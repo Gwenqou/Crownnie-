@@ -6,6 +6,7 @@ class ImagesController < ApplicationController
   
   def new 
     @image = Image.new
+    @users =User.all
   end 
   
   def create 
@@ -19,7 +20,7 @@ class ImagesController < ApplicationController
   end 
   
   def edit
-    
+    @users =User.all
   end 
   
   def update
@@ -50,7 +51,7 @@ class ImagesController < ApplicationController
   private
   
   def image_params 
-    params.require(:image).permit(:picture)
+    params.require(:image).permit(:picture, :user_ids)
   end 
 
   def set_image

@@ -1,8 +1,10 @@
  <div class="center">
+   <%= render 'shared/errors', obj: @image %>
     <%= form_for @image, :html => {multipart: true} do |f|%>
     <div>
       <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png'%>
     </div>
+      <%= f.collection_select :user_ids, User.all, :id,:username %>
       <%= f.submit %>
     <% end %>
   </div>

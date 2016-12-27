@@ -1,1 +1,4 @@
 <h1>Welcome to <%=@user.username%>'s Profile</h1>
+<% @user.images.each do |image| %>
+  <%= image_tag image.picture.url if image.picture%>
+<% end %>

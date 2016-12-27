@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base 
+  
+  has_many :image_users
+  has_many :images, through: :image_users 
+  
   validates :username, presence: true, 
                         uniqueness: {case_sensitive:false}, 
                         length: {minimum:3, maximum:25}
