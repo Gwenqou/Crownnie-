@@ -1,0 +1,6 @@
+<% @images.each do |image|%>
+<div>
+  <%= image_tag image.picture.url %>
+  <%=link_to "Delete picture", image_path(image), method: :delete %>
+</div>
+<% end %>

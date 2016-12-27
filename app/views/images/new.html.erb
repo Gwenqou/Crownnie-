@@ -1,0 +1,10 @@
+<div class="page1">
+  <%= form_for @image, :html => {multipart: true} do |f|%>
+  <div>
+    <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png'%>
+  </div>
+    <%= f.submit %>
+  <% end %>
+  
+  
+</div>
