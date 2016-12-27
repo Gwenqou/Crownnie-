@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-3 form-space">
+    <%= form_for(:session, :html=>{class:"form-horizontal", role: "form"}, url: login_path) do |f| %>
+      <div class="form-group form-color">
+        <div class="col-sm-2">
+          <%= f.label :email, class:"control-label"%>
+        </div>
+        <div class="col-sm-6">
+          <%= f.email_field :email, class:"form-control" %>
+        </div>
+      </div>
+      
+       <div class="form-group form-color">
+        <div class="col-sm-2">
+          <%= f.label :password, class:"control-label"%>
+        </div>
+        <div class="col-sm-6">
+          <%= f.password_field :password, class:"form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-2 col-sm-offset-4">
+          <%= f.submit 'Log In',  class:"btn btn-danger"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div> 
