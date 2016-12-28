@@ -6,7 +6,10 @@ class ImagesController < ApplicationController
   
   def new 
     @image = Image.new
-    @users =User.all
+    1.times do
+      image_user = @image.image_users.build 
+      1.times{image_user.image_user_categories.build}
+    end
   end 
   
   def create 
@@ -20,7 +23,7 @@ class ImagesController < ApplicationController
   end 
   
   def edit
-    @users =User.all
+
   end 
   
   def update
@@ -51,9 +54,10 @@ class ImagesController < ApplicationController
   private
   
   def image_params 
-    params.require(:image).permit(:picture, :user_ids)
+    params.require(:image).permit(:picture, image_users_attributes:[:id, :user_id, image_user_categories_attributes:[:category_id]])
   end 
-
+  
+  
   def set_image
     @image =Image.find(params[:id]) 
   end 
