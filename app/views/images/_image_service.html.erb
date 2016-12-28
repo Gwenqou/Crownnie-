@@ -1,10 +1,8 @@
 <p>
-  <%= f.label :content,"Service" %><br>
-  <%= f.collection_select :category_id, Category.all, :id,:name  %>
-
+  <%= f.label :content, "Service" %><br>
+  <%= f.collection_select :category_id, Category.all, :id,:name %>
+  <%= f.check_box :_destroy %>
+  <%= f.label :_destroy, "Remove service" %>
+             
 </p>  
 
-<!--<#%= f.collection_check_boxes :category_id, Category.all, :id, :name do |cb| %>
-    <#% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class:"checkbox") + cb.text} %>
-  <#% end %> 
-  <#%= f.collection_select :category_id, Category.all, :id,:name  %>-->

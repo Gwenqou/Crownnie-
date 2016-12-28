@@ -6,6 +6,7 @@ class ImageUser < ActiveRecord::Base
   has_many :categories, through: :image_user_categories
   
   accepts_nested_attributes_for :image_user_categories
+  accepts_nested_attributes_for :categories
 
   
 

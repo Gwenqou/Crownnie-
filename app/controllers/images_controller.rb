@@ -8,7 +8,7 @@ class ImagesController < ApplicationController
     @image = Image.new
     1.times do
       image_user = @image.image_users.build 
-      1.times{image_user.image_user_categories.build}
+      2.times{image_user.image_user_categories.build}
     end
   end 
   
@@ -54,7 +54,7 @@ class ImagesController < ApplicationController
   private
   
   def image_params 
-    params.require(:image).permit(:picture, image_users_attributes:[:id, :user_id, image_user_categories_attributes:[:category_id]])
+    params.require(:image).permit(:picture, image_users_attributes:[:id, :user_id, image_user_categories_attributes:[:id, :category_id]])
   end 
   
   
