@@ -1,8 +1,83 @@
+/* ------------------------------------------------ */
+/* BASE COLOR: #e08283 */
+/* DARKBASE COLOR: #d34c4d */
+/* ------------------------------------------------ */
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.temp{
-  width:80%;
-  margin-left: 10%;
-  text-align: center;
+.container-body{
+  width:100%;
+  margin:0;
+  padding: 52px 0 0 0 ;
 }
+
+h1,
+h2,
+h3{
+    margin:0;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    text-align: center;
+}
+
+h2{
+    font-size: 180%;
+    color: #d34c4d;
+}
+
+h2:after{
+    display: block;
+    content: " ";
+    background-color: #e08283;
+    height: 2px;
+    width: 100px;
+    margin: 25px auto 30px auto;
+    
+}
+
+h3{
+    margin-top: 20px;
+    font-size: 90%;
+    color: #d34c4d;
+    
+}
+
+a:link,
+a:visited{
+    color:#e08283;
+    text-decoration: none;
+    padding:5px 15px;
+    border-bottom: 1px solid transparent ;
+}
+
+/* -------navigation------- */
+.navbar{
+ background-color:#e08283; 
+ border-radius: 0px;
+ box-shadow:0 1px 2px #888;
+ margin-bottom:0px;
+ opacity: 0.95;
+}
+.nav li a{
+  color:#fff;
+}
+
+.nav li a:hover,
+.nav li a:hover{
+  color:#e08283;
+  
+}
+#crownshot{
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  font-size:200%;
+  color:#fff;
+  padding-top: 15px ;
+}
+.dropdown-nav{
+  background-color:#e08283;
+}
+

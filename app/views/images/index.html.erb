@@ -1,3 +1,4 @@
+<%= link_to 'filtered_name', {controller: 'images', action: 'index', :name => 'category'}  %>
 <% @images.each do |image|%>
 <div>
   <%= image_tag image.picture.url %>

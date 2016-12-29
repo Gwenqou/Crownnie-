@@ -1,3 +1,42 @@
-
-
-  <h1 align="center">Everyday is a good hair day </h1>
+<div class="page1">
+  <div class="jumbotron">
+    <div class="col-md-6 col-md-offset-3 jumbo">
+      <h1>EVERY DAY IS A GOOD HAIR DAY</h1>
+    </div>
+  </div>
+  <section class="section-daily-picture">
+  <div class="row">
+    <h2>Release your Confidence</h2>
+  </div>
+            
+  <div class="row">
+    <div class="col-sm-4 box">
+      <%= link_to image_tag("mencut.png", alt: "mens cut" ), category_path(1) %>
+        <h3><%=link_to "Men's Cut", category_path(1) %></h3>
+      </div>
+    <div class="col-sm-4 box ">
+      <%= link_to image_tag("womencut.png", alt: "womens cut" ), category_path(2) %>
+      <h3><%=link_to "Women's Cut", category_path(2) %></h3>
+    </div>
+    <div class="col-sm-4 box">
+      <%= link_to image_tag("redcolor.png", alt: "color" ), category_path(3) %>
+      <h3><%=link_to "Color", category_path(3) %></h3>
+    </div>
+   </div>
+ </section>
+ <section class="section-special-picture">
+    <div class="row">
+      <h2>The Perfect Hairstyle for when <br>you say I do</h2>
+    </div>
+    <div class="row ">
+      <div class="col-sm-4 col-sm-offset-2 special-box ">
+        <%= link_to image_tag("bridal1.png", alt: "bridal" ), category_path(4) %>
+        <h3><%=link_to "Bridal", category_path(4) %></h3>
+      </div>
+      <div class="col-sm-4 special-box">
+        <%= link_to image_tag("prom1.png", alt: "prom" ), category_path(5) %>
+        <h3><%=link_to "Prom", category_path(5) %></h3>
+      </div>
+    </div>
+  </section>
+</div>

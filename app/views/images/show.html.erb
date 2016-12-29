@@ -1,1 +1,9 @@
 <%= image_tag @image.picture.url if @image.picture? %>
+<p>Stylist</p>
+<%  @image.users.each do |user| %>
+  <li><%= user.username %></li>
+<% end %>
+<p> Service performed</p>
+<%  @image.categories.each do |category| %>
+  <li><%= category.name %></li>
+<% end %>

@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  has_many :image_users
+  has_many :image_users, dependent: :destroy
   has_many :users, through: :image_users 
   has_many :image_user_categories, through: :image_users
   has_many :categories, through: :image_users
@@ -14,7 +14,7 @@ class Image < ActiveRecord::Base
   validates :picture,  presence: true
   validates_associated :image_users
 
-
+ 
 
 
 

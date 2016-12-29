@@ -1,0 +1,85 @@
+.page1 h1,
+.page1 h2,
+.page1 h3{
+    margin:0;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 4px;
+    text-align: center;
+}
+
+.page1 h2{
+    font-size: 180%;
+    color: #d34c4d;
+}
+
+.page1 h3{
+    margin-top: 20px;
+    font-size: 90%;
+    color: #d34c4d;
+    
+}
+
+/* ------------------------------------------------ */
+/* Header section */
+/* ------------------------------------------------ */
+.page1 .jumbotron{
+  background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.74)), asset-url("headerred-short.jpg");
+  background-size:cover;
+  height:100vh;
+}
+
+.page1 .jumbo{
+  top: 45%;
+}
+.page1 .jumbo h1{
+  text-align: center;
+  color:#e08283;
+  font-size: 200%;
+}
+
+/* ------------------------------------------------ */
+/* Section daily */
+/* ------------------------------------------------ */
+
+
+.section-daily-picture{
+    padding-top: 70px;
+    padding-bottom: 60px;
+
+}
+
+.box {
+    margin-top: 20px;
+    padding:0 50px;
+  
+}
+
+.box img{
+    width:100%;
+    height: auto;
+    border-radius: 5px;
+    border: 4px solid #e08283;
+}
+
+/* ------------------------------------------------ */
+/* Section special */
+/* ------------------------------------------------ */
+.page1 .section-special-picture{
+    padding: 70px 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.71), rgba(255, 255, 255, 0.7)), asset-url('flowerzoom-min.jpg');
+    background-attachment: fixed;  
+}
+
+.page1 .special-box {
+    padding:0 50px;
+    margin-top: 20px;
+}
+
+.page1 .special-box img{
+    width:100%;
+    height: auto;
+    border-radius: 5px;
+    border: 4px solid #e08283; 
+}

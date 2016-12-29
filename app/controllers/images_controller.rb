@@ -3,6 +3,7 @@ class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :destroy, :edit, :update]
   before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
 
+
   
   def new 
     @image = Image.new

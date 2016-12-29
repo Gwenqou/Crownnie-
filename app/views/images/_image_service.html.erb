@@ -1,8 +1,7 @@
-<p>
+<p class="fields">
   <%= f.label :content, "Service" %><br>
   <%= f.collection_select :category_id, Category.all, :id,:name %>
-  <%= f.check_box :_destroy %>
-  <%= f.label :_destroy, "Remove service" %>
+  
              
 </p>  
 
