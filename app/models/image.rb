@@ -15,10 +15,4 @@ class Image < ActiveRecord::Base
   validates_associated :image_users
 
  
-
-
-
- 
-  
-
 end 

@@ -16,7 +16,7 @@ class ImagesController < ApplicationController
   def create 
     @image = Image.new(image_params)
     if @image.save 
-      flash[:notice]="Image saved"
+      flash[:success]="Image saved"
       redirect_to user_path(current_user)
     else 
       render'new'
