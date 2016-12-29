@@ -1,10 +1,34 @@
-<div class="signup"> <!--just to reuse the padding top, no other styling--->
+<div class="editprofile"> 
   <h2>Welcome to Crownshot </h2>
   <h3><strike>Have a good day.</strike> Make it a great day </h3><br>
   <%= render 'shared/errors', obj: @user %>
+  
+  <div class="profile_upload">
+    <%= image_tag @user.avatar.url if @user.avatar?%>
+  </div>
+  
   <div class="row">
     <div class="col-sm-8 col-sm-offset-3 form-space">
-      <%= form_for(@user, :html=>{class:"form-horizontal", role: "form"}) do |f| %>
+      <%= form_for(@user, :html=>{class:"form-horizontal", role: "form", multipart: true}) do |f| %>
+        <%= f.file_field :avatar, accept: 'image/jpeg, image/gif, image/png'%>
+        <div class="form-group form-color">
+          <div class="col-sm-2">
+            <%= f.label :first_name, class:"control-label"%>
+          </div>
+          <div class="col-sm-6">
+            <%= f.text_field :first_name, class:"form-control" %>
+          </div>
+        </div>
+        
+        <div class="form-group form-color">
+          <div class="col-sm-2">
+            <%= f.label :last_name, class:"control-label"%>
+          </div>
+          <div class="col-sm-6">
+            <%= f.text_field :last_name, class:"form-control" %>
+          </div>
+        </div>
+        <hr>
         <div class="form-group form-color">
           <div class="col-sm-2">
             <%= f.label :username, class:"control-label"%>
@@ -31,29 +55,6 @@
             <%= f.password_field :password, class:"form-control" %>
           </div>
         </div>
-        <hr>
-      
-        
-      <%= f.fields_for :profile do |p| %>
-       <div class="form-group form-color">
-          <div class="col-sm-2">
-            <%= p.label :content,"First Name", class:"control-label" %>
-          </div>
-          <div class="col-sm-6">
-            <%= p.text_field :first_name, class:"form-control" %>
-          </div>
-        </div>
-        
-        <div class="form-group form-color">
-          <div class="col-sm-2">
-            <%= p.label :content,"Last Name", class:"control-label" %>
-          </div>
-          <div class="col-sm-6">
-            <%= p.text_field :last_name, class:"form-control" %>
-          </div>
-        </div>
-      <% end %>
-      
         <hr>
       
         
@@ -92,7 +93,7 @@
         </div>
       <% end %>
       
-     
+   
       
       
       
