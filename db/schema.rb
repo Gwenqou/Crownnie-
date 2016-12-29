@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161227225329) do
+ActiveRecord::Schema.define(version: 20161229154918) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 20161227225329) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "profiles", force: :cascade do |t|
+    t.string   "avatar"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"

@@ -1,6 +1,7 @@
 <div class="temp">
 <%= render 'shared/errors', obj: @image %>
   <%= form_for @image, :html => {multipart: true} do |f|%>
+    
     <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png'%>
     
     <%= f.fields_for :image_users do |u| %>

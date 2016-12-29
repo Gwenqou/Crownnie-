@@ -17,7 +17,7 @@ class ImagesController < ApplicationController
     @image = Image.new(image_params)
     if @image.save 
       flash[:notice]="Image saved"
-      redirect_to image_path(@image)
+      redirect_to user_path(current_user)
     else 
       render'new'
     end 

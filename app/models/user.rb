@@ -2,6 +2,10 @@ class User < ActiveRecord::Base
   
   has_many :image_users
   has_many :images, through: :image_users 
+  has_one :profile, through: :user_id, dependent: :destroy
+  
+  accepts_nested_attributes_for :profile, :allow_destroy => true
+  validates_associated :profile
   
   validates :username, presence: true, 
                         uniqueness: {case_sensitive:false}, 
