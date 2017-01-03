@@ -1,0 +1,8 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :content, "Service" %><br>
+    <%= f.collection_select :category_id, Category.all, :id,:name,:prompt => "  "  %>
+  </div>
+  <%= link_to_remove_association "remove service", f %>
+</div>  
+

@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end 
   
   def update 
-    debugger
+
     if @user.update(user_params_update)
       flash[:success] = "You profile was updated successfully"
       redirect_to user_path(@user)

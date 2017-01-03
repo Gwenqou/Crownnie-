@@ -1,15 +1,22 @@
-<div class="temp">
+
 <%= render 'shared/errors', obj: @image %>
-  <%= form_for @image, :html => {multipart: true} do |f|%>
-    
+  
+<%= form_for(@image) do |f|%>
+  <div class="field">
     <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png'%>
-    
-    <%= f.fields_for :image_users do |u| %>
-      <%=render 'image_stylist', :f => u %>
+  </div>
+  
+  <div id="image_users">
+    <%= f.fields_for :image_users, ImageUser.new do |u| %>
+      <%=render 'image_user_fields', :f => u %>
     <% end %> 
-    
-    <%= f.submit %>
+  </div>
+  <div class="links">
+    <%= link_to_add_association 'add stylist', f, :image_users %>
+  </div>
+
+  <%= f.submit 'Upload' %>
+
 <% end %>
 
-</div>
   

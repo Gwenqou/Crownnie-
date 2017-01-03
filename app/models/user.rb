@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :image_users
   has_many :images, through: :image_users 
   
-  
+
 
   mount_uploader :avatar, ImageUploader
   validates :username, presence: true, 

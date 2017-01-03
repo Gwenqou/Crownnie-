@@ -1,7 +1,9 @@
 class ImageUser < ActiveRecord::Base 
+
   belongs_to :user
   belongs_to :image
-  
+
+
   has_many :image_user_categories, dependent: :destroy
   has_many :categories, through: :image_user_categories
   

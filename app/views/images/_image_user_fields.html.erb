@@ -1,0 +1,21 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :content,"Stylist" %><br>
+    <%= f.collection_select :user_id, User.all, :id,:username  %>
+  </div>
+    <%= link_to_remove_association "remove stylist", f %>
+    
+    <%= f.fields_for :image_user_categories, ImageUserCategory.new do |u| %>
+      <%=render 'image_user_category_fields', :f => u %>
+    <% end %> 
+    
+    <div class="links">
+      <%= link_to_add_association 'add service', f, :image_user_categories %>
+    </div> 
+</div>
+
+
+<%#= f.check_box :_destroy %>
+<%#=link_to "remove", '#', class: "remove_fields" %>
+
+  

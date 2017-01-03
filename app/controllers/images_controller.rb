@@ -7,15 +7,13 @@ class ImagesController < ApplicationController
   
   def new 
     @image = Image.new
-    2.times do
-      image_user = @image.image_users.build 
-      1.times{image_user.image_user_categories.build}
-    end
-  end 
+
+  end
+    
   
   def create 
     @image = Image.new(image_params)
-    if @image.save 
+    if @image.save
       flash[:success]="Image saved"
       redirect_to user_path(current_user)
     else 
@@ -55,7 +53,7 @@ class ImagesController < ApplicationController
   private
   
   def image_params 
-    params.require(:image).permit(:picture, image_users_attributes:[:id, :user_id, image_user_categories_attributes:[:id, :category_id]])
+    params.require(:image).permit(:picture, image_users_attributes:[:id, :user_id, :_destroy, image_user_categories_attributes:[:id, :category_id, :_destroy]])
   end 
   
   
@@ -65,3 +63,12 @@ class ImagesController < ApplicationController
   
 
 end 
+
+
+
+#1.times do
+    #  image_user = @image.image_users.build 
+     # 1.times{image_user.image_user_categories.build}
+   # end
+   
+   
