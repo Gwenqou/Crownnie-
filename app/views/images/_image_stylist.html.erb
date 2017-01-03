@@ -1,10 +1,11 @@
-<p>
+<fieldset>
   <%= f.label :content,"Stylist" %><br>
-  <%= f.collection_select :user_id, User.all, :id,:username  %>
+  <%= f.collection_select :user_id, User.all, :id,:username, :prompt => "  "  %>
   <%= f.check_box :_destroy %>
-  <%= f.label :_destroy, "Remove stylist" %>
-</p>
+  <%=link_to "remove", '#', class: "remove_fields" %>
 
-<%= f.fields_for :image_user_categories do |u| %>
-  <%=render 'image_service', :f => u %>
-<% end %> 
+  <%= f.fields_for :image_user_categories do |u| %>
+    <%=render 'image_service', :f => u %>
+  <% end %> 
+
+</fieldset>

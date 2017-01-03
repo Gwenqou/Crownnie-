@@ -7,9 +7,9 @@ class ImagesController < ApplicationController
   
   def new 
     @image = Image.new
-    1.times do
+    2.times do
       image_user = @image.image_users.build 
-      2.times{image_user.image_user_categories.build}
+      1.times{image_user.image_user_categories.build}
     end
   end 
   

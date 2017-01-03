@@ -1,6 +1,6 @@
 <p class="fields">
   <%= f.label :content, "Service" %><br>
-  <%= f.collection_select :category_id, Category.all, :id,:name %>
-
+  <%= f.collection_select :category_id, Category.all, :id,:name,:prompt => "  "  %>
+  
 </p>  
 
