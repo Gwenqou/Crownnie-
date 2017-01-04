@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
-  attr_accessor :picture, :image_users_attributes, :image_user_categories_attributes, :categories_attributes
+ 
   has_many :image_users, dependent: :destroy
   has_many :users, through: :image_users 
   has_many :image_user_categories, through: :image_users
