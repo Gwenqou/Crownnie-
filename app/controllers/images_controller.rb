@@ -41,7 +41,16 @@ class ImagesController < ApplicationController
   end 
   
   def index
-    @images = Image.all  
+    if params[:search].present?
+      @users = User.near(params[:search], 50)
+      @images = []
+      @users.each do |user|
+        @images.append(user.images)
+      end 
+     
+    else
+      @images = Image.all  
+    end
   end
   
   def destroy

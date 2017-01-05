@@ -16,5 +16,8 @@ class User < ActiveRecord::Base
                     length: {minimum:3, maximum:105},
                     format: {with: VALID_EMAIL_REGEX}
                     
-   has_secure_password             
+   has_secure_password     
+   
+   geocoded_by :salon_location
+   after_validation :geocode, :if => :salon_location_changed?
 end 

@@ -7,3 +7,17 @@
 <%  @image.categories.each do |category| %>
   <li><%= category.name %></li>
 <% end %>
+<br>
+
+<p>Location of this picture </p>
+  <% (0... @image.users.count).each do |n| %>
+    User # <%=  n+1 %>
+    <%= @image.users[n].latitude %>
+    <%= @image.users[n].longitude %>
+    <br>
+  <%end%>
+  
+
+
+
+<%= link_to 'Edit', edit_image_path(@image) %>
