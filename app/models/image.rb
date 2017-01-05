@@ -7,6 +7,7 @@ class Image < ActiveRecord::Base
 
   accepts_nested_attributes_for :image_users, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :image_user_categories, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :users
   
   mount_uploader :picture, ImageUploader
   

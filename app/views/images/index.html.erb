@@ -1,7 +1,33 @@
-<%= link_to 'filtered_name', {controller: 'images', action: 'index', :name => 'category'}  %>
-<% @images.each do |image|%>
-<div>
-  <%= image_tag image.picture.url %>
-  <%=link_to "Delete picture", image_path(image), method: :delete %>
-</div>
+<%= form_tag images_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+    
+  </p>
 <% end %>
+
+
+
+<% @images.each do |image| %> 
+  <% if params[:search].present? %>
+  <% @users.each do |user| %>
+   <%= user.username %>
+  <% end %>
+  <br>
+  ------------
+   <% image.each do |indvimage| %>
+      <div>
+        <%= image_tag indvimage.picture.url %>
+        <%=link_to "Delete picture", image_path(indvimage), method: :delete %>
+      </div>
+    <% end %>
+  <% else %>
+    <div>
+      <%= image_tag image.picture.url %>
+      <%=link_to "Delete picture", image_path(image), method: :delete %>
+    </div>
+  <% end %>
+<% end %>
+
+
+<!--http://rubyonrail-juliasmith.c9users.io:8080/images?utf8=%E2%9C%93&search=95050
