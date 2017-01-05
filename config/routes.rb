@@ -15,6 +15,8 @@ get "login", to: "sessions#new"
 post "login", to: "sessions#create"
 delete "logout", to: "sessions#destroy"
 
+get "filter", to: "images#filter"
+get "fetch_images", to: "images#from_category", as: "fetch_images"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
