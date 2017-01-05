@@ -7,17 +7,11 @@
 <% end %>
 
 
-
 <% @images.each do |image| %> 
-  <% if params[:search].present? %>
-   <% image.each do |indvimage| %>
-      <%= image_tag indvimage.picture.url %>
-      <%#=link_to "Delete picture", image_path(indvimage), method: :delete %>
-    <% end %>
-    
-  <% else %>
-      <%= image_tag image.picture.url %>
-      <%#=link_to "Delete picture", image_path(image), method: :delete %>
-  <% end %>
+  <%= image_tag image.picture.url %>
 <% end %>
+
+
+
+
 

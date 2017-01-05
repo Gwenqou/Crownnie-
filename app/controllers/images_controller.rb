@@ -52,12 +52,8 @@ class ImagesController < ApplicationController
   
   def index
     if params[:search].present?
-      @users = User.near(params[:search], 50)
-      @images = []
-      @users.each do |user|
-        @images.append(user.images)
-      end 
-     
+      @users = User.near(params[:search], 50, :select => "users.*, images.*").joins(:images)
+      @images = Image.joins(:users).merge(@users).distinct
     else
       @images = Image.all  
     end
