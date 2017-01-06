@@ -3,22 +3,14 @@ class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :destroy, :edit, :update]
   before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
 
-  def filter
-    @images = Image.all
-    @categories = Category.all
-  end 
-  
-  def from_category
-    @images = Image.joins(:categories).where(categories: { id: params[:cat_id] })
-    respond_to do |format|
-      format.js
-    end 
-  end 
   
   def index
+    @categories = Category.all
+    
     if params[:search].present?
       @users = User.near(params[:search], 50, :select => "users.*, images.*").joins(:images)
-      @images = Image.joins(:users).merge(@users).distinct
+      @images = Image.joins(:categories).where(categories: { id: 3 }).joins(:users).merge(@users).distinct
+      #@images = Image.joins(:categories).where(categories: { id: params[:cat_id] })
     else
       @images = Image.all  
     end

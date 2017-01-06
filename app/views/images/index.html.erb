@@ -3,14 +3,27 @@
     <%= text_field_tag :search, params[:search] %>
     <% submit_tag "Search", :name => nil %>
   </p>
+
+
 <% end %>
+
 
 
 <% @images.each do |image| %> 
   <%= image_tag image.picture.url %>
+  
+  <% image.users.each do |user| %>
+    <%= user.username%>
+  <% end %>
+  
+  <% image.categories.each do |category| %>
+    <%= category.name%>
+  <% end %>
+  
 <% end %>
 
 
 
 
 
+<!--https://rubyonrail-juliasmith.c9users.io/images?utf8=%E2%9C%93&search=95050-->
