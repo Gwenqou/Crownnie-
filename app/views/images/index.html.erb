@@ -19,13 +19,13 @@
 <% @images.each do |image| %> 
   <%= image_tag image.picture.url %>
   
-  <% image.users.each do |user| %>
-    <%= user.username%>
-  <% end %>
+  <%# image.users.each do |user| %>
+    <%#= user.username%>
+  <%# end %>
   
-  <% image.categories.each do |category| %>
-    <%= category.name%>
-  <% end %>
+  <%# image.categories.each do |category| %>
+    <%#= category.name%>
+  <%# end %>
   
 <% end %>
 
