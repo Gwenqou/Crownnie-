@@ -1,3 +1,4 @@
+
 <%= form_tag images_path, :method => :get do %>
     <p> Location<br>
       <%= text_field_tag :search, params[:search] %>
@@ -17,15 +18,15 @@
 
 
 <% @images.each do |image| %> 
-  <%= image_tag image.picture.url %>
+  <%= image_tag image.picture.url(:thumb) %>
   
-  <%# image.users.each do |user| %>
-    <%#= user.username%>
-  <%# end %>
+  <% image.users.each do |user| %>
+    <%= user.username%>
+  <% end %>
   
-  <%# image.categories.each do |category| %>
-    <%#= category.name%>
-  <%# end %>
+  <% image.categories.each do |category| %>
+    <%= category.name%>
+  <% end %>
   
 <% end %>
 
