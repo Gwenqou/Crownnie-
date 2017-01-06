@@ -15,6 +15,15 @@ class ImagesController < ApplicationController
     end 
   end 
   
+  def index
+    if params[:search].present?
+      @users = User.near(params[:search], 50, :select => "users.*, images.*").joins(:images)
+      @images = Image.joins(:users).merge(@users).distinct
+    else
+      @images = Image.all  
+    end
+  end
+  
   def new 
     @image = Image.new
     1.times do
@@ -50,14 +59,6 @@ class ImagesController < ApplicationController
   def show 
   end 
   
-  def index
-    if params[:search].present?
-      @users = User.near(params[:search], 50, :select => "users.*, images.*").joins(:images)
-      @images = Image.joins(:users).merge(@users).distinct
-    else
-      @images = Image.all  
-    end
-  end
   
   def destroy
     if @image.destroy 
