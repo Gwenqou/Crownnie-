@@ -1,9 +1,16 @@
 <%= form_tag images_path, :method => :get do %>
-  <p> Location<br>
-    <%= text_field_tag :search, params[:search] %>
-    <% submit_tag "Search", :name => nil %>
-  </p>
-
+    <p> Location<br>
+      <%= text_field_tag :search, params[:search] %>
+      <% submit_tag "Search", :name => nil %>
+    </p>
+    
+     <ul>
+      <li><%= link_to "Women's cut", images_path(category: 'WOMEN\'S CUT', search: params[:search]) %> </li>
+      <li><%= link_to "Men's cut", images_path(category: 'MEN\'S CUT', search: params[:search]) %> </li>
+      <li><%= link_to "Color", images_path(category: 'COLOR', search: params[:search]) %> </li>
+      <li><%= link_to "Bridal", images_path(category: 'BRIDAL', search: params[:search]) %> </li>
+      <li><%= link_to "Prom", images_path(category: 'PROM', search: params[:search]) %> </li>
+    </ul>
 
 <% end %>
 
@@ -27,3 +34,5 @@
 
 
 <!--https://rubyonrail-juliasmith.c9users.io/images?utf8=%E2%9C%93&search=95050-->
+<%# params[:category] ||= '' %>
+<%# params[:search] ||= '' %>

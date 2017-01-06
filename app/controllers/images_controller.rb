@@ -5,15 +5,26 @@ class ImagesController < ApplicationController
 
   
   def index
-    @categories = Category.all
     
     if params[:search].present?
       @users = User.near(params[:search], 50, :select => "users.*, images.*").joins(:images)
-      @images = Image.joins(:categories).where(categories: { id: 3 }).joins(:users).merge(@users).distinct
-      #@images = Image.joins(:categories).where(categories: { id: params[:cat_id] })
+      if params[:category].present?
+        category = Category.where('lower(name) = ?', params[:category].downcase).first
+        category_id = category.id unless category.nil?
+        @images = Image.joins(:categories).where(categories: { id: category_id }).joins(:users).merge(@users).distinct
+      else 
+        @images = Image.joins(:users).merge(@users).distinct
+      end 
+      
     else
-      @images = Image.all  
-    end
+      if params[:category].present?
+        category = Category.where('lower(name) = ?', params[:category].downcase).first
+        category_id = category.id unless category.nil?
+        @images = Image.joins(:categories).where(categories: { id: category_id })
+      else 
+        @images = Image.all  
+      end
+    end 
   end
   
   def new 
