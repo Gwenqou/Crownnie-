@@ -1,0 +1,1 @@
+json.partial! "service_menus/service_menu", service_menu: @service_menu

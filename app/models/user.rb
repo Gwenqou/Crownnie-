@@ -2,8 +2,9 @@ class User < ActiveRecord::Base
   
   has_many :image_users
   has_many :images, through: :image_users 
+  has_many :service_menus, :dependent => :destroy 
   
-
+  accepts_nested_attributes_for :service_menus, reject_if: :all_blank, allow_destroy: true
 
   mount_uploader :avatar, ImageUploader
   validates :username, presence: true, 

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Service Menus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Menu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_menus.each do |service_menu| %>
+      <tr>
+        <td><%= service_menu.user_id %></td>
+        <td><%= image_tag service_menu.menu.url(:thumb) %></td>
+        <td><%= link_to 'Show', service_menu %></td>
+        <td><%= link_to 'Edit', edit_service_menu_path(service_menu) %></td>
+        <td><%= link_to 'Destroy', service_menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Service menu', new_service_menu_path %>

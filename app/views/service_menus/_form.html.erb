@@ -1,0 +1,26 @@
+<%= form_for(@service_menu) do |f| %>
+  <% if @service_menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service_menu.errors.count, "error") %> prohibited this service_menu from being saved:</h2>
+
+      <ul>
+      <% @service_menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :menu %><br>
+    <%= f.file_field :menu, multiple: true, name: "service_menu[menu]" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

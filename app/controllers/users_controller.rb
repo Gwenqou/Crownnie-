@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   
   def new 
     @user = User.new
+    
   end 
   
   def create 
@@ -19,18 +20,16 @@ class UsersController < ApplicationController
   end 
   
   def edit 
+
   end 
   
   def update 
-
     if @user.update(user_params_update)
-      flash[:success] = "You profile was updated successfully"
-      redirect_to user_path(@user)
+      flash[:success] = "Your profile was updated successfully" 
+      redirect_to edit_user_path(current_user)
     else
-      render 'edit'
+      render 'edit' 
     end 
-
-    
   end 
   
   def show
@@ -48,7 +47,7 @@ class UsersController < ApplicationController
   end 
   
   def user_params_update
-    params.require(:user).permit(:username, :email, :password, :salon_name, :salon_location, :appointment_number, :first_name, :last_name, :avatar)
+    params.require(:user).permit(:username, :email, :password, :salon_name, :salon_location, :appointment_number, :first_name, :last_name, :avatar, service_menus_attributes: [:id, :menu, :_destroy])
   end 
   
 

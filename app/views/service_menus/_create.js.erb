@@ -1,0 +1,6 @@
+<% if @menu.new_record? %>
+  alert("Failed to upload painting")
+<%else %>
+  $('#menus').append("<%=j render(@menu) %>");
+
+<% end %>

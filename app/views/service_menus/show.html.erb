@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @service_menu.user_id %>
+</p>
+
+<p>
+  <strong>Menu:</strong>
+  <%=image_tag @service_menu.menu.url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_service_menu_path(@service_menu) %> |
+<%= link_to 'Back', service_menus_path %>
