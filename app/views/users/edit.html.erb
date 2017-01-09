@@ -19,7 +19,7 @@
         <%= f.file_field :avatar, accept: 'image/jpeg, image/gif, image/png'%>
         <p>Menu</p>
         <%=f.fields_for :menus, Menu.new do |menu| %>
-          <%= menu.file_field :menu %>
+          <%= menu.file_field :menu, multiple: true, name: 'user[menus_attributes][][menu]' %>
         <% end %>
         
         <div class="form-group form-color">

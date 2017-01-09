@@ -19,18 +19,26 @@ class UsersController < ApplicationController
   end 
   
   def edit 
-    
+
   end 
   
   def update 
-    if @user.update(user_params_update)
-      if params[:menu]
-          @user.menus.create(menu: menu, user: @user)
+    respond_to do |format|
+      if @user.update(user_params_update)
+        if params[:menus]
+          params[:menus].each do |menu|
+            @user.menus.create(menu: menu[:menu])
+          end 
+        end 
+        format.html{
+          flash[:success] = 'Your profile was updated successfully'
+          redirect_to edit_user_path(@user)
+        }
+        format.json {render :edit, status: :ok, location: @user }
+      else
+        format.html {render 'edit'}
+        format.json {render json: @user.errors, status: :unprocessable_entity }
       end 
-      flash[:success] = "You profile was updated successfully"
-      redirect_to user_path(@user)
-    else
-      render 'edit'
     end 
   end 
 
@@ -66,4 +74,6 @@ class UsersController < ApplicationController
       redirect_to user_path(current_user)
     end 
   end 
+  
 end 
+
