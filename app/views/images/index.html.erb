@@ -18,7 +18,7 @@
 
 
 <% @images.each do |image| %> 
-  <%= image_tag image.picture.url(:thumb) %>
+  <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
   
   <% image.users.each do |user| %>
     <%= user.username%>

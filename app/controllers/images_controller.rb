@@ -8,6 +8,7 @@ class ImagesController < ApplicationController
     
     if params[:search].present?
       @users = User.near(params[:search], 50, :select => "users.*, images.*").joins(:images).distinct
+      
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
