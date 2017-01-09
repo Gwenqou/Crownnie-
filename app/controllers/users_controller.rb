@@ -19,19 +19,22 @@ class UsersController < ApplicationController
   end 
   
   def edit 
+    
   end 
   
   def update 
-
     if @user.update(user_params_update)
+      if params[:menu]
+          @user.menus.create(menu: menu, user: @user)
+      end 
       flash[:success] = "You profile was updated successfully"
       redirect_to user_path(@user)
     else
       render 'edit'
     end 
-
-    
   end 
+
+
   
   def show
     
@@ -48,7 +51,7 @@ class UsersController < ApplicationController
   end 
   
   def user_params_update
-    params.require(:user).permit(:username, :email, :password, :salon_name, :salon_location, :appointment_number, :first_name, :last_name, :avatar)
+    params.require(:user).permit(:username, :email, :password, :salon_name, :salon_location, :appointment_number, :first_name, :last_name, :avatar, menus_attributes:[:menu, :user_id] )
   end 
   
 

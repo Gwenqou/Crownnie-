@@ -15,7 +15,7 @@ get "login", to: "sessions#new"
 post "login", to: "sessions#create"
 delete "logout", to: "sessions#destroy"
 
-
+resources :menus
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
