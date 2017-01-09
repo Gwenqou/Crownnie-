@@ -7,15 +7,23 @@ class ImagesController < ApplicationController
   def index
     
     if params[:search].present?
-      @users = User.near(params[:search], 50, :select => "users.*, images.*").joins(:images).distinct
-      
+      #this line get all the images from all the nearby users, thus there can be duplication 
+      #if an image has two users, two of the same picture will come up and .distinct doesnt help
+      #so i create an array that get all the image ids. and call uniq to filter out all the duplicat images
+      @images_by_users = User.near(params[:search], 50, :select => "users.*, images.*").joins(:images)
+      @images =[]
+      @images_by_users.each do |image|
+        @images.append(image.id)
+      end 
+      @images.uniq
+
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.joins(:categories).where(categories: { id: category_id }).joins(:users).merge(@users).distinct
+        @images = Image.where(id: @images).joins(:categories).where(categories:{ id: category_id })
         
       else 
-        @images = Image.joins(:users).merge(@users).distinct
+        @images = Image.where(id: @images)
         
       end 
       
