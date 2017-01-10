@@ -2,7 +2,7 @@
   <div class="field col-sm-3">
     <%= f.label :content,"Stylist" %><br>
     <%= f.collection_select :user_id, User.all, :id,:username,:prompt => "  "  %><br>
-    <%= link_to_remove_association "remove stylist", f %>
+    <%= link_to_remove_association "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, f %>
   </div>
   
     <%= f.fields_for :image_user_categories do |u| %>

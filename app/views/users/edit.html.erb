@@ -19,8 +19,7 @@
       <%= form_for(@user, :html=>{class:"form-horizontal", role: "form", multipart: true}) do |f| %>
         <p>Profile</p>
         <%= f.file_field :avatar, accept: 'image/jpeg, image/gif, image/png'%>
-        <p>Menu</p>
-        
+
         <%= render 'editform', :f => f %>
         
         <div class="form-group">
