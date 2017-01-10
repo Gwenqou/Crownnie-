@@ -11,6 +11,7 @@ class Image < ActiveRecord::Base
   
   mount_uploader :picture, ImageUploader
   
+
   validates :picture,  presence: true
   validates_associated :image_users
 

@@ -1,5 +1,5 @@
 class MenusController < ApplicationController
-  before_action :require_user, only: [:index, :create, :edit, :update, :destroy]
+  before_action :require_user, only: [:index, :create, :destroy]
   before_action :require_same_user, only: [:destroy]
   
   def index 

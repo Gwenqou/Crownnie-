@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end 
   
   def edit 
-    @menu = Menu.new  end 
+  end 
   
   def update 
     if @user.update(user_params_update)
@@ -31,8 +31,6 @@ class UsersController < ApplicationController
    
   end 
 
-
-  
   def show
     
   end 

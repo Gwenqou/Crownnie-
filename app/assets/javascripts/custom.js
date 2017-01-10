@@ -25,11 +25,11 @@ $(document).ready(function(){
     // addRemoveLinks: true,
     acceptedFiles: ".jpeg,.jpg,.png,.gif", 
     sucess:function(file, response) {
-      // var imageUrl;
-      // imageUrl = response.file_name.url;
-      $(file.previewTemplate).find('.dz-remove').attr('id', response.id);
-      $(file.previewTemplate).find('.dz-remove').attr('menu_id', response.menu_id);
-     }
+       var imageUrl;
+       imageUrl = response.file_name.url;
+    //   $(file.previewTemplate).find('.dz-remove').attr('id', response.id);
+    //   $(file.previewTemplate).find('.dz-remove').attr('menu_id', response.menu_id);
+    // },
      // removedfile: function(file){
      //  var id = $(file.previewTemplate).find('.dz-remove').attr('id');
      //  var boat_id = $(file.previewTemplate).find('.dz-remove').attr('menu_id');
@@ -40,7 +40,7 @@ $(document).ready(function(){
      //     $(file.previewTemplate).fadeOut()
      //   }
      //  });
-     // }
+      }
   });
   
 });
