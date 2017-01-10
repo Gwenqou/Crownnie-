@@ -1,0 +1,8 @@
+<%=form_for(@menu, :html=>{class:"dropzone", id: "menu-dropzone", multipart: true}) do %>
+<% end %>
+<%= link_to 'Done', new_menu_path %>
+<br>
+<% @user.menus.each do |m| %>
+  <%=image_tag m.menu.url(:thumb) %>
+  <%= link_to 'Delete',m, method: :delete %>
+<% end %>
