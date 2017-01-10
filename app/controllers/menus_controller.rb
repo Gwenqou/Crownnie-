@@ -1,5 +1,8 @@
 class MenusController < ApplicationController
-  def new 
+  before_action :require_user, only: [:index, :create, :edit, :update, :destroy]
+  before_action :require_same_user, only: [:destroy]
+  
+  def index 
     @menu = Menu.new
     @user = current_user
   end 
@@ -35,5 +38,13 @@ class MenusController < ApplicationController
   
   def menu_params
     require(:menu).permit(:user_id, :menu)
+  end 
+  
+  def require_same_user
+    @menu = Menu.find(params[:id])
+    if current_user != @menu.user
+      flash[:danger] = "You can only delete your own picture"
+      redirect_to root_path
+    end 
   end 
 end 

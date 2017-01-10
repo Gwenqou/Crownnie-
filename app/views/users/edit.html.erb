@@ -7,10 +7,10 @@
     <%= image_tag @user.avatar.url if @user.avatar?%>
   </div>
   
-  <% @user.menus.each do |m| %>
-    <%=image_tag m.menu.url(:thumb) %>
-    <%= link_to 'Delete',m, method: :delete %>
-  <% end %>
+  <%# @user.menus.each do |m| %>
+    <%#=image_tag m.menu.url(:thumb) %>
+    <%#= link_to 'Delete',m, method: :delete %>
+  <%# end %>
   
  
   
