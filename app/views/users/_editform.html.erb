@@ -16,64 +16,41 @@
   </div>
 </div>
 <hr>
-<div class="form-group form-color">
-  <div class="col-sm-2">
-    <%= f.label :username, class:"control-label"%>
-  </div>
-  <div class="col-sm-6">
-    <%= f.text_field :username, class:"form-control" %>
-  </div>
-</div>
-
-<div class="form-group form-color">
-  <div class="col-sm-2">
-    <%= f.label :email, class:"control-label"%>
-  </div>
-  <div class="col-sm-6">
-    <%= f.email_field :email, class:"form-control" %>
-  </div>
-</div>
-
-<div class="form-group form-color">
-  <div class="col-sm-2">
-    <%= f.label :password, class:"control-label"%>
-  </div>
-  <div class="col-sm-6">
-    <%= f.password_field :password, class:"form-control" %>
-  </div>
-</div>
+ <%= render 'form', :f => f %>
 <hr>
 
+<% if is_stylist? %>
+  <div class="form-group form-color">
+    <div class="col-sm-2">
+      <%= f.label :salon_name, class:"control-label"%>
+    </div>
+    <div class="col-sm-6">
+      <%= f.text_field :salon_name, class:"form-control" %>
+    </div>
+  </div>
+  
+  <div class="form-group form-color">
+    <div class="col-sm-2">
+      <%= f.label :salon_location, class:"control-label"%>
+    </div>
+    <div class="col-sm-6">
+      <%= f.text_field :salon_location, class:"form-control" %>
+    </div>
+  </div>
+  
+  <div class="form-group form-color">
+    <div class="col-sm-2">
+      <%= f.label :appointment_number, class:"control-label"%>
+    </div>
+    <div class="col-sm-6">
+      <%= f.text_field :appointment_number, class:"form-control" %>
+    </div>
+  </div>
+  
+  <p>Latitude</p>
+  <%= @user.latitude %>
+  
+  <p>Longitude</p>
+  <%=@user.longitude %>
 
-<div class="form-group form-color">
-  <div class="col-sm-2">
-    <%= f.label :salon_name, class:"control-label"%>
-  </div>
-  <div class="col-sm-6">
-    <%= f.text_field :salon_name, class:"form-control" %>
-  </div>
-</div>
-
-<div class="form-group form-color">
-  <div class="col-sm-2">
-    <%= f.label :salon_location, class:"control-label"%>
-  </div>
-  <div class="col-sm-6">
-    <%= f.text_field :salon_location, class:"form-control" %>
-  </div>
-</div>
-
-<div class="form-group form-color">
-  <div class="col-sm-2">
-    <%= f.label :appointment_number, class:"control-label"%>
-  </div>
-  <div class="col-sm-6">
-    <%= f.text_field :appointment_number, class:"form-control" %>
-  </div>
-</div>
-
-<p>Latitude</p>
-<%= @user.latitude %>
-
-<p>Longitude</p>
-<%=@user.longitude %>
+<% end %>

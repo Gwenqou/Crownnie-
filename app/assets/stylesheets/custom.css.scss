@@ -14,7 +14,8 @@
 
 h1,
 h2,
-h3{
+h3,
+h5{
     margin:0;
     font-weight: 400;
     text-transform: uppercase;
@@ -43,6 +44,11 @@ h3{
     font-size: 90%;
     color: #d34c4d;
     
+}
+
+h5{
+  font-size:100%;
+  color:#d34c4d;
 }
 
 a:link,

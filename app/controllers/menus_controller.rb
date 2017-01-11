@@ -1,5 +1,6 @@
 class MenusController < ApplicationController
   before_action :require_user, only: [:index, :create, :destroy]
+  before_action :require_is_stylist, only: [:index, :create, :destroy]
   before_action :require_same_user, only: [:destroy]
   
   def index 
@@ -47,4 +48,6 @@ class MenusController < ApplicationController
       redirect_to root_path
     end 
   end 
+  
+  
 end 

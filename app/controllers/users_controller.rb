@@ -14,9 +14,21 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to Crownshot"
       redirect_to user_path(@user)
     else
-      render "new"
+      if @user.is_stylist? 
+        render "become_a_stylist"
+      else 
+        render "new"
+      end 
     end 
   end 
+  
+  
+  def become_a_stylist 
+    @user = User.new
+  end 
+  
+
+  
   
   def edit 
   end 
@@ -42,7 +54,7 @@ class UsersController < ApplicationController
   private 
   
   def user_params
-    params.require(:user).permit(:username, :email, :password)  
+    params.require(:user).permit(:username, :email, :password, :is_stylist)  
   end 
   
   def user_params_update

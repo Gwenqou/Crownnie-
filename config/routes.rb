@@ -14,7 +14,8 @@ resources :categories
 get "login", to: "sessions#new"
 post "login", to: "sessions#create"
 delete "logout", to: "sessions#destroy"
-
+get "become_a_stylist", to: "users#become_a_stylist"
+post "become_a_stylist", to: "users#stylist_create"
 resources :menus
 
   # Example of regular route:
