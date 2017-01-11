@@ -1,7 +1,7 @@
 <div class="nested-fields">
   <div class="field col-sm-3">
     <%= f.label :content,"Stylist" %><br>
-    <%= f.collection_select :user_id, User.all, :id,:username,:prompt => "  "  %><br>
+    <%= f.collection_select :user_id, User.where(is_stylist: true), :id,:username,:prompt => "  "  %><br>
     <%= link_to_remove_association "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, f %>
   </div>
   
