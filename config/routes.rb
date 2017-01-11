@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 root "pages#home"
 
-resources :images
+resources :images, :path => 'CR'
 
 get "signup", to: "users#new"
 
