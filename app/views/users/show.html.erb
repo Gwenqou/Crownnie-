@@ -1,6 +1,12 @@
 <div class="signup"> <!--just to reuse the padding top, no other styling--->
   <h2>-- My Profile --</h2>
-  <% @user.images.each do |image| %>
-    <%= image_tag image.picture.url(:thumb) if image.picture%>
+  <% if @user.is_stylist? %>
+    <% @user.images.each do |image| %>
+      <%= image_tag image.picture.url(:thumb) if image.picture%>
+    <% end %>
+  <% else %>
+    <% Image.where(pictureuploader: @user.id).each do |image|%>
+      <%= image_tag image.picture.url(:thumb) if image.picture %>    
+    <% end %>  
   <% end %>
 </div>

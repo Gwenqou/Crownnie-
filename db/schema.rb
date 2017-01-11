@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111134752) do
+ActiveRecord::Schema.define(version: 20170111160514) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170111134752) do
     t.string   "picture"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pictureuploader"
   end
 
   create_table "menus", force: :cascade do |t|

@@ -38,6 +38,8 @@ class ImagesController < ApplicationController
     end 
   end
   
+  
+  
   def new 
     @image = Image.new
     1.times do
@@ -49,6 +51,7 @@ class ImagesController < ApplicationController
   
   def create 
     @image = Image.new(image_params)
+    @image.pictureuploader = current_user.id
     if @image.save
       flash[:success]="Image saved"
       redirect_to user_path(current_user)
