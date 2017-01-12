@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   has_many :image_users
   has_many :images, through: :image_users 
   has_many :menus, :dependent => :destroy
+  has_one :wishlist
+  
   accepts_nested_attributes_for :menus, allow_destroy: true
 
   mount_uploader :avatar, ImageUploader

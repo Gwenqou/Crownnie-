@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   
   def create 
     @user = User.new(user_params)
-    if @user.save 
+    if @user.save
+      @user.wishlist = Wishlist.new
       session[:user_id]=@user.id
       flash[:success] = "Welcome to Crownshot"
       redirect_to user_path(@user)
@@ -29,7 +30,6 @@ class UsersController < ApplicationController
   end 
   
   def edit 
-  
   end 
   
   def update 
@@ -43,11 +43,16 @@ class UsersController < ApplicationController
   end 
 
   def show
-
   end 
   
   def index
-    
+  end 
+  
+  def add_to_wishlist
+    @user = current_user
+    @image = Image.find(params[:id])
+    @user.wishlist.images << @image
+    redirect_to wishlist_path(@user)
   end 
   
   private 

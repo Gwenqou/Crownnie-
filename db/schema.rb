@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111160514) do
+ActiveRecord::Schema.define(version: 20170111184726) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -34,6 +34,11 @@ ActiveRecord::Schema.define(version: 20170111160514) do
 
   add_index "image_users", ["image_id"], name: "index_image_users_on_image_id"
   add_index "image_users", ["user_id"], name: "index_image_users_on_user_id"
+
+  create_table "image_wishlists", force: :cascade do |t|
+    t.integer "wishlist_id"
+    t.integer "image_id"
+  end
 
   create_table "images", force: :cascade do |t|
     t.string   "picture"
@@ -71,6 +76,12 @@ ActiveRecord::Schema.define(version: 20170111160514) do
     t.float    "latitude"
     t.float    "longitude"
     t.boolean  "is_stylist",         default: false
+  end
+
+  create_table "wishlists", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

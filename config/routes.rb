@@ -8,16 +8,21 @@ root "pages#home"
 
 resources :images, :path => 'CR'
 
-get "signup", to: "users#new"
-
 resources :users, except: [:new], :path => 'crownshot'
 get "become_a_stylist", to: "users#become_a_stylist"
+get "signup", to: "users#new"
+get "add_to_wishlist", to: "users#add_to_wishlist"
+post "add_to_wishlist", to: "users#add_to_wishlist"
+
+
 resources :categories
 get "login", to: "sessions#new"
 post "login", to: "sessions#create"
 delete "logout", to: "sessions#destroy"
 
 resources :menus
+
+resources :wishlists
 
 
 

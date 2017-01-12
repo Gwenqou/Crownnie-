@@ -19,14 +19,15 @@
 
 <% @images.each do |image| %> 
   <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
+  <%= link_to "Save to wishlist", add_to_wishlist_path(id: image) %> 
   
-  <% image.users.each do |user| %>
-    <%= user.username%>
-  <% end %>
+  <%# image.users.each do |user| %>
+    <%#= user.username%>
+  <%# end %>
   
-  <% image.categories.each do |category| %>
-    <%= category.name%>
-  <% end %>
+  <%# image.categories.each do |category| %>
+    <%#= category.name%>
+  <%# end %>
   
 <% end %>
 
