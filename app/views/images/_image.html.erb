@@ -11,22 +11,22 @@
      </div> 
      
      <div class="col-md-7 col-md-offset-2 uploadfield">
-        <div class="row">
-          <div id="image_users">
-            <%= f.fields_for :image_users do |u| %>
-              <%=render 'image_user_fields', :f => u %>
-            <% end %> 
-          </div>
+        <div id="image_users">
+          <%= f.fields_for :image_users do |u| %>
+            <%=render 'image_user_fields', :f => u %>
+          <% end %> 
         </div>
-        <div class="row">
-          <hr>
-          <div class="links">
-            <%= link_to_add_association 'add stylist', f, :image_users %>
-          </div>
+        <div class="links">
+          <%= link_to_add_association 'add stylist', f, :image_users %>
         </div>
+          
     </div>
-    <div class="col-md-2 col-md-offset-6">
-      <%= f.submit 'Upload' %>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-2 col-md-offset-7">
+          <%= f.submit 'Upload' %>
+        </div>
+      </div>
     </div>
   <% end %>
   </div>

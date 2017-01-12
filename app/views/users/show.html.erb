@@ -1,12 +1,16 @@
-<div class="signup"> <!--just to reuse the padding top, no other styling--->
+<div class="viewprofile"> <!--just to reuse the padding top, no other styling--->
   <h2>-- My Profile --</h2>
   <% if @user.is_stylist? %>
     <% @user.images.each do |image| %>
+    <div class="image-display">
       <%= image_tag image.picture.url(:thumb) if image.picture%>
+    </div>
     <% end %>
   <% else %>
     <% Image.where(pictureuploader: @user.id).each do |image|%>
+    <div class="image-display">
       <%= image_tag image.picture.url(:thumb) if image.picture %>    
+    </div>
     <% end %>  
   <% end %>
 </div>

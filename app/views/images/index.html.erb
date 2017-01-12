@@ -2,7 +2,7 @@
   
 <div class="sidebar">
   <%= form_tag images_path, :method => :get do %>
-      
+  
       <div class="location">
         <p> Location</p>
         <%= text_field_tag :search, params[:search], class: "input_box" %>
@@ -26,11 +26,18 @@
     <div class="image">
       <%= link_to image_tag(image.picture.url(:thumb)), image_path(image), class:"loveimage" %>
       
-      <% if @wishlist_index.include?(image.id) %>
-        <div class="like">
-          <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love",style:'display:none' %>
-          <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove" %>  
-        </div>
+      <% if logged_in? %>
+        <% if @wishlist_index.include?(image.id) %>
+          <div class="like">
+            <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love",style:'display:none' %>
+            <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove" %>  
+          </div>
+        <% else %>
+          <div class="like">
+            <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love" %>
+            <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove",style:'display:none'%>
+          </div>
+        <% end %>
       <% else %>
         <div class="like">
           <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love" %>

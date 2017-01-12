@@ -1,8 +1,10 @@
 <div class="nested-fields">
-  <div class="field col-sm-3">
+  <div class="field col-sm-4">
     <%= f.label :content, "Service" %><br>
     <%= f.collection_select :category_id, Category.all, :id,:name,:prompt => "  "  %>
-    <%= link_to_remove_association "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, f %>
+    <div class="remove-stylist">
+      <%= link_to_remove_association "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, f %>
+    </div>
   </div>
   
 </div>  

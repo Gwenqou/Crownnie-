@@ -3,9 +3,18 @@
 
 }
 
-.uploadplaceholder{
+.uploadimage .uploadplaceholder{
   width:250px;
   border: 2px solid #e08283;
   margin-bottom: 20px;
 
+}
+
+.uploadimage .remove-stylist{
+  display: inline-block;
+}
+
+
+.uploadimage .add-service{
+  margin-top: 20px;
 }

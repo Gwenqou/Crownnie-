@@ -31,7 +31,7 @@ class MenuUploader < CarrierWave::Uploader::Base
   
   version :thumb do
     process :auto_orient
-    resize_to_fill(250, 250)
+    resize_to_fill(150, 150)
   end
   
   

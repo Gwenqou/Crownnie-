@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:update, :edit,:show]
-  before_action :require_user, only: [:edit, :update, :show ]
+  before_action :require_user, only: [:edit, :update, :show, :add_to_wishlist ]
   before_action :require_same_user, only: [:edit, :update, :show]
   
   

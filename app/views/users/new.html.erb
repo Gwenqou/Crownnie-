@@ -1,6 +1,7 @@
 <div class="signup">
   <h2>Welcome to Crownshot </h2>
   <h3><strike>Have a good day.</strike> Make it a great day </h3>
+  <br>
   <%= render 'shared/errors', obj: @user %>
     <div class="row">
       <div class="col-sm-8 col-sm-offset-3 form-space">
@@ -8,7 +9,7 @@
           <%= render 'form', :f => f %>
           <div class="form-group">
             <div class="col-sm-2 col-sm-offset-4">
-              <%= f.submit  class:"btn btn-danger"%>
+              <%= f.submit "Sign Up",  class:"btn btn-danger"%>
             </div>
           </div>
         <% end %>

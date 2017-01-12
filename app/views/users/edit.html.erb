@@ -1,32 +1,30 @@
 <div class="editprofile"> 
-  <h2>Welcome to Crownshot </h2>
-  <h3><strike>Have a good day.</strike> Make it a great day </h3><br>
+  <h2>Every Day is a good hair day</h2>
+  <h3>Release your confidence</h3><br>
   <%= render 'shared/errors', obj: @user %>
   
-  <div class="profile_upload">
-    <%= image_tag @user.avatar.url if @user.avatar?%>
-  </div>
-  
-  <%# @user.menus.each do |m| %>
-    <%#=image_tag m.menu.url(:thumb) %>
-    <%#= link_to 'Delete',m, method: :delete %>
-  <%# end %>
-  
- 
-  
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-3 form-space">
+  <div class="row form-field">
+    <div class="col-sm-2 col-sm-offset-1 profile_upload">
+      <%= image_tag @user.avatar.url(:avatar) if @user.avatar?%>
+      <br>
       <%= form_for(@user, :html=>{class:"form-horizontal", role: "form", multipart: true}) do |f| %>
-        <p>Profile</p>
-        <%= f.file_field :avatar, accept: 'image/jpeg, image/gif, image/png'%>
-        <%= render 'editform', :f => f %>
-        
-        <div class="form-group">
-          <div class="col-sm-2 col-sm-offset-4">
-            <%= f.submit  class:"btn btn-danger"%>
-          </div>
-        </div>
+        <p>Profile Picture</p>
+          <%= f.file_field :avatar, accept: 'image/jpeg, image/gif, image/png' %>
+          <br>
+          <%= f.submit "Upload", class:"btn btn-sm"%>
       <% end %>
     </div>
+    
+    <div class="col-sm-8 col-sm-offset-1">
+    <%= form_for(@user, :html=>{class:"form-horizontal", role: "form", multipart: true}) do |f| %>
+      <%= render 'editform', :f => f %>
+      <div class="form-group">
+        <div class="col-sm-2 col-sm-offset-4">
+          <%= f.submit "Update", class:"btn btn-danger"%>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    
   </div> 
 </div>
