@@ -11,16 +11,16 @@
             
   <div class="row">
     <div class="col-sm-4 box">
-      <%= link_to image_tag("mencut.png", alt: "mens cut" ), category_path(1) %>
-        <h3><%=link_to "Men's Cut", category_path(1) %></h3>
+      <%= link_to image_tag("mencut.png", alt: "mens cut" ), images_path(category: 'MEN\'S CUT') %>
+        <h3><%= link_to "Men's cut", images_path(category: 'MEN\'S CUT') %></h3>
       </div>
     <div class="col-sm-4 box ">
-      <%= link_to image_tag("womencut.png", alt: "womens cut" ), category_path(2) %>
-      <h3><%=link_to "Women's Cut", category_path(2) %></h3>
+      <%= link_to image_tag("womencut.png", alt: "womens cut" ), images_path(category: 'WOMEN\'S CUT') %>
+      <h3><%= link_to "Women's cut", images_path(category: 'WOMEN\'S CUT') %></h3>
     </div>
     <div class="col-sm-4 box">
-      <%= link_to image_tag("redcolor.png", alt: "color" ), category_path(3) %>
-      <h3><%=link_to "Color", category_path(3) %></h3>
+      <%= link_to image_tag("redcolor.png", alt: "color" ), images_path(category: 'COLOR') %>
+      <h3><%= link_to "Color", images_path(category: 'COLOR') %></h3>
     </div>
    </div>
  </section>
@@ -30,12 +30,12 @@
     </div>
     <div class="row ">
       <div class="col-sm-4 col-sm-offset-2 special-box ">
-        <%= link_to image_tag("bridal1.png", alt: "bridal" ), category_path(4) %>
-        <h3><%=link_to "Bridal", category_path(4) %></h3>
+        <%= link_to image_tag("bridal1.png", alt: "bridal" ), images_path(category: 'BRIDAL') %>
+        <h3><%= link_to "Bridal", images_path(category: 'BRIDAL') %></h3>
       </div>
       <div class="col-sm-4 special-box">
-        <%= link_to image_tag("prom1.png", alt: "prom" ), category_path(5) %>
-        <h3><%=link_to "Prom", category_path(5) %></h3>
+        <%= link_to image_tag("prom1.png", alt: "prom" ), images_path(category: 'PROM') %>
+        <h3><%= link_to "Prom", images_path(category: 'PROM') %></h3>
       </div>
     </div>
   </section>
