@@ -5,6 +5,14 @@ class ImagesController < ApplicationController
 
   
   def index
+    #get all the images from the user's wishlist
+    #and check with each image so that if an image is in the wishlist, the heart is filled in the index page
+    @user = current_user
+    @wishlist_index = []
+    @user.wishlist.images.each do |image|
+      @wishlist_index.append(image.id)
+    end 
+    
     
     if params[:search].present?
       #this line get all the images from all the nearby users, thus there can be duplication 

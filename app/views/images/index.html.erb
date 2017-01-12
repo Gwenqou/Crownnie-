@@ -1,26 +1,45 @@
 <div class="image_index">
-<%= form_tag images_path, :method => :get do %>
-    <p> Location<br>
-      <%= text_field_tag :search, params[:search] %>
-      <% submit_tag "Search", :name => nil %>
-    </p>
-    
-     <ul>
-      <li><%= link_to "Women's cut", images_path(category: 'WOMEN\'S CUT', search: params[:search]) %> </li>
-      <li><%= link_to "Men's cut", images_path(category: 'MEN\'S CUT', search: params[:search]) %> </li>
-      <li><%= link_to "Color", images_path(category: 'COLOR', search: params[:search]) %> </li>
-      <li><%= link_to "Bridal", images_path(category: 'BRIDAL', search: params[:search]) %> </li>
-      <li><%= link_to "Prom", images_path(category: 'PROM', search: params[:search]) %> </li>
-    </ul>
+  
+<div class="sidebar">
+  <%= form_tag images_path, :method => :get do %>
+      
+      <div class="location">
+        <p> Location</p>
+        <%= text_field_tag :search, params[:search], class: "input_box" %>
+        <% submit_tag "Search", :name => nil %>
+      </div>
+      
+       <ul>
+        <li class="category"><%= link_to "Women's cut", images_path(category: 'WOMEN\'S CUT', search: params[:search]) %> </li>
+        <li class="category"><%= link_to "Men's cut", images_path(category: 'MEN\'S CUT', search: params[:search]) %> </li>
+        <li class="category"><%= link_to "Color", images_path(category: 'COLOR', search: params[:search]) %> </li>
+        <li class="category"><%= link_to "Bridal", images_path(category: 'BRIDAL', search: params[:search]) %> </li>
+        <li class="category"><%= link_to "Prom", images_path(category: 'PROM', search: params[:search]) %> </li>
+      </ul>
+  
+  <% end %>
+</div>
 
-<% end %>
 
-<% @images.each do |image| %> 
-  <%= link_to image_tag(image.picture.url(:thumb)), image_path(image), class:"loveimage" %>
-  <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love" %>
-  <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove"%>
-<% end %>
-
+<div class="main">
+  <% @images.each do |image| %> 
+    <div class="image">
+      <%= link_to image_tag(image.picture.url(:thumb)), image_path(image), class:"loveimage" %>
+      
+      <% if @wishlist_index.include?(image.id) %>
+        <div class="like">
+          <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love",style:'display:none' %>
+          <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove" %>  
+        </div>
+      <% else %>
+        <div class="like">
+          <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love" %>
+          <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove",style:'display:none'%>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 </div>
   
   
