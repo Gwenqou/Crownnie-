@@ -5,8 +5,13 @@ class WishlistsController < ApplicationController
   end 
   
   def destroy
-    @image_wishlist = ImageWishlist.find(params[:id])
-    @image_wishlist.destroy()
+    @user = current_user
+    @image = Image.find(params[:image])
+    @image.image_wishlists.each do |iw|
+      if iw.wishlist.user_id === @user.id
+        iw.destroy()
+      end 
+    end 
     redirect_to :back
   end 
   

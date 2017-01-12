@@ -51,8 +51,10 @@ class UsersController < ApplicationController
   def add_to_wishlist
     @user = current_user
     @image = Image.find(params[:id])
-    @user.wishlist.images << @image
-    redirect_to wishlist_path(@user)
+    if !@user.wishlist.images.exists?(@image.id)
+      @user.wishlist.images << @image
+    end 
+    redirect_to wishlist_path(current_user)
   end 
   
   private 
