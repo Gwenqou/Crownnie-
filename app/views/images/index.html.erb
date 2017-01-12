@@ -19,7 +19,9 @@
 
 <% @images.each do |image| %> 
   <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
-  <%= link_to "Save to wishlist", add_to_wishlist_path(id: image) %> 
+  <%= link_to "Love", add_to_wishlist_path(id: image), remote: true %>
+  
+  <%#= link_to "Save to wishlist", add_to_wishlist_path(id: image) %> 
   
   <%# image.users.each do |user| %>
     <%#= user.username%>

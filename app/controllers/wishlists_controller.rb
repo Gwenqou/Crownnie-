@@ -12,7 +12,10 @@ class WishlistsController < ApplicationController
         iw.destroy()
       end 
     end 
-    redirect_to :back
+    respond_to do |format|
+      format.html { redirect_to :back, flash[:success] = "Image was successfully deleted" }
+      format.js 
+    end 
   end 
   
 end 

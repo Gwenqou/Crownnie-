@@ -1,4 +1,4 @@
 <% @user.wishlist.images.each do |image| %>
   <%=image_tag image.picture.url(:thumb)%>
-  <%= link_to "Delete", wishlist_path(image: image), method: :delete %>
+  <%= link_to "Delete", wishlist_path(image: image), method: :delete, remote: true, class: "delete_wishlist"%>
 <% end %>

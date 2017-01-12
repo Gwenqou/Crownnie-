@@ -54,7 +54,11 @@ class UsersController < ApplicationController
     if !@user.wishlist.images.exists?(@image.id)
       @user.wishlist.images << @image
     end 
-    redirect_to wishlist_path(current_user)
+    respond_to do |format|
+      format.html { flash[:success] = "Image was successfully saved in your wishlist" }
+      format.js
+    end 
+
   end 
   
   private 
