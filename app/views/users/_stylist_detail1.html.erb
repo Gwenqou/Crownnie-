@@ -16,22 +16,57 @@
     
     <div class="picture-under-stylist">
       <% obj.images.each do |image| %>
-        <%=image_tag image.picture.url(:thumb) %>
+        <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
       <% end %>
     </div>
   </div>
   
   <div class="stylist-features">
-    <div class=" booking">
+    <div class="booking" data-toggle="modal" data-target="#appointment">
         <i class="ion-ios-calendar-outline"></i>
         <% if obj.first_name.present? %>
-          <h3>Book with <%= obj.first_name %></h3>
+          <h3 >Book with <%= obj.first_name %></h3>
         <% else %>
           <h3>Book with <%= obj.username %></h3>
         <% end %>
     </div>
-    <div class=" stylist-menu">
+    
+    <div class="modal fade" id="appointment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Appointment Number</h4>
+          </div>
+          <div class="modal-body">
+            To book with this stylist, please call <%= obj.appointment_number %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Gotcha</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" stylist-menu" data-toggle="modal" data-target="#menu">
         <i class="ion-ios-paper-outline"></i>
         <h3>Service Menu</h3>
     </div>
+    
+    <div class="modal fade" id="menu" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Service Menu</h4>
+          </div>
+          <div class="modal-body">
+            <% obj.menus.each do |m| %>
+              <%= link_to image_tag(m.menu.url(:thumb)), m.menu.url, rel: 'view-menu', :data => { :colorbox => true } %>
+            <% end %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Done</button>
+          </div>
+        </div>
+      </div>
   </div>

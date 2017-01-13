@@ -2,7 +2,28 @@
   
   <div class="image-big-section" >
     <div class="image-big">
-      <%= image_tag @image.picture.url if @image.picture? %>
+      <%= image_tag @image.picture.url if @image.picture %>
+      
+       <% if logged_in? %>
+        <% if @wishlist_index.include?(@image.id) %>
+          <div class="big-picture-like">
+            <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: @image), remote: true, class: "love",style:'display:none' %>
+            <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: @image.id, image: @image), method: :delete, remote: true, class: "unlove" %>  
+          </div>
+        <% else %>
+          <div class="big-picture-like", data-toggle="tooltip", data-placement="top", title="Save to wishlsit">
+            <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: @image), remote: true, class: "love"%>
+            <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: @image.id, image: @image), method: :delete, remote: true, class: "unlove",style:'display:none'%>
+          </div>
+        <% end %>
+      <% else %>
+        <div class="big-picture-like", data-toggle="tooltip", data-placement="top", title="Save to wishlsit">
+          <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: @image), remote: true, class: "love" %>
+          <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: @image.id, image: @image), method: :delete, remote: true, class: "unlove",style:'display:none'%>
+        </div>
+      <% end %>
+
+      
       <div class="hover-text">
         <% @image.image_users.each do |imageuser| %>
           <% imageuser.image_user_categories.each do |iuc| %>
@@ -22,7 +43,7 @@
   <p>Stylist</p>
   <div class="row shortcut-section">
     <% @image.image_users.each do |imageuser| %>
-      <div class="round">
+      <div class="round data-toggle="tooltip", data-placement="top", title="<%=imageuser.user.username %>">
         <% if imageuser.user.avatar? %>
           <%= link_to image_tag(imageuser.user.avatar.url(:shortcut)), stylist_detail_path(id: imageuser.user.id), remote: true, class:"shortcut" %>
         <% else %>

@@ -6,10 +6,21 @@
   
   <% @user.menus.each do |m| %>
     <div class="menu-box">
-      <%=image_tag m.menu.url(:thumb) %>
+      <%#= link_to image_tag(m.menu.url(:thumb)), m.menu.url%>
+      <%= link_to image_tag(m.menu.url(:thumb)), m.menu.url,  rel: 'menu', :data => { :colorbox_static => true } %>
       <div class="menu-delete">
         <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe,m, method: :delete %>
       </div>
     </div>
   <% end %>
 </div>
+
+<script>
+  $('.menu-box').mouseover(function(){
+    $(this).find('.menu-delete').fadeIn(200);
+  });
+  
+  $('.menu-box').mouseleave(function(){
+    $(this).find('.menu-delete').fadeOut(200);
+  });
+</script>

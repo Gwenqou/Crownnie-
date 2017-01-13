@@ -9,3 +9,20 @@
   position: relative;
   margin: 8px;
 }
+
+.viewprofile .image-function{
+  display: none;
+}
+
+
+.viewprofile .image-delete{
+  position: absolute;
+  top: 5px;
+  right: -10px;
+}
+
+.viewprofile .image-edit{
+  position: absolute;
+  top: 5px;
+  right: 12px;
+}

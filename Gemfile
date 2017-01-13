@@ -15,6 +15,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'geocoder'
+gem 'colorbox-rails', '~> 0.1.2'
 
 gem 'ionicons-rails'
 gem 'cocoon'

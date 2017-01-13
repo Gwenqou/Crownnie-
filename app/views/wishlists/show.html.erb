@@ -9,3 +9,13 @@
   </div>
   <% end %>
 </div>
+
+<script>
+  $('.wishlist-image').mouseover(function(){
+    $(this).find('.wishlist-delete').fadeIn(200);
+  });
+  
+  $('.wishlist-image').mouseleave(function(){
+    $(this).find('.wishlist-delete').fadeOut(200);
+  });
+</script>

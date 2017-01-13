@@ -2,6 +2,8 @@
 /* BASE COLOR: #e08283 */
 /* DARKBASE COLOR: #d34c4d */
 /* ------------------------------------------------ */
+
+/* -----Image -------- */
 .image-show .image-big-section{
   background-image: linear-gradient(rgba(255, 255, 255, 0.71), rgba(255, 255, 255, 0.7)), asset-url('flowerzoom-min.jpg');
 }
@@ -12,7 +14,7 @@
   position: relative;
 }
 
-
+/* -----hover text -------- */
 .image-show .hover-text{
   display: block ;
   background-color: rgba(251,239,239, 0.8);
@@ -29,8 +31,19 @@
 .image-show p{
   text-align: center;
   margin-top: 10px;
+  color: #555;
 }
 
+/* -----add to wishlist -------- */
+
+.big-picture-like{
+  position: absolute;
+  bottom: 0px;
+  left: 5px;
+}
+
+
+/* -----shortcut section -------- */
 .image-show .round{
   border-radius: 50%;
   overflow: hidden;
@@ -58,3 +71,6 @@
 .image-show .round a{
   padding: 0px;
 }
+
+
+

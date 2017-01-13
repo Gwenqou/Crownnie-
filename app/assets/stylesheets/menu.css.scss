@@ -12,6 +12,7 @@
 }
 
 .menu-section .menu-delete{
+  display: none;
   position: absolute;
   top: 2px;
   right: -10px ;
@@ -20,4 +21,6 @@
 .menu-section .menu-done{
   margin-left: 45%;
   margin-top: 10px ;
+  color: #fff;
 }
+

@@ -1,16 +1,38 @@
-<div class="viewprofile"> <!--just to reuse the padding top, no other styling--->
+<div class="viewprofile"> 
   <h2>-- My Profile --</h2>
   <% if @user.is_stylist? %>
     <% @user.images.each do |image| %>
     <div class="image-display">
-      <%= image_tag image.picture.url(:thumb) if image.picture%>
+      <%= link_to image_tag(image.picture.url(:thumb)), image.picture.url, rel: 'group1', :data => { :colorbox_static => true }  %>
+      <%#= image_tag(image.picture.url(:thumb)) %>
+      <div class="image-function">
+        <div class="image-delete">
+          <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, image_path(id: image.id), method: :delete, remote: true, class: "delete_image"%>
+        </div>
+        <div class="image-edit">
+          <%=link_to "<span class='glyphicon glyphicon-pencil' aria-hidden='true' </span>".html_safe, edit_image_path(image) %>
+        </div>
+      </div>
     </div>
     <% end %>
   <% else %>
     <% Image.where(pictureuploader: @user.id).each do |image|%>
     <div class="image-display">
-      <%= image_tag image.picture.url(:thumb) if image.picture %>    
+      <%= image_tag image.picture.url(:thumb) if image.picture %>
+      <div class="image-delete">
+        <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, image_path(image: image), method: :delete, remote: true, class: "delete_image"%>
+      </div>
     </div>
     <% end %>  
   <% end %>
 </div>
+
+<script>
+  $('.image-display').mouseover(function(){
+    $(this).find('.image-function').fadeIn(200);
+  });
+  
+  $('.image-display').mouseleave(function(){
+    $(this).find('.image-function').fadeOut(200);
+  });
+</script>

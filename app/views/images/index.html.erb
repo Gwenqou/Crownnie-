@@ -24,7 +24,7 @@
 <div class="main">
   <% @images.each do |image| %> 
     <div class="image">
-      <%= link_to image_tag(image.picture.url(:thumb)), image_path(image), class:"loveimage" %>
+      <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
       
       <% if logged_in? %>
         <% if @wishlist_index.include?(image.id) %>
@@ -33,8 +33,8 @@
             <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove" %>  
           </div>
         <% else %>
-          <div class="like">
-            <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love" %>
+          <div class="like" data-toggle="tooltip" data-placement="top" title="Save to wishlsit">
+            <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love"%>
             <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove",style:'display:none'%>
           </div>
         <% end %>

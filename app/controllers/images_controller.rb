@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
   
-  before_action :set_image, only: [:show, :destroy, :edit, :update]
+  before_action :set_image, only: [:show,:destroy, :edit, :update]
   before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
 
   
@@ -83,19 +83,30 @@ class ImagesController < ApplicationController
   end 
   
   def show 
-
+    if logged_in?
+      @user = current_user
+      @wishlist_index = []
+      @user.wishlist.images.each do |image|
+        @wishlist_index.append(image.id)
+      end 
+    end
   end 
   
   
   def destroy
-    if @image.destroy 
-      flash[:notice]="image destroyed"
-      redirect_to images_path
-    else 
-      redirect_to image_path(@image)
+
+    respond_to do |format|
+      if @image.destroy 
+        format.html { redirect_to :back, flash[:success] = "Image was successfully deleted" }
+        format.js 
+      else 
+        format.html { redirect_to :back, flash[:danger] = "something went wrong" }
+      end 
     end 
   end 
   
+    
+    
   private
   
   def image_params 

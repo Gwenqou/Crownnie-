@@ -37,6 +37,7 @@
 .stylist-detail .stylist-name p {
     padding:2px;
     text-align: left;
+    color: #555;
 
 }
 .stylist-detail .basic-profile .image {
@@ -51,6 +52,10 @@
     padding-top:20px;   
 }
 
+.stylist-detail .picture-under-stylist a{
+    padding: 0px;    
+    
+}
 /* ------------------------------------------------ */
 /* STYLIST DETAIL RIGHT */
 /* ------------------------------------------------ */

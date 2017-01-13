@@ -16,5 +16,6 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require dropzone
+//= require colorbox-rails
 //= require_tree .
 
