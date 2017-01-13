@@ -4,7 +4,6 @@
     <% @user.images.each do |image| %>
     <div class="image-display">
       <%= link_to image_tag(image.picture.url(:thumb)), image.picture.url, rel: 'group1', :data => { :colorbox_static => true }  %>
-      <%#= image_tag(image.picture.url(:thumb)) %>
       <div class="image-function">
         <div class="image-delete">
           <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, image_path(id: image.id), method: :delete, remote: true, class: "delete_image"%>
