@@ -13,6 +13,7 @@ get "become_a_stylist", to: "users#become_a_stylist"
 get "signup", to: "users#new"
 get "add_to_wishlist", to: "users#add_to_wishlist"
 post "add_to_wishlist", to: "users#add_to_wishlist"
+get "stylist_detail", to:"users#stylist_detail"
 
 
 resources :categories

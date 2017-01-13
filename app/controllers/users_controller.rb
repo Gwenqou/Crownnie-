@@ -3,6 +3,12 @@ class UsersController < ApplicationController
   before_action :require_user, only: [:edit, :update, :show, :add_to_wishlist ]
   before_action :require_same_user, only: [:edit, :update, :show]
   
+  def stylist_detail
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.js
+    end 
+  end 
   
   def new 
     @user = User.new

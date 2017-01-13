@@ -1,0 +1,90 @@
+.stylist-detail{
+    background-color: #f8f8f8;
+    position: relative;
+    margin-top: 30px;
+    
+}
+
+/* ------------------------------------------------ */
+/* STYLIST DETAIL LEFT */
+/* ------------------------------------------------ */
+
+.stylist-detail .stylist-portforlio{
+    position: absolute;
+    left:0;
+    top: 0;
+    width:70vw;
+    background-color: #fffbfb;
+    padding-top: 30px;  
+}
+
+.stylist-detail .basic-profile {
+    height:150px;
+    width: 80%;
+    margin-left:10%;
+    border-bottom: 2px solid #e2898a;
+}
+
+.stylist-detail .stylist-name {
+    display: inline-block;
+    margin: 15px 10px;
+}
+.stylist-detail .stylist-name h5{
+    font-size: 200%;
+    margin-bottom: 10px;
+    text-align: left;
+}
+.stylist-detail .stylist-name p {
+    padding:2px;
+    text-align: left;
+
+}
+.stylist-detail .basic-profile .image {
+    display: inline-block;
+    width: 100px;
+    float: right;
+    border-radius: 10px;
+    
+}
+
+.stylist-detail .picture-under-stylist{
+    padding-top:20px;   
+}
+
+/* ------------------------------------------------ */
+/* STYLIST DETAIL RIGHT */
+/* ------------------------------------------------ */
+
+.stylist-features{
+    position: absolute;
+    left: 70vw;
+    top: 0;
+    right: 5px;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 2px #b48182;
+}
+
+.stylist-features h3{
+    padding-top:12px;
+    font-size: 150%;
+}
+
+.booking,
+.stylist-menu{
+    height:150px;
+    padding-top:30px;
+    padding-left: 15%;
+    color: #d34c4d;
+    border-top: 2px solid #e08283;
+}
+
+
+.ion-ios-calendar-outline,
+.ion-ios-paper-outline{
+    display: inline-block;
+    float: left;
+    padding-right:10px;
+    margin-top: 0;
+    font-size: 250%;
+    padding-top: 20px
+}

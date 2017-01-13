@@ -1,0 +1,37 @@
+ <div class="stylist-portforlio">
+    <div class="basic-profile">
+      <div class="stylist-name">
+        <h5><%= obj.first_name %> <%=obj.last_name %></h5>
+        <p>Username: <%= obj.username.capitalize %> </p>
+        <p><%= obj.salon_location %></p>
+      </div>
+      <div class="image">
+        <% if obj.avatar? %>
+          <%= image_tag obj.avatar.url(:avatar) %>
+        <% else %>
+          <img class="img-responsive"  src="/assets/profile_placeholder.png" alt="stylist_profile" />
+        <% end %>
+      </div>
+    </div>
+    
+    <div class="picture-under-stylist">
+      <% obj.images.each do |image| %>
+        <%=image_tag image.picture.url(:thumb) %>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="stylist-features">
+    <div class=" booking">
+        <i class="ion-ios-calendar-outline"></i>
+        <% if obj.first_name.present? %>
+          <h3>Book with <%= obj.first_name %></h3>
+        <% else %>
+          <h3>Book with <%= obj.username %></h3>
+        <% end %>
+    </div>
+    <div class=" stylist-menu">
+        <i class="ion-ios-paper-outline"></i>
+        <h3>Service Menu</h3>
+    </div>
+  </div>

@@ -1,17 +1,62 @@
 <div class="image-show">
-  <div class="image-big">
-    <%= image_tag @image.picture.url if @image.picture? %>
+  
+  <div class="image-big-section" >
+    <div class="image-big">
+      <%= image_tag @image.picture.url if @image.picture? %>
+      <div class="hover-text">
+        <% @image.image_users.each do |imageuser| %>
+          <% imageuser.image_user_categories.each do |iuc| %>
+            <p><%=iuc.category.name %> by 
+              <% if imageuser.user.first_name.present? %>
+                <%= imageuser.user.first_name %> 
+              <% else %>
+                <%= imageuser.user.username %> 
+              <% end %>
+            </p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
   </div>
+  
   <p>Stylist</p>
+  <div class="row shortcut-section">
+    <% @image.image_users.each do |imageuser| %>
+      <div class="round">
+        <% if imageuser.user.avatar? %>
+          <%= link_to image_tag(imageuser.user.avatar.url(:shortcut)), stylist_detail_path(id: imageuser.user.id), remote: true, class:"shortcut" %>
+        <% else %>
+          <%= link_to image_tag("/assets/profile_placeholder.png"), stylist_detail_path(id: imageuser.user.id), remote: true, class:"shortcut" %>
+        <% end %>
+     </div>
+    <% end %>
+  </div>
+  <div class="stylist-detail">
+    <%= render 'users/stylist_detail1', obj: @image.image_users.first.user %>
+  </div>
+</div>  
   
-  <%  @image.users.each do |user| %>
-    <li><%= user.username %></li>
-  <% end %>
-  <p> Service performed</p>
-  <%  @image.categories.each do |category| %>
-    <li><%= category.name %></li>
-  <% end %>
+ 
 
-</div>
 
-  
+<script>
+  $('.image-big').mouseover(function(){
+    $('.hover-text').fadeIn();
+  });
+  $('.image-big').mouseleave(function(){
+    $('.hover-text').fadeOut();
+  });
+</script>
+
+
+
+<!--<p>Stylist</p>-->
+<!--  <%#  @image.users.each do |user| %>-->
+<!--    <li><%#= user.username %></li>-->
+<!--  <%# end %>-->
+<!--  <p> Service performed</p>-->
+<!--  <%#  @image.categories.each do |category| %>-->
+<!--    <li><%#= category.name %></li>-->
+<!--  <%# end %>-->
+
+<%#= render :partial => '/users/stylist_detail'%>
