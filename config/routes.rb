@@ -25,6 +25,7 @@ resources :menus
 
 resources :wishlists
 
+resources :password_resets
 
 
   # Example of regular route:

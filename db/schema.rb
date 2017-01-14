@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113225905) do
+ActiveRecord::Schema.define(version: 20170114132220) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -75,8 +75,10 @@ ActiveRecord::Schema.define(version: 20170113225905) do
     t.string   "avatar"
     t.float    "latitude"
     t.float    "longitude"
-    t.boolean  "is_stylist",         default: false
+    t.boolean  "is_stylist",             default: false
     t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   create_table "wishlists", force: :cascade do |t|
