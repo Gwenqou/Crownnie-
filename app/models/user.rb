@@ -22,8 +22,15 @@ class User < ActiveRecord::Base
   
    has_secure_password     
    validates :password, length: { minimum: 5, maximum: 30 }, on: :create
-   
+   before_create {generate_token(:auth_token)}
    
    geocoded_by :salon_location
    after_validation :geocode, :if => :salon_location_changed?
+   
+  def generate_token(column)
+     begin
+      self[column] = SecureRandom.urlsafe_base64
+     end while User.exists? (column = self[column])
+  end 
+   
 end 

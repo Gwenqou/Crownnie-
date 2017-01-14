@@ -18,7 +18,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.wishlist = Wishlist.new
-      session[:user_id]=@user.id
+      #session[:user_id]=@user.id
+      cookies[:auth_token] = @user.auth_token
       flash[:success] = "Welcome to Crownshot"
       redirect_to user_path(@user)
     else
