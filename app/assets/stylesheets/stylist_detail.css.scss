@@ -1,7 +1,7 @@
 .stylist-detail{
     background-color: #f8f8f8;
     position: relative;
-    margin-top: 30px;
+    margin-top: 40px;
     
 }
 
@@ -19,7 +19,7 @@
 }
 
 .stylist-detail .basic-profile {
-    height:150px;
+    height:160px;
     width: 80%;
     margin-left:10%;
     border-bottom: 2px solid #e2898a;
@@ -42,19 +42,29 @@
 }
 .stylist-detail .basic-profile .image {
     display: inline-block;
-    width: 100px;
+    width: 120px;
     float: right;
     border-radius: 10px;
     
 }
 
+.stylist-detail .basic-profile img{
+    width: 100%;
+    border-radius: 10px;
+    
+}
 .stylist-detail .picture-under-stylist{
-    padding-top:20px;   
+    margin-top:20px;   
+    width: 85%;
+    margin-left: 7.5%;
 }
 
 .stylist-detail .picture-under-stylist a{
-    padding: 0px;    
-    
+    padding: 0;
+}
+
+.stylist-detail .picture-under-stylist img{
+    margin: 5px;
 }
 /* ------------------------------------------------ */
 /* STYLIST DETAIL RIGHT */

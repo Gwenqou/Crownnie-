@@ -1,3 +1,7 @@
-$('.delete_image').bind('ajax:success', function() {
+$('.delete_image-general').bind('ajax:success', function() {
      $(this).parent('div').parent('div').fadeOut(300);
+});
+
+$('.delete_image').bind('ajax:success', function() {
+     $(this).parent('div').parent('div').parent('div').fadeOut(300);
 });

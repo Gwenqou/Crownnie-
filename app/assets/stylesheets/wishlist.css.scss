@@ -1,13 +1,17 @@
 .wishlist-section{
-  width: 80%;
-  margin-left: 10%;
-  padding-top: 70px;
+  width: 64%;
+  margin-left: 18%;
+  padding-top: 100px;
+}
+
+.wishlist-section .wishlist{
+  padding: 5px;
 }
 
 .wishlist-section .wishlist-image{
   display: inline-block;
   position: relative;
-  margin: 8px;
+  margin: 10px 8px;
 }
 
 .wishlist-section .wishlist-delete{

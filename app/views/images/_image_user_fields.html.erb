@@ -1,25 +1,28 @@
-<div class="row">
-  <div class="nested-fields">
-    <div class="field col-sm-3">
+<div class="col-sm-4">
+<div class="nested-fields">
+  
+  <div class="field-box">
+    <div class="field">
       <%= f.label :content,"Stylist" %><br>
-      <%= f.collection_select :user_id, User.where(is_stylist: true), :id,:username,:prompt => "  "  %>
+      <%= f.collection_select :user_id, User.where(is_stylist: true), :id,:username,:prompt => "  " %>
       <div class="remove-stylist">
-        <%= link_to_remove_association "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, f %>
-      </div>
+        <%= link_to_remove_association "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, f, class:"remove_stylist" %>
+    </div>
     </div>
     
-      <%= f.fields_for :image_user_categories do |u| %>
-        <%=render 'image_user_category_fields', :f => u %>
-      <% end %> 
-      <div class="btn btn-default btn-xs add-service">
-        <%= link_to_add_association 'add service', f, :image_user_categories %>
-      </div> 
-    <br>
-    <hr>
+    <%= f.fields_for :image_user_categories do |u| %>
+      <%=render 'image_user_category_fields', :f => u %>
+    <% end %> 
+    
+    <div class="btn btn-default btn-xs add-service links">
+      <%= link_to_add_association 'add service', f, :image_user_categories %>
+    </div>
+    </div>
+</div>
 
-  </div>
 
 </div>
+
 <%#= f.check_box :_destroy %>
 <%#=link_to "remove", '#', class: "remove_fields" %>
 

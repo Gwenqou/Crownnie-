@@ -4,22 +4,21 @@
       
   <%= form_for(@image) do |f|%>
     <div class="col-md-2 col-md-offset-1">
-      <div class="uploadbox">
-        <div class="uploadplaceholder"><img class="img-responsive" id="img_prev" src="/assets/white.png" alt="your image" /></div>
+      <div class="uploadplaceholder"><img class="img-responsive" id="img_prev" src="/assets/white.png" alt="your image" /></div>
         <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png',onchange:"readURL(this);" %>
       </div>
-     </div> 
+
      
-     <div class="col-md-7 col-md-offset-2 uploadfield">
+     <div class="col-md-8 col-md-offset-1 uploadfield">
         <div id="image_users">
-          <%= f.fields_for :image_users do |u| %>
-            <%=render 'image_user_fields', :f => u %>
-          <% end %> 
+            <%= f.fields_for :image_users do |u| %>
+              <%=render 'image_user_fields', :f => u %>
+            <% end %> 
+            
+            <div class="links">
+              <%= link_to_add_association 'add stylist', f, :image_users, id: "add_stylist" %>
+            </div>
         </div>
-        <div class="links">
-          <%= link_to_add_association 'add stylist', f, :image_users %>
-        </div>
-          
     </div>
     <div class="row">
       <div class="col-md-12">
@@ -33,6 +32,7 @@
 </div>
 
 <script>
+
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -44,4 +44,6 @@
       reader.readAsDataURL(input.files[0]);
     }
   }
+
+
 </script>

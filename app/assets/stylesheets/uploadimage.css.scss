@@ -1,8 +1,12 @@
 .uploadimage{
-    padding-top: 50px;
+    padding-top: 100px;
 
 }
 
+/*-----left side -------*/
+.uploadimage .uploadbox{
+  margin-top: 50px;
+}
 .uploadimage .uploadplaceholder{
   width:250px;
   border: 2px solid #e08283;
@@ -10,11 +14,21 @@
 
 }
 
+/*-----right side -------*/
+.uploadimage .field-box{
+  width: 250px;
+  padding-left: 50px;
+  padding-top: 25px;
+  border: 2px solid #e08283 ;
+}
+
+
+
 .uploadimage .remove-stylist{
   display: inline-block;
 }
 
 
 .uploadimage .add-service{
-  margin-top: 20px;
+  margin: 20px 0;
 }

@@ -1,3 +1,23 @@
+/* ------------------------------------------------ */
+/* BASE COLOR: #e08283 */
+/* DARKBASE COLOR: #d34c4d */
+/* ------------------------------------------------ */
+
+.signup h5{
+  margin-bottom: 20px;
+}
 .signup{
-  padding-top:70px;
+  padding-top:30px;
+  border: 1px solid #e08283;
+  box-shadow: 1px 2px 2px #e08283;
+  width: 50%;
+  margin: 70px auto 0 auto;
+}
+
+.signup .connect-remember{
+  margin-bottom: 0px;
+}
+
+.signup #login{
+  margin-top: 20px;
 }

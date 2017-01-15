@@ -94,7 +94,6 @@ class ImagesController < ApplicationController
   
   
   def destroy
-
     respond_to do |format|
       if @image.destroy 
         format.html { redirect_to :back, flash[:success] = "Image was successfully deleted" }

@@ -1,5 +1,5 @@
 <div class="nested-fields">
-  <div class="field col-sm-4">
+  <div class="field">
     <%= f.label :content, "Service" %><br>
     <%= f.collection_select :category_id, Category.all, :id,:name,:prompt => "  "  %>
     <div class="remove-stylist">

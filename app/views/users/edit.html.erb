@@ -1,10 +1,9 @@
 <div class="editprofile"> 
-  <h2>Every Day is a good hair day</h2>
-  <h3>Release your confidence</h3><br>
+  <h2>Every Day is a good hair day</h2><hr>
   <%= render 'shared/errors', obj: @user %>
   
   <div class="row form-field">
-    <div class="col-sm-2 col-sm-offset-1 profile_upload">
+    <div class="col-sm-2 col-sm-offset-2 profile_upload">
       <% if @user.avatar? %>
         <%= image_tag @user.avatar.url(:avatar) if @user.avatar?%>
       <% else %>
@@ -19,11 +18,12 @@
       <% end %>
     </div>
     
-    <div class="col-sm-8 col-sm-offset-1">
+    <div class="col-sm-6 col-sm-offset-1">
     <%= form_for(@user, :html=>{class:"form-horizontal", role: "form", multipart: true}) do |f| %>
       <%= render 'editform', :f => f %>
+      <br>
       <div class="form-group">
-        <div class="col-sm-2 col-sm-offset-4">
+        <div class="col-sm-2 col-sm-offset-2">
           <%= f.submit "Update", class:"btn btn-danger"%>
         </div>
       </div>

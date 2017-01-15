@@ -5,7 +5,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   
   include CarrierWave::MiniMagick
   process :auto_orient
-  process resize_to_fill: [400, 400]
+  process resize_to_fill: [500, 500]
   
 
   # Choose what kind of storage to use for this uploader:
@@ -46,7 +46,7 @@ class ImageUploader < CarrierWave::Uploader::Base
    
   version :avatar do
     process :auto_orient
-    resize_to_fill(100, 100)
+    resize_to_fill(200, 200)
    end
    
   version :shortcut do

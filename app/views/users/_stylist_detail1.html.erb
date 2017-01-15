@@ -2,8 +2,8 @@
     <div class="basic-profile">
       <div class="stylist-name">
         <h5><%= obj.first_name %> <%=obj.last_name %></h5>
-        <p>Username: <%= obj.username.capitalize %> </p>
-        <p><%= obj.salon_location %></p>
+        <%= obj.username.capitalize %>(username)<br>
+        Salon Location: <br><span class="color"><%= obj.salon_location %></span>
       </div>
       <div class="image">
         <% if obj.avatar? %>
@@ -14,12 +14,13 @@
       </div>
     </div>
     
-    <div class="picture-under-stylist">
-      <% obj.images.each do |image| %>
-        <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
-      <% end %>
-    </div>
-  </div>
+      <div class="picture-under-stylist">
+        <% obj.images.each do |image| %>
+          <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
+        <% end %>
+      </div>
+  
+</div>
   
   <div class="stylist-features">
     <div class="booking" data-toggle="modal" data-target="#appointment">

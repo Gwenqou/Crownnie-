@@ -19,31 +19,34 @@
 .image_index .location{
   padding: 8px 0;
   text-align: center;
-  margin: 10% 13% 8% 10%; 
+  margin: 10% 13% 8% 6%; 
 }
 
 .image_index .location p{
-  font-size: 120%;
+  font-size: 130%;
   
 }
 .image_index .input_box{
-  width: 100%;
-  height: 30px;
-  border-radius: 5px;
+  width: 110%;
+  height: 35px;
+  border-radius: 3px;
 }
 
 .image_index ul{
   list-style: none; 
   padding:0;
+  margin-top: 30px;
 }
+
 .image_index .category{
   padding: 8px 0;
   text-align: center;
-  width: 70%;
-  margin: 8% 15%;
+  width: 75%;
+  margin: 8% 12.5%;
   background-color: #eae3e3;
   border-radius: 5px;
   box-shadow: 3px 3px 3px #bc6a6b;
+  font-size: 120%;
 }
 
 
@@ -66,12 +69,10 @@
 }
 
 /* ---------like button----------- */
-.image_index .love,
-.image_index .unlove{
-  font-size: 200%;
-  font-weight: 100;
-  text-shadow: 1px 0px 3px #e08283;
+.image_index .like i{
+  color: #e08283;
 }
+
 .image_index .like {
   position: absolute;
   bottom: 0;

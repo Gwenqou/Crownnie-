@@ -2,7 +2,7 @@
   <h2>-- My Wishlist --</h2>
   <% @user.wishlist.images.each do |image| %>
   <div class="wishlist-image">
-    <%=image_tag image.picture.url(:thumb)%>
+    <%=link_to image_tag(image.picture.url(:thumb)), image_path(id: image.id), class: "wishlist" %>
     <div class="wishlist-delete">
       <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, wishlist_path(image: image), method: :delete, remote: true, class: "delete_wishlist"%>
     </div>

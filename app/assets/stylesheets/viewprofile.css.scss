@@ -1,13 +1,17 @@
 .viewprofile{
-  width: 80%;
-  margin-left: 10%;
-  padding-top: 70px;
+  width: 60%;
+  margin-left: 20%;
+  padding-top: 100px;
+}
+.viewprofile .pic-showing{
+  margin-top: 50px;
 }
 
-.viewprofile .image-display{
+.viewprofile .image-display,
+.viewprofile .image-display-general{
   display: inline-block;
   position: relative;
-  margin: 8px;
+  margin: 10px 8px;
 }
 
 .viewprofile .image-function{
@@ -15,10 +19,15 @@
 }
 
 
-.viewprofile .image-delete{
+.viewprofile .image-delete,
+.viewprofile .image-delete-general{
   position: absolute;
   top: 5px;
   right: -10px;
+}
+
+.viewprofile .image-delete-general{
+  display: none;
 }
 
 .viewprofile .image-edit{
