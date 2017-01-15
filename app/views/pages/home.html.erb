@@ -5,8 +5,8 @@
     </div>  
     <div class="row search-boxes">
       <%= form_tag images_path, :method => :get do %>
-        <%= text_field_tag :search, params[:search], class: "search-box", placeholder: "Location" %>
-        <%= select_tag 'category', options_for_select(@cats, ''),class: "search-box" %>
+        <%= text_field_tag :search, params[:search], class: "search-box location-box", placeholder: "Location" %>
+        <%= select_tag 'category', options_for_select(@cats, ''),class: "search-box category-box" %>
         <%= submit_tag "Discover", :name => nil, class:"search-box discover-box" %>
       <% end %>
     </div>
@@ -14,17 +14,23 @@
   <section class="section-daily-picture">
     <h2>Release your Confidence</h2>
             
-  <div class="row">
-    <div class="col-sm-4 box">
-      <%= link_to image_tag("mencut.png", alt: "mens cut" ), images_path(category: 'MEN\'S CUT') %>
+  <div class="row box-section">
+    <div class="col-md-offset-1 col-md-3 ">
+      <div class="box">
+        <%= link_to image_tag("mencut.png", alt: "mens cut" ), images_path(category: 'MEN\'S CUT') %>
+      </div>
         <h3><%= link_to "Men's cut", images_path(category: 'MEN\'S CUT') %></h3>
       </div>
-    <div class="col-sm-4 box ">
-      <%= link_to image_tag("womencut.png", alt: "womens cut" ), images_path(category: 'WOMEN\'S CUT') %>
+    <div class="col-md-3 ">
+       <div class="box">
+          <%= link_to image_tag("womencut.png", alt: "womens cut" ), images_path(category: 'WOMEN\'S CUT') %>
+        </div>
       <h3><%= link_to "Women's cut", images_path(category: 'WOMEN\'S CUT') %></h3>
     </div>
-    <div class="col-sm-4 box">
-      <%= link_to image_tag("redcolor.png", alt: "color" ), images_path(category: 'COLOR') %>
+    <div class="col-md-3 ">
+       <div class="box">
+        <%= link_to image_tag("redcolor.png", alt: "color" ), images_path(category: 'COLOR') %>
+      </div>
       <h3><%= link_to "Color", images_path(category: 'COLOR') %></h3>
     </div>
    </div>
@@ -34,11 +40,11 @@
       <h2>The Perfect Hairstyle for when <br>you say I do</h2>
     </div>
     <div class="row ">
-      <div class="col-sm-4 col-sm-offset-2 special-box ">
+      <div class="col-sm-3 col-sm-offset-3 special-box ">
         <%= link_to image_tag("bridal1.png", alt: "bridal" ), images_path(category: 'BRIDAL') %>
         <h3><%= link_to "Bridal", images_path(category: 'BRIDAL') %></h3>
       </div>
-      <div class="col-sm-4 special-box">
+      <div class="col-sm-3 special-box">
         <%= link_to image_tag("prom1.png", alt: "prom" ), images_path(category: 'PROM') %>
         <h3><%= link_to "Prom", images_path(category: 'PROM') %></h3>
       </div>

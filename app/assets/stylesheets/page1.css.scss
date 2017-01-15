@@ -10,13 +10,13 @@
 }
 
 .page1 h2{
-    font-size: 180%;
+    font-size: 200%;
     color: #d34c4d;
 }
 
 .page1 h3{
     margin-top: 20px;
-    font-size: 110%;
+    font-size: 130%;
     color: #d34c4d;
     
 }
@@ -36,7 +36,7 @@
 .page1 .jumbo h1{
   text-align: center;
   color:#e08283;
-  font-size: 200%;
+  font-size: 250%;
 }
 
 .page1 .search-boxes{
@@ -50,10 +50,20 @@
     margin:0;
     padding: 8px;
     border-radius: 2px;
-    height: 40px;
+    height: 50px;
     color: #555;
+    font-size:130%;
+
 }
 
+.page1 .location-box{
+    width: 280px;
+}
+
+.page1 .category-box{
+    width: 150px;
+    
+}
 
 .page1 .discover-box{
     background-color:#d34c4d;
@@ -72,15 +82,19 @@
 
 .section-daily-picture{
     padding-top: 70px;
-    padding-bottom: 60px;
+    padding-bottom: 100px;
 
 }
-
+.box-section{
+    padding-top: 20px;
+    padding-left: 105px;
+    
+}
 .box {
-    margin-top: 20px;
-    padding:0 50px;
-  
+    margin: 20px 30px 10px 0;
 }
+
+
 
 .box img{
     width:100%;
@@ -101,6 +115,10 @@
 .page1 .special-box {
     padding:0 50px;
     margin-top: 20px;
+}
+.page1 .special-box  a{
+    padding:0;
+
 }
 
 .page1 .special-box img{
