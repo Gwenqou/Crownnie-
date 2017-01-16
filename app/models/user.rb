@@ -44,4 +44,7 @@ class User < ActiveRecord::Base
      end while User.exists? (column = self[column])
   end 
    
+  extend FriendlyId
+  friendly_id :username
+  
 end 

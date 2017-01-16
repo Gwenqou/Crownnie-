@@ -16,7 +16,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'geocoder'
 gem 'colorbox-rails', '~> 0.1.2'
-
+gem 'friendly_id', '~> 5.1.0'
 gem 'ionicons-rails'
 gem 'cocoon'
 # See https://github.com/rails/execjs#readme for more supported runtimes

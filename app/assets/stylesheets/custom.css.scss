@@ -124,3 +124,35 @@ a:visited{
 #become{
   border: 2px solid #e08283;
 }
+
+/*---footer---*/
+.footer{
+    background-color: #333;
+    padding-top: 30px;
+    font-size: 100%;
+}
+
+.footer-nav{
+    list-style: none;
+    padding-top: 00px;
+    padding-left: 60px;
+}
+
+
+.footer-nav li{
+    float: left;
+    display: inline-block;
+}
+
+.footer-nav li a{
+    border:0;
+    color: #888;
+}
+
+.footer p{
+    color: #888;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    font-size: 95%;
+}

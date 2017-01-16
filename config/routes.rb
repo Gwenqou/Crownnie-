@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 root "pages#home"
 
-resources :images, :path => 'CR'
+resources :images, :path => 'crownshot'
 
-resources :users, except: [:new], :path => 'crownshot'
+resources :users, except: [:new]
 get "become_a_stylist", to: "users#become_a_stylist"
 get "signup", to: "users#new"
 get "add_to_wishlist", to: "users#add_to_wishlist"
