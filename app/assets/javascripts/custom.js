@@ -21,7 +21,7 @@
 $(document).ready(function(){
   Dropzone.autoDiscover = false;
   $('#menu-dropzone').dropzone({
-    maxFilesize: 3,
+    maxFilesize: 2,
     acceptedFiles: ".jpeg,.jpg,.png,.gif", 
     sucess:function(file, response) {
        var imageUrl;
@@ -53,6 +53,6 @@ $(document).ready(function(){
        $('#image_users .links a').show();
      }
    }
-  })
+  });
  
 });

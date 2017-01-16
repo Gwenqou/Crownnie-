@@ -18,7 +18,7 @@
     <% else %>
       <% Image.where(pictureuploader: @user.id).each do |image|%>
       <div class="image-display-general">
-        <%= image_tag image.picture.url(:thumb) if image.picture %>
+        <%= link_to image_tag(image.picture.url(:thumb)), image.picture.url, rel: 'showprofileg', :data => { :colorbox_static => true } %>
         <div class="image-delete-general">
           <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, image_path(id: image), method: :delete, remote: true, class: "delete_image-general"%>
         </div>
