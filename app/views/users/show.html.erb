@@ -2,7 +2,8 @@
   <h2>-- My Profile --</h2>
   <div class="pic-showing">
     <% if @user.is_stylist? %>
-      <% @user.images.each do |image| %>
+     
+      <% @stylist_images.each do |image| %>
       <div class="image-display">
         <%= link_to image_tag(image.picture.url(:thumb)), image.picture.url, rel: 'group1', :data => { :colorbox_static => true }  %>
         <div class="image-function">
@@ -14,9 +15,13 @@
           </div>
         </div>
       </div>
+      <div class="paginate-box">
+        <%= will_paginate @stylist_images %>
+      </div>
       <% end %>
     <% else %>
-      <% Image.where(pictureuploader: @user.id).each do |image|%>
+     
+      <% @general_images.each do |image|%>
       <div class="image-display">
         <%= link_to image_tag(image.picture.url(:thumb)), image.picture.url, rel: 'showprofileg', :data => { :colorbox_static => true } %>
         <div class="image-function">
@@ -29,6 +34,9 @@
         </div>
       </div>
       <% end %>  
+      <div class="paginate-box">
+        <%= will_paginate @general_images %>
+      </div>
     <% end %>
   </div>
 </div>

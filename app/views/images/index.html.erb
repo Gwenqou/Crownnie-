@@ -22,6 +22,7 @@
 
 
 <div class="main">
+
   <% @images.each do |image| %> 
     <div class="image">
       <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
@@ -64,11 +65,12 @@
       <% end %>
     </div>
   <% end %>
+  <div class="paginate-box">
+    <%= will_paginate %>
+  </div>
 </div>
 </div>
-  
-  
-  
+
   
   
   

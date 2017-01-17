@@ -29,10 +29,10 @@ class ImagesController < ApplicationController
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.where(id: @images).joins(:categories).where(categories:{ id: category_id })
+        @images = Image.where(id: @images).joins(:categories).where(categories:{ id: category_id }).paginate(page: params[:page], per_page: 12)  
         
       else 
-        @images = Image.where(id: @images)
+        @images = Image.where(id: @images).paginate(page: params[:page], per_page: 12)  
         
       end 
       
@@ -40,9 +40,9 @@ class ImagesController < ApplicationController
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.joins(:categories).where(categories: { id: category_id }).distinct
+        @images = Image.joins(:categories).where(categories: { id: category_id }).distinct.paginate(page: params[:page], per_page: 12)  
       else 
-        @images = Image.all  
+        @images = Image.paginate(page: params[:page], per_page: 12)  
       end
     end 
   end
@@ -97,7 +97,6 @@ class ImagesController < ApplicationController
   end 
   
   def show 
-   
     if logged_in?
       @user = current_user
       @wishlist_index = []

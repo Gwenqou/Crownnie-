@@ -50,6 +50,8 @@ class UsersController < ApplicationController
   end 
 
   def show
+    @stylist_images = @user.images.paginate(page: params[:page], per_page: 3)
+    @general_images = Image.where(pictureuploader: @user.id).paginate(page: params[:page], per_page: 3)
   end 
   
   def index

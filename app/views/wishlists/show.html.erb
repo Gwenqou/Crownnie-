@@ -1,6 +1,7 @@
 <div class="wishlist-section">
   <h2>-- My Wishlist --</h2>
-  <% @user.wishlist.images.each do |image| %>
+
+  <% @user_wishlist_images.each do |image| %>
   <div class="wishlist-image">
     <%=link_to image_tag(image.picture.url(:thumb)), image_path(id: image.id), class: "wishlist" %>
     <div class="wishlist-delete">
@@ -8,6 +9,9 @@
     </div>
   </div>
   <% end %>
+  <div class="paginate-box">
+    <%= will_paginate @user_wishlist_images%>
+  </div>
 </div>
 
 <script>

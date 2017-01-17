@@ -72,6 +72,29 @@ a:visited{
   color: #e08283;
 }
 
+
+
+.pagination li a,
+.pagination li span,
+.pagination li a:hover{
+  color: #e08283;
+}
+
+.pagination .active a,
+.pagination .active a:hover,
+.pagination .active a:focus,
+.pagination .active span,
+.pagination .active span:hover,
+.pagination .active span:focus{
+  background-color: #e08283;
+  border-color: #e08283;
+}
+
+.paginate-box{
+  text-align:center;
+}
+
+
 /* -------navigation------- */
 .navbar{
  background-color:#fff; 
