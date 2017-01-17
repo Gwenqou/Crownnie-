@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :edit]
   before_action :require_user, only: [:edit, :update, :show, :add_to_wishlist ]
   before_action :require_same_user, only: [:edit, :update, :show]
+  before_action :require_admin, only: [:index]
   
   def stylist_detail
     @user = User.find(params[:id])
@@ -55,6 +56,7 @@ class UsersController < ApplicationController
   end 
   
   def index
+    @users = User.all
   end 
   
   def add_to_wishlist
@@ -69,6 +71,7 @@ class UsersController < ApplicationController
     end 
 
   end 
+  
   
   private 
   
@@ -86,11 +89,17 @@ class UsersController < ApplicationController
   end
   
   def require_same_user
-    if current_user != @user
+    if current_user != @user && !current_user.admin? 
       flash[:danger] = "You can only edit or view your own account"
       redirect_to user_path(current_user)
     end 
   end 
   
+  def require_admin
+    if !current_user.admin? 
+      flash[:danger] = "Sorry, you entered an invalid URL"
+      redirect_to root_path
+    end 
+  end 
 end 
 

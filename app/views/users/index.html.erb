@@ -1,0 +1,19 @@
+<div class="user_list">
+  <div class="list-group list_table">
+    <% @users.each do |user| %>
+      <li class="list-group-item">
+        <% if user.is_stylist? %>
+          <span class="badge"><%= user.images.count %></span>
+        <% else %>
+          <span class="badge"><%= Image.where(pictureuploader: user.id).count %></span>
+        <% end %>
+        
+        <%=link_to user.id, user_path(user) %>
+        <%=link_to user.username.capitalize, user_path(user) %> 
+        <% if user.is_stylist? %>
+            <span class="badge">stylist</span>
+        <% end %>
+      </li>
+    <% end %>
+  </div>
+</div>

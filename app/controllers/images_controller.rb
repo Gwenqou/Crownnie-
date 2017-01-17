@@ -2,6 +2,7 @@ class ImagesController < ApplicationController
   
   before_action :set_image, only: [:show,:destroy, :edit, :update]
   before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   
   def index
@@ -131,14 +132,19 @@ class ImagesController < ApplicationController
     @image =Image.find(params[:id]) 
   end 
   
-
+  def require_same_user
+    @image_user = []
+    @image.users.each do |user|
+      @image_user.append(user.id)
+    end 
+    
+    if !@image_user.include?(current_user.id) && @image.pictureuploader != current_user.id && !current_user.admin
+      flash[:danger] = "You can only edit your own picture"
+      redirect_to user_path(current_user)
+    end 
+  end 
+  
 end 
 
 
 
-#1.times do
-    #  image_user = @image.image_users.build 
-     # 1.times{image_user.image_user_categories.build}
-   # end
-   
-   

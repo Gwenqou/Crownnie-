@@ -1,0 +1,23 @@
+.user_list{
+  padding-top: 50px;
+}
+
+.user_list .list_table{
+  width:350px;
+  margin: 0 auto;
+}
+
+.user_list .list-group-item{
+  background-color: #e08283;
+  border-radius: 5px;
+}
+
+.user_list .list-group-item a{
+  color: #fff;
+  font-size: 120%;
+}
+.user_list .badge{
+  color: #e08283;
+  background-color: #fff;
+  margin-right: 5px;
+}

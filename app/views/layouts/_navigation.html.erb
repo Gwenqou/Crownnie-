@@ -25,6 +25,10 @@
               <% if is_stylist? %>
                 <li class="nav-font"><%= link_to "Menus", menus_path(current_user)%></li>
               <% end %>
+               <% if is_admin? %>
+                <li role="separator" class="divider"></li>
+                <li class="nav-font"><%= link_to "Users List", users_path %></li>
+              <% end %>
               <li role="separator" class="divider"></li>
               <li class="nav-font"><%=link_to "Wishlist", wishlist_path(current_user)%></li>
               <li role="separator" class="divider"></li>

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  helper_method :current_user, :logged_in?, :is_stylist?
+  helper_method :current_user, :logged_in?, :is_stylist?, :is_admin?
   
   def current_user
     @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token] && cookies[:auth_token].length > 0
@@ -17,6 +17,9 @@ class ApplicationController < ActionController::Base
     current_user.is_stylist !=  false
   end 
   
+  def is_admin?
+    current_user.admin !=  false
+  end 
   
   def require_user
     if !logged_in?
@@ -32,4 +35,5 @@ class ApplicationController < ActionController::Base
     end 
   end 
   
+
 end
