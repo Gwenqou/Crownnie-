@@ -35,24 +35,5 @@ $(document).ready(function(){
  
 
  
- $(function() {
-   $('#image_users').on('cocoon:after-insert', function() {
-     check_to_hide_or_show_add_link();
-   });
 
-   $('#image_users').on('cocoon:after-remove', function() {
-     check_to_hide_or_show_add_link();
-   });
-
-   check_to_hide_or_show_add_link();
-
-   function check_to_hide_or_show_add_link() {
-     if ($('#image_users .nested-fields').length >= 5) {
-       $('#image_users .links a').hide();
-     } else {
-       $('#image_users .links a').show();
-     }
-   }
-  });
- 
 });

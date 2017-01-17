@@ -14,8 +14,12 @@ class Image < ActiveRecord::Base
   
   mount_uploader :picture, ImageUploader
   
-
+  validate :picture_size
   validates :picture,  presence: true
   validates_associated :image_users
 
+
+  def picture_size
+    errors[:picture] << "should be less than 2MB" if picture.size > 2000000 
+  end 
 end 

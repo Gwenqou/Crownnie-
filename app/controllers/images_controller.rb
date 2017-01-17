@@ -83,6 +83,7 @@ class ImagesController < ApplicationController
   end 
   
   def show 
+   
     if logged_in?
       @user = current_user
       @wishlist_index = []

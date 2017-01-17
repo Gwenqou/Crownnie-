@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base 
   
-  has_many :image_users
-  has_many :images, through: :image_users 
+  has_many :image_users, :dependent => :destroy
+  has_many :images, through: :image_users, :dependent => :destroy
   has_many :menus, :dependent => :destroy
-  has_one :wishlist
+  has_one :wishlist, :dependent => :destroy 
   
   accepts_nested_attributes_for :menus, allow_destroy: true
 
@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
    
    before_create {generate_token(:auth_token)}
 
-   
+   validate :avatar_size
    
    geocoded_by :salon_location
    after_validation :geocode, :if => :salon_location_changed?
@@ -42,6 +42,10 @@ class User < ActiveRecord::Base
      begin
       self[column] = SecureRandom.urlsafe_base64
      end while User.exists? (column = self[column])
+  end 
+  
+  def avatar_size
+    errors[:avatar] << "should be less than 2MB" if avatar.size > 100
   end 
    
   extend FriendlyId
