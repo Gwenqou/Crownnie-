@@ -1,11 +1,19 @@
 <div class="row">
   <div class="col-md-12">
-  <%= render 'shared/errors', obj: @image %>
+  <%#= render 'shared/errors', obj: @image %>
       
   <%= form_for(@image) do |f|%>
     <div class="col-md-2 col-md-offset-1">
-      <div class="uploadplaceholder"><img class="img-responsive" id="img_prev" src="/assets/white.png" alt="your image" /></div>
+      <div class="uploadplaceholder">
+        <% if @image.picture? %>
+          <%=image_tag @image.picture.url(:thumb) %>
+        <% else %>
+          <img class="img-responsive" id="img_prev" src="/assets/white.png" alt="your image" />
+        <% end %>
+        
+      </div>
         <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png',onchange:"readURL(this);" %>
+        <%= f.hidden_field :picture_cache, :value => @image.picture_cache %>
       </div>
 
      

@@ -12,9 +12,9 @@ class ImageUser < ActiveRecord::Base
 
   
 
-  validates :user_id, presence: { message: "Please choose a stylist that performed on this hair" }
+  validates :user_id, presence: true
   validates_associated :image_user_categories
-  validates :image_user_categories, presence: {message: 'You need to choose at least one service for each stylist' }
+  validates :image_user_categories, presence: true
 
  
 end 

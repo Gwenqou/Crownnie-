@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
   end 
   
   def avatar_size
-    errors[:avatar] << "should be less than 2MB" if avatar.size > 100
+    errors[:avatar] << "should be less than 2MB" if avatar.size > 2000000
   end 
    
   extend FriendlyId
