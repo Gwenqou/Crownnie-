@@ -8,7 +8,8 @@
         <% if @image.picture? %>
           <%=image_tag @image.picture.url(:thumb) %>
         <% else %>
-          <img class="img-responsive" id="img_prev" src="/assets/white.png" alt="your image" />
+          <img class="img-responsive" id="img_prev" src="https://s3.amazonaws.com/crownshot/white.png?X-Amz-Date=20170118T152612Z&X-Amz-Expires=300&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Signature=4afb07f909f05b26844f15adf91d5db5af88cead27d0d3342d53856f7bd6726f&X-Amz-Credential=ASIAJPQO3V3PY47M5H6A/20170118/us-east-1/s3/aws4_request&X-Amz-SignedHeaders=Host&x-amz-security-token=FQoDYXdzEEcaDP62cDlkdSxWXwRX7iL6Abvb8URcUXVj%2BRVX%2BLD7ofdsqhij8sP0ajsG%2BAzCinHAbGhHiCkB6zSWKVBFMYQ73V61icZUUynmxyz/wPJP9YnNAfVgOyNEVRy0zTSRLKvtAgFdsbXIq3RDwY7Ur4O9BLDsPfbxGbwnn%2BJow7oI2jM9kBMitYCi07pCJBw73NwS8BTIHLXk5Ue7ZKftZva66LzP1I2vkAyI4Dw3PsdGF2gVV%2BBPUzknvorX5108BTWyu8nVRVs%2B8uCi0qzFgLNAfmBdC8t4M/hnLFgUxSfWtVtV8kU4Q5emepEyPHtWBDyI9G53mO7rEiCSKzo8A2EIv7SvH8EDXZUsRsEo7tL9wwU%3D" alt="your image" />
+          
         <% end %>
         
       </div>
