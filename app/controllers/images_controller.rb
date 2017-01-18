@@ -111,6 +111,9 @@ class ImagesController < ApplicationController
   def destroy
     respond_to do |format|
       if @image.destroy 
+        @image.image_wishlists.each do |iw|
+            iw.destroy()
+        end 
         format.html { redirect_to :back, flash[:success] = "Image was successfully deleted" }
         format.js 
       else 
