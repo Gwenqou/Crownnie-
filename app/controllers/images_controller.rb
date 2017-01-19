@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   before_action :set_image, only: [:show,:destroy, :edit, :update]
   before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
-  before_action :delete_picture_from_s3, only: [:destroy]
+  #before_action :delete_picture_from_s3, only: [:destroy]
 
   
   def index

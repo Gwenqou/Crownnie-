@@ -35,7 +35,7 @@
         <%= link_to image_tag(image.picture.url(:thumb)), image.picture.url, rel: 'showprofileg', :data => { :colorbox_static => true } %> <!--, picture_url: image.picture-->
         <div class="image-function">
           <div class="image-delete">
-            <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, image_path(id: image), method: :delete, remote: true, class: "delete_image", data: {confirm: "Are you sure you want to delete this user?"}%>
+            <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, image_path(id: image), method: :delete, remote: true, class: "delete_image", data: {confirm: "Are you sure you want to delete this image?"}%>
 
           </div>
           <div class="image-edit">
