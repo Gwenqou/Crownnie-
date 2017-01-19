@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base 
   
   has_many :image_users, :dependent => :destroy
-  has_many :images, through: :image_users, :dependent => :destroy
+  has_many :images, through: :image_users #, :dependent => :destroy
   has_many :menus, :dependent => :destroy
   has_one :wishlist, :dependent => :destroy 
   

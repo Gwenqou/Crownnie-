@@ -72,6 +72,21 @@ class UsersController < ApplicationController
 
   end 
   
+  def destroy 
+    @user = User.find(params[:id])
+    respond_to do |format|
+      if @user.destroy()
+        Image.where(pictureuploader: @user.id).each do |image|
+          image.destroy()
+        end 
+        format.html { redirect_to :back, flash[:success] = "User was successfully deleted" }
+        format.js
+      else 
+        format.html { redirect_to :back, flash[:danger] = "User was not deleted successfully" }
+      end 
+    end 
+  end 
+  
   
   private 
   
