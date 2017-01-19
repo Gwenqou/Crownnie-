@@ -123,14 +123,13 @@ class ImagesController < ApplicationController
     end 
   end 
   
-  def delete_picture_from_s3
-    key = params[:picture_url].split('amazonaws.com/')[1]
-    S3_BUCKET.object(params[key]).delete
-    return true
-    rescue => e
-      # Do nothing. Leave the now defunct file sitting in the bucket.
-      return true
-  end
+  # def delete_picture_from_s3
+  #   key = params[:picture_url].split('amazonaws.com/')[1]
+  #   S3_BUCKET.object(params[key]).delete
+  #   return true
+  #   rescue => e
+  #     return true
+  # end
 
     
   private
