@@ -87,7 +87,7 @@ Rails.application.configure do
    :user_name            => ENV['zoho_username'],
    :password             => ENV['zoho_password'],
    :authentication       => "login",
-   :ssl                  => true,
+   #:ssl                  => true,
    #:tls                  => true,
    :enable_starttls_auto => true
   }
