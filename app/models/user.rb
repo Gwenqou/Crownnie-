@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   
   accepts_nested_attributes_for :menus, allow_destroy: true
 
-  mount_uploader :avatar, ImageUploader
+  mount_uploader :avatar, AvatarUploader
   validates :username, presence: true, 
                         uniqueness: {case_sensitive:false}, 
                         length: {minimum:3, maximum:25}

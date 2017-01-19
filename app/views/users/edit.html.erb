@@ -5,7 +5,7 @@
   <div class="row form-field">
     <div class="col-sm-2 col-sm-offset-2 profile_upload">
       <% if @user.avatar? %>
-        <%= image_tag @user.avatar.url(:avatar) if @user.avatar?%>
+        <%= image_tag @user.avatar.url%>
       <% else %>
         <div class="profileplaceholder"><img class="img-responsive" id="profile_prev" src="https://s3.amazonaws.com/crownshot/profile_placeholder.png" alt="your image"  /></div>
       <% end %>

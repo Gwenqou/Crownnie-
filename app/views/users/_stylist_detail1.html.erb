@@ -7,7 +7,7 @@
       </div>
       <div class="image">
         <% if obj.avatar? %>
-          <%= image_tag obj.avatar.url(:avatar) %>
+          <%= image_tag obj.avatar.url %>
         <% else %>
           <img class="img-responsive"  src="https://s3.amazonaws.com/crownshot/profile_placeholder.png" alt="stylist_profile" />
         <% end %>

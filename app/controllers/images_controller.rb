@@ -3,6 +3,7 @@ class ImagesController < ApplicationController
   before_action :set_image, only: [:show,:destroy, :edit, :update]
   before_action :require_user, only: [:new, :create, :edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
+  before_action :delete_picture_from_s3, only: [:destroy]
 
   
   def index
@@ -122,7 +123,15 @@ class ImagesController < ApplicationController
     end 
   end 
   
-    
+  def delete_picture_from_s3
+    key = params[:picture_url].split('amazonaws.com/')[1]
+    S3_BUCKET.object(params[key]).delete
+    return true
+    rescue => e
+      # Do nothing. Leave the now defunct file sitting in the bucket.
+      return true
+  end
+
     
   private
   
