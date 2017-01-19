@@ -70,7 +70,13 @@
     <% end %>
   </div>
   <div class="stylist-detail">
-    <%= render 'users/stylist_detail1', obj: @image.image_users.first.user %>
+    <% if !@image.image_users.empty? %>
+      <%= render 'users/stylist_detail1', obj: @image.image_users.first.user %>
+    <% else %>
+    <div align="center">
+      <h3>Sorry, can't find the stylists for this picture</h3>
+    </div>
+    <% end %>
   </div>
 </div>  
   

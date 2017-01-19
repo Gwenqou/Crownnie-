@@ -7,13 +7,12 @@
         <% else %>
           <span class="badge"><%= Image.where(pictureuploader: user.id).count %></span>
         <% end %>
-        <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, user_path(id: user.id), method: :delete, remote: true, class: "delete_user"%>
+        <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, user_path(id: user.id), method: :delete, remote: true, class: "delete_user", data: {confirm: "Are you sure you want to delete this user?"}%>
         <%=link_to user.id, user_path(user) %>
         <%=link_to user.username.capitalize, user_path(user) %> 
         <% if user.is_stylist? %>
             <span class="badge">stylist</span>
         <% end %>
-        
       </li>
     <% end %>
   </div>
