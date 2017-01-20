@@ -8,6 +8,6 @@ class UserMailer < ApplicationMailer
   #
   def password_reset(user)
     @user = user
-    mail to: user.email, :subject => "Crownshot password_reset"
+    mail to: user.email, :subject => "Crownshot password reset"
   end
 end
