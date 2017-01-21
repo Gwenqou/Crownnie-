@@ -5,10 +5,9 @@ ActionMailer::Base.smtp_settings = {
   :user_name            => 'crownshotty@gmail.com',
   :password             => 'templogin',     
   :authentication       => :login,
-  :ssl                  => true,
-  :tls                  => true,
-  :enable_starttls_auto => true,
-  :openssl_verify_mode => 'none'
+  #:ssl                  => true,
+  #:tls                  => true,
+  :enable_starttls_auto => true
 }
 
      
