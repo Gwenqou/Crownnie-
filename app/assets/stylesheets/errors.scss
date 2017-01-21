@@ -1,0 +1,41 @@
+/* ------------------------------------------------ */
+/* BASE COLOR: #e08283 */
+/* DARKBASE COLOR: #d34c4d */
+/* ------------------------------------------------ */
+.errorpages{
+  height: 100vh;
+}
+
+.error{
+  padding-top:30px;
+  border: 1px solid #e08283;
+  box-shadow: 1px 2px 2px #e08283;
+  width: 50%;
+  margin: 100px auto 0 auto;
+  
+  padding-bottom: 30px;
+
+}
+.errorpages p{
+  text-transform: capitalize;
+}
+
+.errorpages p{
+  color: #555;
+  text-align: center;
+}
+
+.errorpages h5{
+  font-size: 110%;
+  font-weight: 600;
+}
+
+.errorpages a{
+  padding: 0;
+  
+}
+
+.errorpages .funnyerror{
+  margin-left: 160px;
+  color: #555;
+}

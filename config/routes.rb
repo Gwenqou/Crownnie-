@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'errors/not_found'
+
+  get 'errors/internal_error'
+
+  get 'errors/unacceptable'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -27,6 +33,11 @@ resources :menus
 resources :wishlists
 
 resources :password_resets
+
+match "/404", :to => "errors#not_found", :via=> :all
+match "/422", :to => "errors#unacceptable", :via=> :all
+match "/500", :to => "errors#internal_error", :via=> :all
+
 
 
   # Example of regular route:
