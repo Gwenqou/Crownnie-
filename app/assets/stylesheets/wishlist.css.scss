@@ -1,3 +1,8 @@
+/* ------------------------------------------------ */
+/* BASE COLOR: #e08283 */
+/* DARKBASE COLOR: #d34c4d */
+/* ------------------------------------------------ */
+
 .wishlist-section{
   width: 64%;
   margin-left: 18%;
@@ -19,4 +24,19 @@
   position: absolute;
   top: 5px;
   right: -10px;
+}
+
+.wishlist-section .wishlist-emp{
+  border: 2px dotted #cdcdcd;
+  padding: 30px 0 50px 0;
+}
+.wishlist-section p{
+  text-align: center;
+  color: #888;
+  font-size: 120%;
+}
+.wishlist-section a{
+  color: #888;
+  padding: 0;
+  border-bottom: 1px dotted #888;
 }

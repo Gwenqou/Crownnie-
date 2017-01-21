@@ -1,18 +1,24 @@
 <% content_for(:title){'Wishlist - Crownshot'} %>
 <div class="wishlist-section">
   <h2>-- My Wishlist --</h2>
-
-  <% @user_wishlist_images.each do |image| %>
-  <div class="wishlist-image">
-    <%=link_to image_tag(image.picture.url(:thumb)), image_path(id: image.id), class: "wishlist" %>
-    <div class="wishlist-delete">
-      <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, wishlist_path(image: image), method: :delete, remote: true, class: "delete_wishlist"%>
+  <% if @user.wishlist.images.empty? %>
+    <div class="wishlist-emp">
+      <p> Your wishlist is empty </p>
+      <p> Let's go checkout some <%= link_to 'amazing hairstyles', images_path %> :) </p>
     </div>
-  </div>
+  <% else %>
+    <% @user_wishlist_images.each do |image| %>
+    <div class="wishlist-image">
+      <%=link_to image_tag(image.picture.url(:thumb)), image_path(id: image.id), class: "wishlist" %>
+      <div class="wishlist-delete">
+        <%= link_to "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, wishlist_path(image: image), method: :delete, remote: true, class: "delete_wishlist"%>
+      </div>
+    </div>
+    <% end %>
+    <div class="paginate-box">
+      <%= will_paginate @user_wishlist_images%>
+    </div>
   <% end %>
-  <div class="paginate-box">
-    <%= will_paginate @user_wishlist_images%>
-  </div>
 </div>
 
 <script>
