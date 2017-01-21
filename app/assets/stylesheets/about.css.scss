@@ -1,0 +1,38 @@
+/* ------------------------------------------------ */
+/* BASE COLOR: #e08283 */
+/* DARKBASE COLOR: #d34c4d */
+/* ------------------------------------------------ */
+.about{
+  background-image: linear-gradient(rgba(255, 255, 255, 0.71), rgba(255, 255, 255, 0.7)), asset-url('flowerzoom-min.jpg');
+  background-attachment: fixed;  
+}
+.about .content{
+  padding: 70px 0;
+  width: 50%;
+  margin: auto;
+  color: #666;
+  
+}
+.about h1{
+  color: #d34c4d;
+}
+.about h2{
+  font-size: 150%;
+}
+.about h3{
+  color: #666;
+  font-size: 130%;
+}
+.about .center{
+  text-align: center;
+}
+
+.about .hr-color{
+  border-top: 1px solid #e08283 ;
+  margin: 50px 0;
+
+}
+.about p{
+  font-size: 120%;
+  line-height: 2;
+}

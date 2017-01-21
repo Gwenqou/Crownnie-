@@ -1,3 +1,4 @@
+<% content_for(:title){'Picture - Crownshot'} %>
 <div class="image-show">
   
   <div class="image-big-section" >
@@ -64,7 +65,7 @@
         <% if imageuser.user.avatar? %>
           <%= link_to image_tag(imageuser.user.avatar.url(:shortcut)), stylist_detail_path(id: imageuser.user.id), remote: true, class:"shortcut" %>
         <% else %>
-          <%= link_to image_tag("https://s3.amazonaws.com/crownshot/profile_placeholder.png" ), stylist_detail_path(id: imageuser.user.id), remote: true, class:"shortcut" %>
+          <%= link_to image_tag("https://s3.amazonaws.com/crownshot/profile_placeholder.png", alt: "profile picture" ), stylist_detail_path(id: imageuser.user.id), remote: true, class:"shortcut" %>
         <% end %>
      </div>
     <% end %>

@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 root "pages#home"
+get "aboutus", to: "pages#about"
+get 'term', to: "pages#term"
+
 
 resources :images, :path => 'crownshot'
 

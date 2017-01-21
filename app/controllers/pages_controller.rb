@@ -3,4 +3,10 @@ class PagesController < ApplicationController
     @cats = ['Women\'s cut','Men\'s cut','Color','Bridal','Prom']
   end 
   
+  def about 
+  end 
+
+  def term
+  end 
+
 end
