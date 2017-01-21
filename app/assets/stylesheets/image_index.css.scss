@@ -19,7 +19,7 @@
 .image_index .location{
   padding: 8px 0;
   text-align: center;
-  margin: 10% 13% 8% 6%; 
+  margin: 10% 13% 0% 6%; 
 }
 
 .image_index .location p{
@@ -30,8 +30,12 @@
   width: 110%;
   height: 35px;
   border-radius: 3px;
+  margin-bottom: 15px;
 }
 
+.image_index .rangebar{
+  margin-bottom: 12px;
+}
 .image_index ul{
   list-style: none; 
   padding:0;

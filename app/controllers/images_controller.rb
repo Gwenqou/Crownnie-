@@ -21,7 +21,8 @@ class ImagesController < ApplicationController
       #this line get all the images from all the nearby users, thus there can be duplication 
       #if an image has two users, two of the same picture will come up and .distinct doesnt help
       #so i create an array that get all the image ids. and call uniq to filter out all the duplicat images
-      @images_by_users = User.near(params[:search], 50, :select => "users.*, images.*").joins(:images)
+      @radius = params[:radius] || 5
+      @images_by_users = User.near(params[:search], @radius, :select => "users.*, images.*").joins(:images)
       @images =[]
       @images_by_users.each do |image|
         @images.append(image.id)

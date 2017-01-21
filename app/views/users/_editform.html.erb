@@ -20,7 +20,7 @@
  <%= render 'form', :f => f %>
 <hr>
 
-<% if is_stylist? %>
+<% if @user.is_stylist? %>
   <div class="form-group form-color">
     <div class="col-sm-2">
       <%= f.label :salon_name, class:"control-label"%>
