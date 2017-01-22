@@ -6,7 +6,7 @@
   
 <div class="sidebar">
   <%= form_tag images_path, :method => :get do %>
-  
+      <i class="ion-navicon icon-show"></i>
       <div class="location">
         <p> Location</p>
         <%= text_field_tag :search, params[:search], class: "input_box" %>
@@ -24,10 +24,11 @@
         <li class="category"><%= link_to "Bridal", images_path(category: 'BRIDAL', search: params[:search], radius: params[:radius]) %> </li>
         <li class="category"><%= link_to "Prom", images_path(category: 'PROM', search: params[:search],radius: params[:radius]) %> </li>
       </ul>
-  
   <% end %>
 </div>
-
+<div class="side-hidden">
+  <i class="ion-navicon icon-hidden"></i>
+</div>
 
 <div class="main">
 
@@ -80,10 +81,19 @@
 </div>
 
   
+<script>
+  $( ".icon-hidden" ).click(function() {
+    $('.side-hidden').hide();
+    $('.sidebar').show();
+  });
+  
+  $( ".icon-show" ).click(function() {
+    $('.side-hidden').show();
+    $('.sidebar').hide();
+  });
+</script>
 
-  
-  
-  
+
   
   <%# image.users.each do |user| %>
     <%#= user.username%>

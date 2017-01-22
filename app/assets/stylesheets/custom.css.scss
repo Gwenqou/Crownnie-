@@ -190,17 +190,17 @@ a:visited{
     padding: 0;
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 450px) {
 
     #crownshot{
-      display: none;
+      font-size: 150%;
+      padding-left: 2px;
     }
-    
-    #logo img{
-      margin-left: 10px;
-    }
-    
     .footer-nav{
       padding-left: 0px;
+    }
+    .navbar-header a{
+      padding-right: 5px;
+      padding-left: 5px;
     }
 }
