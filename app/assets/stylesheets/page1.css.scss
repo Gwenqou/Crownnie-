@@ -104,6 +104,9 @@
     border: 4px solid #e08283;
 }
 
+.row{
+    margin-right: 0px;
+}
 /* ------------------------------------------------ */
 /* Section special */
 /* ------------------------------------------------ */
@@ -239,13 +242,16 @@
     
    .page1 h2{
     font-size: 150%;
+    }
+    
+    .page1 h3{
+        font-size: 110%;
+    }
+
 
 }
 
-
-}
-
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 765px) {
 
     .page1 .search-box{
         height: 40px;
@@ -282,35 +288,43 @@
 
 @media screen and (max-width: 650px) {
     .page1 .jumbotron{
-      height: 450px;
+      height: 470px;
     }
     .page1 .jumbo h1{
       font-size: 150%;
     }
     .page1 .search-box{
-        width: 60%;
-        margin-left: 5%;
+        width: 70%;
+        margin-left: -3%;
         padding: 2px;
     }
     .page1 h2{
-    font-size: 120%;
+        font-size: 140%;
     }
     
     .page1 h2:after{
         margin: 25px auto 0px auto;
         
     }
+    .page1 h3{
+        font-size: 115%;
+    }
     .section-daily-picture{
         padding-top: 20px;
         padding-bottom: 30px;
     }
     .box {
-        width: 40%;
-        margin: auto;
-        margin-top: 30px;
+        width: 47%;
+
+    }
+    .box-section{
+        padding-top: 5px;
     }
     .page1 .section-special-picture{
         padding: 30px 0 40px 0;
+    }
+    .page1 .special-box {
+        width: 47%;
     }
     
 }
@@ -318,33 +332,26 @@
 @media screen and (max-width: 400px) {
 
     .page1 .jumbo h1{
-      font-size: 110%;
+      font-size: 120%;
     }
     .page1 .search-box{
-        font-size:90%;
+        font-size: 90%;
         height: 35px;
-        margin-left: 3%;
-    }
-    .page1 .search-box{
-        width: 90%;
+        width: 80%;
         margin-left: -10%;
-        padding-left: 0;
+        padding: 0 2px;
     }
     
     .page1 h2{
-    font-size: 100%;
+    font-size: 120%;
     }
 
     
     .box {
-        width: 70%;
-        margin: auto;
-        margin-top: 20px;
+        width: 60%;
     }
      .page1 .special-box {
-        width: 70%;
-        margin: auto;
-        margin-top: 20px;
+        width: 60%;
     }
     .page1 h3{
         font-size: 110%;

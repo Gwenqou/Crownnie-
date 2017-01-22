@@ -11,7 +11,7 @@
         <p> Location</p>
         <%= text_field_tag :search, params[:search], class: "input_box" %>
         <div class="rangebar">
-          <%= range_field_tag 'radius', params[:radius], in: 1...20, step: 1, id:"ageInputId", oninput:"ageOutputId.value = ageInputId.value" %>
+          <%= range_field_tag 'radius', params[:radius], in: 1..20, step: 1, id:"ageInputId", oninput:"ageOutputId.value = ageInputId.value" %>
           <output name="ageOutputName" id="ageOutputId"></output> miles 
         </div>
         <%= submit_tag "Done", :name => nil %>
