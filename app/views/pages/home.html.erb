@@ -6,7 +6,7 @@
     <div class="col-md-6 col-md-offset-3 jumbo">
       <h1>EVERY DAY IS A GOOD HAIR DAY</h1>
     </div>  
-    <div class="row search-boxes">
+    <div class="col-md-6 col-md-offset-3 search-boxes">
       <%= form_tag images_path, :method => :get do %>
         <%= text_field_tag :search, params[:search], class: "search-box location-box", placeholder: "Location" %>
         <%= select_tag 'category', options_for_select(@cats, ''),class: "search-box category-box" %>
@@ -18,19 +18,19 @@
     <h2>Release your Confidence</h2>
             
   <div class="row box-section">
-    <div class="col-md-offset-1 col-md-3 ">
+    <div class="col-sm-offset-1 col-sm-3 ">
       <div class="box">
         <%= link_to image_tag("mencut.png", alt: "mens cut" ), images_path(category: 'MEN\'S CUT') %>
       </div>
         <h3><%= link_to "Men's cut", images_path(category: 'MEN\'S CUT') %></h3>
       </div>
-    <div class="col-md-3 ">
+    <div class="col-sm-3 ">
        <div class="box">
           <%= link_to image_tag("womencut.png", alt: "womens cut" ), images_path(category: 'WOMEN\'S CUT') %>
         </div>
       <h3><%= link_to "Women's cut", images_path(category: 'WOMEN\'S CUT') %></h3>
     </div>
-    <div class="col-md-3 ">
+    <div class="col-sm-3 ">
        <div class="box">
         <%= link_to image_tag("redcolor.png", alt: "color" ), images_path(category: 'COLOR') %>
       </div>
@@ -40,7 +40,7 @@
  </section>
  <section class="section-special-picture">
     <div class="row">
-      <h2>The Perfect Hairstyle for when <br>you say I do</h2>
+      <h2>The Perfect <br>Hairstyle for when <br>you say I do</h2>
     </div>
     <div class="row ">
       <div class="col-sm-3 col-sm-offset-3 special-box ">
