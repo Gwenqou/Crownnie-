@@ -15,7 +15,7 @@ get "aboutus", to: "pages#about"
 get 'term', to: "pages#term"
 
 
-resources :images, :path => 'crownshot'
+resources :images  , :path => 'crownshot'
 
 resources :users, except: [:new]
 get "become_a_stylist", to: "users#become_a_stylist"

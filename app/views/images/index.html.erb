@@ -17,12 +17,13 @@
         <%= submit_tag "Done", :name => nil %>
       </div>
       <hr>
+        <% url = request.fullpath.upcase() %>
        <ul class="cat-list">
-        <li class="category"><%= link_to "Women's cut", images_path(category: 'WOMEN\'S CUT', search: params[:search], radius: params[:radius]) %> </li>
-        <li class="category"><%= link_to "Men's cut", images_path(category: 'MEN\'S CUT', search: params[:search], radius: params[:radius]) %> </li>
-        <li class="category"><%= link_to "Color", images_path(category: 'COLOR', search: params[:search], radius: params[:radius]) %> </li>
-        <li class="category"><%= link_to "Bridal", images_path(category: 'BRIDAL', search: params[:search], radius: params[:radius]) %> </li>
-        <li class="category"><%= link_to "Prom", images_path(category: 'PROM', search: params[:search],radius: params[:radius]) %> </li>
+        <li class="category <%='active' if url.include?('=WOMEN')%>"><%= link_to "Women's cut", images_path(category: 'WOMEN\'S CUT', search: params[:search], radius: params[:radius]) %> </li>
+        <li class="category <%='active' if url.include?('=MEN')%>"><%= link_to "Men's cut", images_path(category: 'MEN\'S CUT', search: params[:search], radius: params[:radius]) %> </li>
+        <li class="category <%='active' if url.include?('=COLOR')%>"><%= link_to "Color", images_path(category: 'COLOR', search: params[:search], radius: params[:radius]) %> </li>
+        <li class="category <%='active' if url.include?('=BRIDAL')%>"><%= link_to "Bridal", images_path(category: 'BRIDAL', search: params[:search], radius: params[:radius]) %> </li>
+        <li class="category <%='active' if url.include?('=PROM')%>"><%= link_to "Prom", images_path(category: 'PROM', search: params[:search],radius: params[:radius]) %> </li>
       </ul>
   <% end %>
 </div>
