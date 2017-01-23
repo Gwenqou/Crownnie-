@@ -1,5 +1,6 @@
 <%= provide(:description, 'Discover the perfect hair stylist for your dreaming hairstyle. Click to find out more.') %>  
 <%= provide(:keywords, 'hair, stylist, haircut, color, prom, bride, cut, crownshot') %> 
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 
 <div class="page1">
   <div class="jumbotron">
@@ -8,7 +9,7 @@
     </div>  
     <div class="col-md-6 col-md-offset-3 search-boxes">
       <%= form_tag images_path, :method => :get do %>
-        <%= text_field_tag :search, params[:search], class: "search-box location-box", placeholder: "Address, city, zipcode" %>
+        <%= text_field_tag :search, params[:search], id: "searchTextField",  class: "search-box location-box", placeholder: "Address, city, zipcode" %>
         <%= select_tag 'category', options_for_select(@cats, ''),class: "search-box category-box" %>
         <%= submit_tag "Discover", :name => nil, class:"search-box discover-box" %>
       <% end %>
@@ -55,3 +56,12 @@
   </section>
   <%=render 'layouts/footer' %>
 </div>
+
+<script>
+  function initialize() {
+    var input = document.getElementById('searchTextField');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
