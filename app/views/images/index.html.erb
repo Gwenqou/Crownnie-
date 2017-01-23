@@ -9,7 +9,7 @@
       <i class="ion-navicon icon-show"></i>
       <div class="location">
         <p> Location</p>
-        <%= text_field_tag :search, params[:search], class: "input_box" %>
+        <%= text_field_tag :search, params[:search], class: "input_box",placeholder: "Address, city, zipcode" %>
         <div class="rangebar">
           <%= range_field_tag 'radius', params[:radius], in: 1..20, step: 1, id:"ageInputId", oninput:"ageOutputId.value = ageInputId.value" %>
           <output name="ageOutputName" id="ageOutputId"></output> miles 

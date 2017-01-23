@@ -8,7 +8,7 @@
     </div>  
     <div class="col-md-6 col-md-offset-3 search-boxes">
       <%= form_tag images_path, :method => :get do %>
-        <%= text_field_tag :search, params[:search], class: "search-box location-box", placeholder: "Location" %>
+        <%= text_field_tag :search, params[:search], class: "search-box location-box", placeholder: "Address, city, zipcode" %>
         <%= select_tag 'category', options_for_select(@cats, ''),class: "search-box category-box" %>
         <%= submit_tag "Discover", :name => nil, class:"search-box discover-box" %>
       <% end %>
@@ -40,7 +40,7 @@
  </section>
  <section class="section-special-picture">
     <div class="row">
-      <h2>The Perfect <br>Hairstyle for when <br>you say I do</h2>
+      <h2>The Perfect Hairstyle <br>for when you say I do</h2>
     </div>
     <div class="row ">
       <div class="col-sm-3 col-sm-offset-3 special-box ">
