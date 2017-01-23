@@ -85,4 +85,23 @@
 }
 
 
+/*---------------------------------------------*/
 
+@media screen and (max-width: 550px) {
+  .image-show .image-big-section .image-big{
+    width: 90%;
+  }
+  
+  .image-show .image-big-section .image-big img{
+    width: 100%;
+  }
+  .image-show .hover-text{
+    width: 100%;
+    font-size: 110%;
+  }
+  
+  .image-show p{
+    margin-top: 10px;
+  }
+  
+}

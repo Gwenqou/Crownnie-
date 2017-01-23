@@ -1,6 +1,6 @@
 .viewprofile{
   width: 64%;
-  margin-left: 18%;
+  margin: auto;
   padding-top: 100px;
 }
 .viewprofile .pic-showing{
@@ -66,4 +66,66 @@
   color: #888;
   padding: 0;
   border-bottom: 1px dotted #888;
+}
+
+/*---------------------------------------*/
+@media screen and (max-width: 1345px) {
+  .viewprofile{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1230px) {
+  .viewprofile{
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 1155px) {
+  .viewprofile{
+    width: 83%;
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .viewprofile{
+    width: 86%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .viewprofile{
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .viewprofile{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .viewprofile{
+    width: 36%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .viewprofile{
+    width: 50%;
+    padding-top: 70px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .viewprofile{
+    width: 67%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .viewprofile{
+    width: 85%;
+  }
 }

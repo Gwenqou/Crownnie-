@@ -131,3 +131,36 @@
 
 
 }
+
+@media screen and (max-width: 420px) {
+  .image_index .location{
+    padding: 0;
+    margin: 5% 13% 0% 6%; 
+  }
+  .image_index .cat-list a{
+    padding: 5px;
+  }
+  
+  
+  .image_index .location p{
+    font-size: 120%;
+    
+  }
+  .image_index .input_box{
+    width: 100%;
+    height: 32px;
+    margin-bottom: 10px;
+  }
+  
+  .image_index .rangebar{
+    margin-bottom: 5px;
+  }
+  .image_index ul{
+    margin-top: 10px;
+  }
+  
+  .image_index .category{
+    padding: 4px 0;
+    margin: 4% 12.5%;
+  }
+}

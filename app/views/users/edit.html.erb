@@ -12,23 +12,27 @@
       <br>
       <%= form_for(@user, :html=>{class:"form-horizontal", role: "form", multipart: true}) do |f| %>
         <p>Profile Picture</p>
-          <%= f.file_field :avatar, accept: 'image/jpeg, image/gif, image/png'%>
+          <div class="avatar-field"><%= f.file_field :avatar, accept: 'image/jpeg, image/gif, image/png'%></div>
           <br>
           <%= f.submit "Upload", class:"btn btn-sm"%>
       <% end %>
     </div>
     
     <div class="col-sm-6 col-sm-offset-1">
-    <%= form_for(@user, :html=>{class:"form-horizontal", role: "form", multipart: true}) do |f| %>
-      <%= render 'editform', :f => f %>
-      <br>
-      <div class="form-group">
-        <div class="col-sm-2 col-sm-offset-2">
-          <%= f.submit "Update", class:"btn btn-danger"%>
+      <div class="editform">
+        <%= form_for(@user, :html=>{class:"form-horizontal", role: "form", multipart: true}) do |f| %>
+          <%= render 'editform', :f => f %>
+          <br>
+          <div class="form-group">
+            <div class="col-sm-2 col-sm-offset-2">
+              <div class="edit-submit">
+                <%= f.submit "Update", class:"btn btn-danger"%>
+              </div>
+            </div>
+          </div>
         </div>
+        <% end %>
       </div>
-    </div>
-    <% end %>
     
   </div> 
 </div>

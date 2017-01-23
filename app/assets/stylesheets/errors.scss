@@ -44,3 +44,53 @@
   margin-left: 160px;
   color: #fff;
 }
+
+/*-----------------------------------------------*/
+@media screen and (max-width: 1200px) {
+  .errorpages .funnyerror{
+    margin-left: 120px;
+  }
+}
+
+@media screen and (max-width: 1035px) {
+  .error{
+    width: 60%;
+  }
+
+}
+@media screen and (max-width: 830px) {
+  .error{
+    width: 70%;
+  }
+  .errorpages .funnyerror{
+    margin-left: 100px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .errorpages .funnyerror{
+    margin-left: 40px;
+  }
+  .error{
+    padding: 20px 10px;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .error{
+    width: 80%;
+  }
+  .errorpages .funnyerror{
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .error{
+    width: 85%;
+  }
+  .errorpages .funnyerror{
+    margin-left: 0px;
+  }
+}

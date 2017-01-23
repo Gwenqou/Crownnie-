@@ -4,9 +4,7 @@
 }
 
 /*-----left side -------*/
-.uploadimage .uploadbox{
-  margin-top: 50px;
-}
+
 .uploadimage .uploadplaceholder{
   width:255px;
   border: 2px solid #e08283;
@@ -14,14 +12,18 @@
 
 }
 
+.uploadimage .upload-file{
+  margin: 0;
+}
+
 /*-----right side -------*/
 .uploadimage .field-box{
-  width: 250px;
+  width: 230px;
   padding-left: 50px;
   padding-top: 25px;
   border: 2px solid #e08283 ;
+  margin-right: 0;
 }
-
 
 
 .uploadimage .remove-stylist{
@@ -32,3 +34,119 @@
 .uploadimage .add-service{
   margin: 20px 0;
 }
+
+.uploadimage .add-stylist {
+  width: 25%;
+  text-align: right;
+}
+
+.uploadimage .image-upload{
+  margin: 0;
+}
+
+/*-----------------------------------------------------------*/ 
+
+@media screen and (max-width: 991px) {
+  .uploadimage{
+    padding-top: 50px;
+  }
+  .uploadimage .uploadplaceholder{
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  .uploadimage .upload-file{
+    width: 30%;
+    margin: auto;
+  }
+
+  .uploadimage .field-box{
+    margin-left: 32%;
+    margin-top: 30px;
+  }
+  .uploadimage .add-stylist {
+    width: 25%;
+    margin-left: 30%;
+    margin-top: 20px;
+  }
+  .uploadimage .image-upload{
+    width: 6%;
+    margin: 20px auto;
+  }
+
+}
+
+@media screen and (max-width: 890px) {
+  .uploadimage .field-box{
+    margin-left: 27%;
+  }
+  .uploadimage .add-stylist {
+    margin-left: 31%;
+  }
+  .uploadimage .image-upload{
+    width: 6%;
+    margin: 20px auto;
+  }
+  
+}
+
+@media screen and (max-width: 640px) {
+  .uploadimage .field-box{
+    margin-left: 22%;
+  }
+  .uploadimage .add-stylist {
+    margin-left: 30%;
+  }
+  .uploadimage .image-upload{
+    width: 15%;
+    margin: 20px auto;
+  }
+  
+}
+
+@media screen and (max-width: 520px) {
+  .uploadimage .field-box{
+    margin-left: 14%;
+  }
+  .uploadimage .add-stylist {
+    margin-left: 30%;
+  }
+  
+  .uploadimage .image-upload{
+    width: 15%;
+    margin: 20px auto;
+  }
+  
+}
+
+@media screen and (max-width: 440px) {
+  .uploadimage .upload-file{
+    width: 50%;
+    margin: 20px auto;
+  }
+  .uploadimage .add-stylist {
+    margin-left: 23%;
+    width: 40%;
+  }
+  
+  .uploadimage .field-box{
+    margin-left: 10%;
+  }
+  .uploadimage .image-upload{
+    width: 12%;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+  .uploadimage .uploadplaceholder{
+    margin-left: 10%;
+  }
+  .uploadimage .field-box{
+    margin-left: 0%;
+  }
+
+  .uploadimage .image-upload{
+    width: 15%;
+  }
+}
+

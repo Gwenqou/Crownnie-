@@ -103,3 +103,91 @@
     font-size: 250%;
     padding-top: 20px
 }
+
+/*-------------------------------------------*/
+
+@media screen and (max-width: 1050px) {
+    .stylist-features h3{
+        font-size: 120%;
+        text-align: left;
+        margin-left: 50px;
+        padding-top: 14px;
+    }
+    
+    .booking,
+    .stylist-menu{
+        height:120px;
+        padding-top: 20px;
+        padding-left: 12%;
+    }
+    
+    
+    .ion-ios-calendar-outline,
+    .ion-ios-paper-outline{
+        padding-right: 20px 5px 0 0;
+        font-size: 230%;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .stylist-features h3{
+        font-size: 110%;
+        padding-top: 14px;
+    }
+    .booking,
+    .stylist-menu{
+        height: 110px;
+        padding-top: 12px;
+    }
+    .stylist-detail .basic-profile {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .stylist-features h3{
+        font-size: 100%;
+        margin-left: 40px;
+        padding-top: 12px;
+    }
+    
+    .booking h3{
+        padding-top: 8px;
+    }
+    .booking,
+    .stylist-menu{
+        padding-top: 8px;
+    }
+    .stylist-detail .basic-profile {
+        width: 90%;
+        margin-left: 5%;
+        height: 280px;
+    }
+    .stylist-detail .basic-profile .image {
+        display: block;
+        float: left;
+    }
+
+}
+
+@media screen and (max-width: 470px) {
+    .stylist-features h3{
+        font-size: 90%;
+        margin-left: 30px;
+        text-transform: capitalize;
+    }
+    
+    .stylist-detail .basic-profile {
+        width: 95%;
+        margin-left: 2.5%;
+        height: 300px;
+    }
+    .ion-ios-calendar-outline,
+    .ion-ios-paper-outline{
+        font-size: 200%;
+        padding-top: 20px;
+        padding-right: 2px;
+    }
+
+}

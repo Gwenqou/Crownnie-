@@ -21,3 +21,15 @@
   background-color: #fff;
   margin-right: 5px;
 }
+
+/*-------------------------------*/
+
+@media screen and (max-width: 400px) {
+  .user_list .list_table{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .user_list .list-group-item{
+    height: 70px;
+  }
+}

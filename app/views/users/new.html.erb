@@ -9,9 +9,11 @@
         <%= form_for(@user, :html=>{class:"form-horizontal", role: "form"}) do |f| %>
           <%= render 'form', :f => f %>
           <br>
-          <div class="form-group">
+          <div class="form-group ">
             <div class="col-sm-2 col-sm-offset-3">
-              <%= f.submit "Sign Up",  class:"btn btn-danger"%>
+              <div class="submit-btn">
+                <%= f.submit "Sign Up",  class:"btn btn-danger"%>
+              </div>
             </div>
           </div>
         <% end %>

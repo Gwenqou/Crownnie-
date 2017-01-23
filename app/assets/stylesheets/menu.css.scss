@@ -1,7 +1,6 @@
 .menu-section{
   width:56%;
   margin: 30px auto 10px auto;
-  margin-top: 30px;
 
 }
 
@@ -25,3 +24,39 @@
   color: #fff;
 }
 
+/* --------------------------------------------*/
+
+@media screen and (max-width: 1000px) {
+  .menu-section{
+    width: 65%;
+  }
+
+}
+
+@media screen and (max-width: 785px) {
+  .menu-section{
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .menu-section{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .menu-section .menu-box{
+    margin-left: 22%;
+  }
+  .menu-section .menu-done{
+    margin-left: 40%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .menu-section .menu-box{
+    margin-left: 15%;
+  }
+
+}

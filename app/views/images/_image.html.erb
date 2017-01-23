@@ -1,9 +1,8 @@
 <div class="row">
   <div class="col-md-12">
-  <%#= render 'shared/errors', obj: @image %>
       
   <%= form_for(@image) do |f|%>
-    <div class="col-md-2 col-md-offset-1">
+    <div class="col-md-3 col-md-offset-1">
       <div class="uploadplaceholder">
         <% if @image.picture? %>
           <%=image_tag @image.picture.url(:thumb) %>
@@ -11,20 +10,21 @@
           <img class="img-responsive" id="img_prev" src="https://s3.amazonaws.com/crownshot/white.png" alt="your image" />
           
         <% end %>
-        
       </div>
+      <div class="upload-file">
         <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png',onchange:"readURL(this);" %>
+      </div>
         <%= f.hidden_field :picture_cache, :value => @image.picture_cache %>
       </div>
 
      
-     <div class="col-md-8 col-md-offset-1 uploadfield">
+     <div class="col-md-8">
         <div id="image_users">
             <%= f.fields_for :image_users do |u| %>
               <%=render 'image_user_fields', :f => u %>
             <% end %> 
             
-            <div class="links">
+            <div class="links add-stylist">
               <%= link_to_add_association 'add stylist', f, :image_users, id: "add_stylist" %>
             </div>
         </div>
@@ -32,7 +32,10 @@
     <div class="row">
       <div class="col-md-12">
         <div class="col-md-2 col-md-offset-7">
-          <%= f.submit 'Upload' %>
+          <div class="image-upload">
+            <%= f.submit 'Upload' %>
+          </div>
+          
         </div>
       </div>
     </div>

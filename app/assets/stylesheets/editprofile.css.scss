@@ -23,3 +23,87 @@
   height: 195px;
 
 }
+.editform{
+  margin-left: 0;
+}
+.avatar-field{
+  margin: 0;
+}
+.edit-submit{
+  margin: 0;
+}
+
+/* ------------------------------------*/
+
+@media screen and (max-width: 1125px) {
+  .editform{
+    margin-left: 20px;
+  }
+  .editprofile .profileplaceholder{
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .editform{
+    margin-left: 80px;
+  }
+  .editprofile{
+    width: 70%;
+    margin: auto;
+  }
+  .editprofile .profileplaceholder{
+    margin: auto;
+  }
+  .avatar-field{
+    margin-left: 30%;
+  }
+  .edit-submit{
+    width: 25%;
+    margin: auto;
+  }
+  .editprofile .profile_upload{
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 710px) {
+    .editprofile{
+      width: 80%;
+    }
+    .editform{
+      margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 531px) {
+    .editprofile{
+      width: 80%;
+      margin-left: 10%;
+    }
+    .editform{
+      margin-left: 30px;
+    }
+    .editprofile .avatar-field input{
+      width: 33%;
+      margin-left: 10%;
+    }
+}
+
+
+@media screen and (max-width: 440px) {
+   .editprofile .avatar-field input{
+      margin-left: -30%;
+      width: 100%;
+    }
+    .editprofile{
+      padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+   .editprofile .avatar-field input{
+      margin-left: -30%;
+      width: 115%;
+    }
+}
