@@ -2,7 +2,7 @@ class WishlistsController < ApplicationController
   
   def show 
      @user = current_user
-     @user_wishlist_images = @user.wishlist.images.paginate(page: params[:page], per_page: 3)
+     @user_wishlist_images = @user.wishlist.images.paginate(page: params[:page], per_page: 30)
   end 
   
   def destroy

@@ -32,10 +32,10 @@ class ImagesController < ApplicationController
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.where(id: @images).joins(:categories).where(categories:{ id: category_id }).paginate(page: params[:page], per_page: 12)  
+        @images = Image.where(id: @images).joins(:categories).where(categories:{ id: category_id }).paginate(page: params[:page], per_page: 60)  
         
       else 
-        @images = Image.where(id: @images).paginate(page: params[:page], per_page: 12)  
+        @images = Image.where(id: @images).paginate(page: params[:page], per_page: 60)  
         
       end 
       
@@ -43,9 +43,9 @@ class ImagesController < ApplicationController
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.joins(:categories).where(categories: { id: category_id }).distinct.paginate(page: params[:page], per_page: 12)  
+        @images = Image.joins(:categories).where(categories: { id: category_id }).distinct.paginate(page: params[:page], per_page: 60)  
       else 
-        @images = Image.paginate(page: params[:page], per_page: 12)  
+        @images = Image.paginate(page: params[:page], per_page: 60)  
       end
     end 
   end
