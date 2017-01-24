@@ -44,13 +44,17 @@
 }
 
 /*---------------------------------------------------------*/
+@media screen and (max-width: 1450px) {
+  .contact .space{
+    height: 30px;
+  }
+}
+
 @media screen and (max-width: 1350px) {
   .contact{
     width: 70%;
   }
-  .contact .space{
-    height: 40px;
-  }
+  
   .contact input,
   .contact textarea{
     margin-left: 0px;
