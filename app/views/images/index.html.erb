@@ -33,53 +33,63 @@
 </div>
 
 <div class="main">
-
-  <% @images.each do |image| %> 
-    <div class="image">
-      <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
-      
-      <% if logged_in? %>
-        <% if @wishlist_index.include?(image.id) %>
-          <div class="like">
-            <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love",style:'display:none' %>
-            <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove" %>  
-          </div>
+  <% if @images.empty? %>
+    <div class="image-emp">
+      <p> No pictures are available in this area yet :( . Please try to choose a larger radius.</p>
+      <hr>
+      <p> We are eager to make more pictures available in your area. Email us your area name to get a head start :)</p>
+      <p> In the meantime, let's go checkout pictures in some <%= link_to 'popular places',images_path(search: 10314) %> :) </p>
+      <br>
+      <p class="emp-email">Email: info@crownshot.com</p>
+    </div>
+  <% else %>
+    <% @images.each do |image| %> 
+      <div class="image">
+        <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
+        
+        <% if logged_in? %>
+          <% if @wishlist_index.include?(image.id) %>
+            <div class="like">
+              <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love",style:'display:none' %>
+              <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove" %>  
+            </div>
+          <% else %>
+            <div class="like" data-toggle="tooltip" data-placement="top" title="Save to wishlsit">
+              <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love"%>
+              <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove",style:'display:none'%>
+            </div>
+          <% end %>
         <% else %>
-          <div class="like" data-toggle="tooltip" data-placement="top" title="Save to wishlsit">
-            <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love"%>
-            <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove",style:'display:none'%>
+          <div class="like" data-toggle="tooltip" data-placement="top" title="Save to wishlsit" >
+            <div data-toggle="modal" data-target="#wishlist">
+              <i class='ion-ios-heart-outline love'></i>
+            </div>
           </div>
+         
+          <div class="modal" id="wishlist" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Require login</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Go ahead and sign up to have your own wishlist :)</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Gotcha</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
         <% end %>
-      <% else %>
-        <div class="like" data-toggle="tooltip" data-placement="top" title="Save to wishlsit" >
-          <div data-toggle="modal" data-target="#wishlist">
-            <i class='ion-ios-heart-outline love'></i>
-          </div>
-        </div>
-       
-        <div class="modal" id="wishlist" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Require login</h4>
-              </div>
-              <div class="modal-body">
-                <p>Go ahead and sign up to have your own wishlist :)</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Gotcha</button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-      <% end %>
+      </div>
+    <% end %>
+    <div class="paginate-box">
+      <%= will_paginate %>
     </div>
   <% end %>
-  <div class="paginate-box">
-    <%= will_paginate %>
   </div>
-</div>
 </div>
 
   
