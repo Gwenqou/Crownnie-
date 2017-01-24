@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :edit]
-  before_action :require_user, only: [:edit, :update, :show, :add_to_wishlist ]
+  before_action :require_user, only: [:index, :locationmap,:edit, :update, :show, :add_to_wishlist ]
   before_action :require_same_user, only: [:edit, :update, :show]
-  before_action :require_admin, only: [:index]
+  before_action :require_admin, only: [:index, :locationmap]
   
   def stylist_detail
     @user = User.find(params[:id])
@@ -87,6 +87,13 @@ class UsersController < ApplicationController
     end 
   end 
   
+  def locationmap
+    @users = User.where(is_stylist: true).where.not(salon_location: [nil, ''])
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+    end
+  end 
   
   private 
   
@@ -113,7 +120,7 @@ class UsersController < ApplicationController
   def require_admin
     if !current_user.admin? 
       flash[:danger] = "Sorry, you entered an invalid URL"
-      redirect_to root_path
+      redirect_to user_path(current_user)
     end 
   end 
 end 

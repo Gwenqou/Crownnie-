@@ -17,5 +17,7 @@
 //= require turbolinks
 //= require dropzone
 //= require colorbox-rails
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 

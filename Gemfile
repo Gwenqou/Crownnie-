@@ -38,7 +38,7 @@ gem 'will_paginate', '~> 3.1.0'
 gem 'bootstrap-will_paginate'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'gmaps4rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
