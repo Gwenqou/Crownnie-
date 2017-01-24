@@ -39,6 +39,7 @@ gem 'bootstrap-will_paginate'
 # Use Unicorn as the app server
 # gem 'unicorn'
 gem 'gmaps4rails'
+gem 'mail_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
