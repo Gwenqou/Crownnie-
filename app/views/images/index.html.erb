@@ -37,10 +37,9 @@
     <div class="image-emp">
       <p> No pictures are available in this area yet :( . Please try to choose a larger radius.</p>
       <hr>
-      <p> We are eager to make more pictures available in your area. Email us your area name to get a head start :)</p>
+      <p> We are eager to expand. <%= link_to 'Tell us',contacts_path %> your area name to grab our attention.</p>
       <p> In the meantime, let's go checkout pictures in some <%= link_to 'popular places',images_path(search: 10314) %> :) </p>
       <br>
-      <p class="emp-email">Email: info@crownshot.com</p>
     </div>
   <% else %>
     <% @images.each do |image| %> 

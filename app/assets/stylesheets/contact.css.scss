@@ -1,0 +1,116 @@
+/* ------------------------------------------------ */
+/* BASE COLOR: #e08283 */
+/* DARKBASE COLOR: #d34c4d */
+/* ------------------------------------------------ */
+
+.contact{
+  width: 60%;
+  padding-top: 50px;
+  margin: auto;
+}
+
+.contact .list{
+  width: 50%;
+  list-style: none;
+  text-align: center;
+  padding: 10px;
+  margin: 10px auto 30px auto;
+  background-color: #d34c4d;
+  color: #fff;
+  font-size: 110%;
+}
+
+.contact form{
+  margin-top: 30px;
+}
+
+.contact input,
+.contact textarea{
+  margin-left: -25px;
+}
+
+
+.contact .submit-btn input{
+  margin-left: 25px;
+}
+
+.contact p{
+  color: #d34c4d;
+  text-align: right;
+}
+
+.contact .space{
+  height: 150px;
+}
+
+/*---------------------------------------------------------*/
+@media screen and (max-width: 1350px) {
+  .contact{
+    width: 70%;
+  }
+  .contact .space{
+    height: 40px;
+  }
+  .contact input,
+  .contact textarea{
+    margin-left: 0px;
+  }
+  .contact .submit-btn input{
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .contact{
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .contact{
+    width: 90%;
+  }
+  .contact .space{
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact .space{
+    height: 20px;
+  }
+  .contact form{
+    width: 60%;
+    margin: 30px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .contact .list{
+    width: 60%;
+  }
+  .contact form{
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact .submit-btn input{
+    margin-left: 0px;
+  }
+  .contact h2{
+    font-size: 150%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contact .submit-btn input{
+    margin-left: -10px;
+  }
+  .contact{
+    padding-top: 30px;
+  }
+  .contact .list{
+    font-size: 90%;
+  }
+}
