@@ -5,8 +5,11 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(params[:contact])
-    if @contact.deliver_now
-      flash.now[:success] = 'Thank you for your message. We will contact you soon!'
+  
+    @contact.request = request
+    if @contact.deliver
+      flash.now[:success] = 'Thank you for your message. We will review it soon!'
+      render :new
     else
       flash.now[:danger] = 'Cannot send message.'
       render :new
