@@ -1,3 +1,4 @@
+
  <div class="stylist-portforlio">
     <div class="basic-profile">
       <div class="stylist-name">
@@ -60,9 +61,9 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="myModalLabel">Service Menu</h4>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" >
             <% obj.menus.each do |m| %>
-              <%= link_to image_tag(m.menu.url(:thumb)), m.menu.url, rel: 'view-menu', :data => { :colorbox => true } %>
+              <%= link_to image_tag(m.menu.url(:thumb)), m.menu.url, rel: 'menu', :data => { :colorbox_static => true } %>
             <% end %>
           </div>
           <div class="modal-footer">

@@ -6,8 +6,7 @@
 /* -----Image -------- */
 .image-show .image-big-section{
   background-image: linear-gradient(rgba(255, 255, 255, 0.71), rgba(255, 255, 255, 0.7)), asset-url('flowerzoom-min.jpg');
-
-
+  background-attachment: fixed;  
 }
 
 .image-show .image-big-section .image-big{

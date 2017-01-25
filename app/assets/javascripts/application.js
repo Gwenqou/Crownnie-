@@ -1,3 +1,4 @@
+/*global $ */
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -14,7 +15,6 @@
 //= require jquery_ujs
 //= require cocoon
 //= require bootstrap-sprockets
-//= require turbolinks
 //= require dropzone
 //= require colorbox-rails
 //= require underscore

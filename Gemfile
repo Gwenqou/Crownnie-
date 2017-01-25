@@ -40,6 +40,7 @@ gem 'bootstrap-will_paginate'
 # gem 'unicorn'
 gem 'gmaps4rails'
 gem 'mail_form'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
