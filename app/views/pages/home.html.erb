@@ -22,18 +22,27 @@
     <div class="col-sm-offset-1 col-sm-3 ">
       <div class="box">
         <%= link_to image_tag("mencut.png", alt: "mens cut" ), images_path(category: 'MEN\'S CUT') %>
+        <div class="credit">
+            <%= link_to "by Moran", "https://www.crownshot.com/crownshot/5" %>
+          </div>
       </div>
         <h3><%= link_to "Men's cut", images_path(category: 'MEN\'S CUT') %></h3>
       </div>
     <div class="col-sm-3 ">
        <div class="box">
           <%= link_to image_tag("womencut2.png", alt: "womens cut" ), images_path(category: 'WOMEN\'S CUT') %>
+          <div class="credit">
+            <%= link_to "by Michael", "https://www.crownshot.com/crownshot/103" %>
+          </div>
         </div>
       <h3><%= link_to "Women's cut", images_path(category: 'WOMEN\'S CUT') %></h3>
     </div>
     <div class="col-sm-3 ">
        <div class="box">
         <%= link_to image_tag("redcolor.png", alt: "color" ), images_path(category: 'COLOR') %>
+         <div class="credit">
+            <%= link_to "by Reavey", "#" %>
+          </div>
       </div>
       <h3><%= link_to "Color", images_path(category: 'COLOR') %></h3>
     </div>
@@ -64,4 +73,11 @@
     }
     google.maps.event.addDomListener(window, 'load', initialize);
 
+    $('.box').mouseover(function(){
+      $(this).find('.credit').fadeIn(200);
+    });
+    
+    $('.box').mouseleave(function(){
+      $(this).find('.credit').fadeOut(200);
+    });
 </script>

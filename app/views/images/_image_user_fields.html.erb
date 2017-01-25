@@ -4,7 +4,7 @@
     <div class="field-box">
       <div class="field">
         <%= f.label :content,"Stylist" %><br>
-        <%= f.collection_select :user_id, User.where(is_stylist: true), :id,:username,:prompt => "  " %>
+        <%= f.collection_select :user_id, User.where(is_stylist: true).order('username ASC'), :id,:username,:prompt => "  " %>
         <div class="remove-stylist">
           <%= link_to_remove_association "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, f, class:"remove_stylist" %>
       </div>
