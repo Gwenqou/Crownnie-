@@ -23,19 +23,19 @@ class ImagesController < ApplicationController
       #so i create an array that get all the image ids. and call uniq to filter out all the duplicat images
       @radius = params[:radius] || 5
       @images_by_users = User.near(params[:search], @radius, :select => "users.*, images.*").joins(:images)
-      @images =[]
+      @images_list =[]
       @images_by_users.each do |image|
-        @images.append(image.id)
+        @images_list.append(image.id)
       end 
-      @images.uniq
+      @images_list.uniq
 
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.where(id: @images).joins(:categories).where(categories:{ id: category_id }).paginate(page: params[:page], per_page: 60)  
+        @images = Image.where(id: @images_list).joins(:categories).where(categories:{ id: category_id }).order("Random()").paginate(page: params[:page], per_page: 60)  
         
       else 
-        @images = Image.where(id: @images).paginate(page: params[:page], per_page: 60)  
+        @images = Image.where(id: @images_list).order("Random()").paginate(page: params[:page], per_page: 60)  
         
       end 
       
@@ -43,9 +43,9 @@ class ImagesController < ApplicationController
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.joins(:categories).where(categories: { id: category_id }).paginate(page: params[:page], per_page: 60)
+        @images = Image.joins(:categories).where(categories: { id: category_id }).order("Random()").paginate(page: params[:page], per_page: 60)
       else 
-        @images = Image.paginate(page: params[:page], per_page: 60) 
+        @images = Image.all.order("Random()").paginate(page: params[:page], per_page: 60) 
       end
     end 
   end
