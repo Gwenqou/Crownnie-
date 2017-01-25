@@ -38,8 +38,13 @@
     padding:2px;
     text-align: left;
     color: #555;
-
 }
+
+.stylist-detail .color{
+  color:#d34c4d;
+  font-size: 110%;
+}
+
 .stylist-detail .basic-profile .image {
     display: inline-block;
     width: 120px;
@@ -66,6 +71,8 @@
 .stylist-detail .picture-under-stylist img{
     margin: 5px;
 }
+
+
 /* ------------------------------------------------ */
 /* STYLIST DETAIL RIGHT */
 /* ------------------------------------------------ */
