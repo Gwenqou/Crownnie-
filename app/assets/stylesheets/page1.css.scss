@@ -257,7 +257,7 @@
 
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 767px) {
 
     .page1 .search-box{
         height: 40px;
@@ -279,7 +279,9 @@
     .box-section{
         padding-left: 0;
     }
-
+    .box .credit{
+        right: -5px;
+    }
     .page1 .section-special-picture{
     padding: 70px 0 100px 0;
     }
