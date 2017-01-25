@@ -20,6 +20,7 @@ gem 'colorbox-rails', '~> 0.1.2'
 gem 'friendly_id', '~> 5.1.0'
 gem 'ionicons-rails'
 gem 'cocoon'
+gem 'jquery-fileupload-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'aws-sdk', '~> 2'
@@ -40,6 +41,8 @@ gem 'bootstrap-will_paginate'
 # gem 'unicorn'
 gem 'gmaps4rails'
 gem 'mail_form'
+
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

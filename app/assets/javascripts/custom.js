@@ -33,7 +33,7 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip()
  });
  
-
+  $('#new_image').fileupload()
  
 
 });
