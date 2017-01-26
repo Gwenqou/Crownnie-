@@ -73,11 +73,11 @@ class ImagesController < ApplicationController
         flash.now[:danger] << "* Picture is not blank.<br/>"
       end
       if(params[:image][:description].empty?)
-        flash.now[:danger] << "* A short description for the picture is present.<br/>"
+        flash.now[:danger] << "* Picture Caption is present.<br/>"
       end
       if(!params[:image][:description].empty?)
-        flash.now[:danger] << "* Description is between 3-25 characters. <br/>"
-        flash.now[:danger] << "* Description contains only letters, spaces and dashes. <br/>"
+        flash.now[:danger] << "* Caption is between 3-25 characters. <br/>"
+        flash.now[:danger] << "* Caption should contain only letters, single quotes, spaces and dashes <br/>"
       end 
       
       if(params[:image][:image_user_attributes].nil?)
@@ -100,7 +100,7 @@ class ImagesController < ApplicationController
       flash.now[:danger] = 'Please make sure that: <br/>'
       if(!params[:image][:description].empty?)
         flash.now[:danger] << "* Caption is between 3-25 characters. <br/>"
-        flash.now[:danger] << "* Caption contains only letters, spaces and dashes. <br/>"
+        flash.now[:danger] << "* Caption should contain only letters, single quotes, spaces and dashes. <br/>"
       end 
       if(params[:image][:image_user_attributes].nil?)
         flash.now[:danger] << "* At least one stylist that performed on this hair is chosen.<br/>"
