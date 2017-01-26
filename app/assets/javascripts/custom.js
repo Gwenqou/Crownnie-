@@ -4,19 +4,6 @@
 /* global Dropzone */
 
 
- // $(document).ready(function(){
- //  $(function() {
- //    Dropzone.autoDiscover = false;
- //    var menuDropzone = new Dropzone("#menu-dropzone");
- //    menuDropzone.options.addRemoveLinks = true;
- //    return menuDropzone.on("success", function(file, responseText) {
- //      var imageUrl;
- //      imageUrl = responseText.file_name.url;
- //    });
- //  });
-  
-  
- // });
 
 $(document).ready(function(){
   Dropzone.autoDiscover = false;
@@ -33,7 +20,7 @@ $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip()
  });
  
-  $('#new_image').fileupload()
+  // $('#new_image').fileupload()
  
 
 });
