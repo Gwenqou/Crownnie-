@@ -45,7 +45,7 @@
     <% @images.shuffle.each do |image| %> 
       <div class="image">
         <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
-        
+        <div class="description"><%= image.description.titleize if image.description %></div>
         <% if logged_in? %>
           <% if @wishlist_index.include?(image.id) %>
             <div class="like">

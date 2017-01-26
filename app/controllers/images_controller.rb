@@ -62,7 +62,6 @@ class ImagesController < ApplicationController
     
   
   def create 
-
     @image = Image.new(image_params)
     @image.pictureuploader = current_user.id
     if @image.save
@@ -73,6 +72,14 @@ class ImagesController < ApplicationController
       if(params[:image][:picture].nil?)
         flash.now[:danger] << "* Picture is not blank.<br/>"
       end
+      if(params[:image][:description].empty?)
+        flash.now[:danger] << "* A short description for the picture is present.<br/>"
+      end
+      if(!params[:image][:description].empty?)
+        flash.now[:danger] << "* Description is between 3-25 characters. <br/>"
+        flash.now[:danger] << "* Description contains only letters, spaces and dashes. <br/>"
+      end 
+      
       if(params[:image][:image_user_attributes].nil?)
         flash.now[:danger] << "* At least one stylist that performed on this hair is chosen.<br/>"
         flash.now[:danger] << "* At least one service is selected for each stylist."
@@ -88,9 +95,13 @@ class ImagesController < ApplicationController
   def update
     if @image.update(image_params)
       flash[:success]="The image was updated successfully"
-      redirect_to image_path(@image)
+      redirect_to user_path(current_user)
     else 
       flash.now[:danger] = 'Please make sure that: <br/>'
+      if(!params[:image][:description].empty?)
+        flash.now[:danger] << "* Description is between 3-25 characters. <br/>"
+        flash.now[:danger] << "* Description contains only letters, spaces and dashes. <br/>"
+      end 
       if(params[:image][:image_user_attributes].nil?)
         flash.now[:danger] << "* At least one stylist that performed on this hair is chosen.<br/>"
         flash.now[:danger] << "* At least one service is selected for each stylist."
@@ -136,7 +147,7 @@ class ImagesController < ApplicationController
   private
   
   def image_params 
-    params.require(:image).permit(:picture, :picture_cache, image_users_attributes:[:id, :user_id, :_destroy, image_user_categories_attributes:[:id, :category_id, :_destroy]])
+    params.require(:image).permit(:picture, :picture_cache, :description, image_users_attributes:[:id, :user_id, :_destroy, image_user_categories_attributes:[:id, :category_id, :_destroy]])
   end 
   
    

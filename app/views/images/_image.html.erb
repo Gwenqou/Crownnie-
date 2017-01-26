@@ -12,10 +12,16 @@
         <% end %>
       </div>
       <div class="upload-file">
-        <%= f.file_field :picture,accept: 'image/jpeg, image/gif, image/png',onchange:"readURL(this);" %>
+        <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png',onchange:"readURL(this);" %>
       </div>
         <%= f.hidden_field :picture_cache, :value => @image.picture_cache %>
+      <div class="image-description">
+        <p>Short Description*</p>
+        <%= f.text_field :description %>
       </div>
+    </div>
+      
+      
 
 <!--, multiple: true, name: "image[picture]"-->
      
@@ -32,9 +38,9 @@
     </div>
     <div class="row">
       <div class="col-md-12">
-        <div class="col-md-2 col-md-offset-7">
+        <div class="col-md-2 col-md-offset-6">
           <div class="image-upload">
-            <%= f.submit 'Upload' %>
+            <%= f.submit 'Upload', class:"btn btn-danger" %>
           </div>
           
         </div>

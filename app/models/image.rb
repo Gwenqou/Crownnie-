@@ -14,8 +14,13 @@ class Image < ActiveRecord::Base
   
   mount_uploader :picture, ImageUploader
   
+  VALID_DESCRIPTION_REGEX = /\A[A-Za-z\-\s]*\z/ 
   validate :picture_size
   validates :picture,  presence: true
+  validates :description, presence: true, 
+                        length: {minimum:3, maximum:25},
+                        format: {with: VALID_DESCRIPTION_REGEX}
+                        
   validates_associated :image_users
 
 

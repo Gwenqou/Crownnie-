@@ -8,17 +8,23 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :menus, allow_destroy: true
 
   mount_uploader :avatar, AvatarUploader
+  
+  VALID_USER_REGEX = /\A[a-zA-Z0-9]*\z/
   validates :username, presence: true, 
                         uniqueness: {case_sensitive:false}, 
-                        length: {minimum:3, maximum:25}
+                        length: {minimum:3, maximum:25},
+                        format: {with: VALID_USER_REGEX, message: 'should contain only letters and numbers'}
                         
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i                      
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
+  
   validates :email, presence:true,
                     uniqueness: {case_sensitive:false}, 
                     length: {minimum:3, maximum:105},
                     format: {with: VALID_EMAIL_REGEX}
     
-
+  VALID_NAME_REGEX = /\A[a-zA-Z\s]*\z/ 
+  validates :first_name, format: {with: VALID_NAME_REGEX, message: 'should only contain letters'}, on: :update, :if => lambda{ !first_name.nil? }
+  validates :last_name, format: {with: VALID_NAME_REGEX, message: 'should only contain letters'}, on: :update, :if => lambda{ !last_name.nil? }
   
    has_secure_password     
    validates :password, length: { minimum: 5, maximum: 30 }, on: :create

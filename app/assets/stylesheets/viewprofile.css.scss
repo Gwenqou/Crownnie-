@@ -7,8 +7,7 @@
   margin-top: 50px;
 }
 
-.viewprofile .image-display,
-.viewprofile .image-display-general{
+.viewprofile .image-display{
   display: inline-block;
   position: relative;
   margin: 10px 2px;
@@ -19,21 +18,18 @@
 }
 
 
-.viewprofile .image-delete,
-.viewprofile .image-delete-general{
+.viewprofile .image-delete{
   position: absolute;
   top: 5px;
-  right: -10px;
+  right: 5px;
 }
 
-.viewprofile .image-delete-general{
-  display: none;
-}
+
 
 .viewprofile .image-edit{
   position: absolute;
   top: 5px;
-  right: 12px;
+  right: 27px;
 }
 
 .viewprofile .image-loved{
