@@ -95,12 +95,12 @@ class ImagesController < ApplicationController
   def update
     if @image.update(image_params)
       flash[:success]="The image was updated successfully"
-      redirect_to user_path(current_user)
+      redirect_to :back
     else 
       flash.now[:danger] = 'Please make sure that: <br/>'
       if(!params[:image][:description].empty?)
-        flash.now[:danger] << "* Description is between 3-25 characters. <br/>"
-        flash.now[:danger] << "* Description contains only letters, spaces and dashes. <br/>"
+        flash.now[:danger] << "* Caption is between 3-25 characters. <br/>"
+        flash.now[:danger] << "* Caption contains only letters, spaces and dashes. <br/>"
       end 
       if(params[:image][:image_user_attributes].nil?)
         flash.now[:danger] << "* At least one stylist that performed on this hair is chosen.<br/>"
