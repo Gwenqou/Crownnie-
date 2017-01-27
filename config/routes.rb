@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 root "pages#home"
 get "aboutus", to: "pages#about"
 get 'term', to: "pages#term"
+get 'price_explanation', to: "pages#price"
 
 
 resources :images  , :path => 'crownshot'

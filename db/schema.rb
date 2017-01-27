@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170126140739) do
+ActiveRecord::Schema.define(version: 20170127161842) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -79,6 +79,8 @@ ActiveRecord::Schema.define(version: 20170126140739) do
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.boolean  "admin",                  default: false
+    t.string   "women_cut"
+    t.string   "single_process"
   end
 
   create_table "wishlists", force: :cascade do |t|

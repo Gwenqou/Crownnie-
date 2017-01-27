@@ -16,7 +16,6 @@ class User < ActiveRecord::Base
                         format: {with: VALID_USER_REGEX, message: 'should contain only letters and numbers'}
                         
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
-  
   validates :email, presence:true,
                     uniqueness: {case_sensitive:false}, 
                     length: {minimum:3, maximum:105},
@@ -25,6 +24,15 @@ class User < ActiveRecord::Base
   VALID_NAME_REGEX = /\A[a-zA-Z\s]*\z/ 
   validates :first_name, format: {with: VALID_NAME_REGEX, message: 'should only contain letters'}, on: :update, :if => lambda{ !first_name.nil? }
   validates :last_name, format: {with: VALID_NAME_REGEX, message: 'should only contain letters'}, on: :update, :if => lambda{ !last_name.nil? }
+  
+  VALID_PRICE_REGEX = /\A[0-9\+]*\z/ 
+  validates :women_cut, presence: { message: "price is required" },
+                        length: {maximum: 4},
+                        format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, on: :update
+  validates :single_process, presence: { message: "price is required" },
+                        length: {maximum: 4},
+                        format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, on: :update
+  
   
    has_secure_password     
    validates :password, length: { minimum: 5, maximum: 30 }, on: :create

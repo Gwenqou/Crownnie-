@@ -8,5 +8,9 @@ class PagesController < ApplicationController
 
   def term
   end 
+  
+  def price
+    
+  end 
 
 end
