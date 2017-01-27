@@ -95,7 +95,7 @@ class ImagesController < ApplicationController
   def update
     if @image.update(image_params)
       flash[:success]="The image was updated successfully"
-      redirect_to :back
+      redirect_to user_path(current_user)
     else 
       flash.now[:danger] = 'Please make sure that: <br/>'
       if(!params[:image][:description].empty?)
