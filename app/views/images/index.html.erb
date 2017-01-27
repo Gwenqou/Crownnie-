@@ -47,8 +47,9 @@
         <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
         <div class="description">
           <%= image.description.titleize if image.description %>
-          <div class="price-circle">101+</div>
-          <div class="price-circle">4</div>
+          <div class="price-circle single_process"><%=image.users.first.single_process if image.users.first.single_process %></div>
+          <div class="price-circle women_cut"><%=image.users.first.women_cut if image.users.first.women_cut %></div>
+          
         </div>
         <% if logged_in? %>
           <% if @wishlist_index.include?(image.id) %>
