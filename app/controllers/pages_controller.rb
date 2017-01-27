@@ -10,7 +10,8 @@ class PagesController < ApplicationController
   end 
   
   def price
-    
   end 
 
+  def faq
+  end 
 end

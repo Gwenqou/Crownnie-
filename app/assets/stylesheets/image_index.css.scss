@@ -123,6 +123,7 @@
   width: 250px;
   color: #da6768;
   height: 35px;
+  vertical-align: middle;
 }
 
 .image_index .image-emp{
@@ -145,13 +146,18 @@
 
 .image_index .description .price-circle{
   border-radius: 50%;
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   display: inline-block;
   text-align: center;
   font-size: 80%;
   float: right;
   margin-left: 3px;
+  cursor: pointer;;
+}
+.image_index .description .text{
+  display: inline-block;
+  margin-top: 5px;
 }
 
 .image_index .description .women_cut{
@@ -167,6 +173,13 @@
   padding: 7px 2px;
 }
 
+.image_index .description .price-model{
+  color: #000;
+}
+
+.image_index .description .price-model .modal-title{
+  color: #e08283;
+}
 /* ---------like button----------- */
 .image_index .like i{
   color: #e08283;
@@ -174,7 +187,7 @@
 
 .image_index .like {
   position: absolute;
-  top: 74%;
+  top: 72%;
   left: 20px;
 }
 

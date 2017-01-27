@@ -14,6 +14,7 @@ root "pages#home"
 get "aboutus", to: "pages#about"
 get 'term', to: "pages#term"
 get 'price_explanation', to: "pages#price"
+get 'faq', to: "pages#faq"
 
 
 resources :images  , :path => 'crownshot'
