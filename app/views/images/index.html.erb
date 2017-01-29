@@ -1,6 +1,11 @@
-<% content_for(:title){'Hairstyles - Crownshot'} %>
-<% content_for(:description){ 'Trending hairstyles for you. Find out where you can get them. '} %>  
+<head>
+  <meta name="description" content="We have styles for haircut, color, prom and wedding. Click to see more.">
+</head>
+
+<% content_for(:title){'Dreaming Hairstyles - Crownshot'} %>
 <% content_for(:keywords){ 'hair, ombre, balayage, prom, wedding, pixie, cut, hairstyle, layer, lob, salon, highlight'} %> 
+
+
 <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyAnP42cpqrM8iSm_b2d5VhhqXg0mNXPtLk"></script>
 
 <div class="image_index">
@@ -42,7 +47,7 @@
       <br>
     </div>
   <% else %>
-    <% @images.each do |image| %> 
+    <% @images.shuffle.each do |image| %> 
       <div class="image">
         <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
         <div class="description">
