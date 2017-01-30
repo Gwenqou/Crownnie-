@@ -35,10 +35,10 @@ class ImagesController < ApplicationController
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.where(id: @images_list).joins(:categories).where(categories:{ id: category_id }).order('random()').paginate(page: params[:page], per_page: 3)  
+        @images = Image.where(id: @images_list).joins(:categories).where(categories:{ id: category_id }).order('random()').paginate(page: params[:page], per_page: 30)  
         
       else 
-        @images = Image.where(id: @images_list).order('random()').paginate(page: params[:page], per_page: 3)  
+        @images = Image.where(id: @images_list).order('random()').paginate(page: params[:page], per_page: 30)  
         
       end 
       
@@ -46,9 +46,9 @@ class ImagesController < ApplicationController
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.joins(:categories).where(categories: { id: category_id }).order('random()').paginate(page: params[:page], per_page: 3)
+        @images = Image.joins(:categories).where(categories: { id: category_id }).order('random()').paginate(page: params[:page], per_page: 30)
       else 
-        @images = Image.all.order('random()').paginate(page: params[:page], per_page: 3) 
+        @images = Image.all.order('random()').paginate(page: params[:page], per_page: 30) 
       end
     end 
   end
