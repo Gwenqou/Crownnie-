@@ -21,7 +21,7 @@ $(document).ready(function(){
  });
  
  
-  $('#new_image').fileupload()
+  // $('#new_image').fileupload()
  
 
 });
