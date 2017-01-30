@@ -17,8 +17,7 @@ class ImagesController < ApplicationController
       end 
     end
     
-    Image.connection.execute "select setseed(#{Time.now.strftime("%H%M").to_i/10000.0})"
-    # Image.connection.execute "SELECT SETSEED(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
+    Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
 
     if params[:search].present?
       #this line get all the images from all the nearby users, thus there can be duplication 
@@ -35,10 +34,10 @@ class ImagesController < ApplicationController
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.where(id: @images_list).joins(:categories).where(categories:{ id: category_id }).order('random()').paginate(page: params[:page], per_page: 30)  
+        @images = Image.where(id: @images_list).joins(:categories).where(categories:{ id: category_id }).order('random()').paginate(page: params[:page], per_page: 60)  
         
       else 
-        @images = Image.where(id: @images_list).order('random()').paginate(page: params[:page], per_page: 30)  
+        @images = Image.where(id: @images_list).order('random()').paginate(page: params[:page], per_page: 60)  
         
       end 
       
@@ -46,9 +45,9 @@ class ImagesController < ApplicationController
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.joins(:categories).where(categories: { id: category_id }).order('random()').paginate(page: params[:page], per_page: 30)
+        @images = Image.joins(:categories).where(categories: { id: category_id }).order('random()').paginate(page: params[:page], per_page: 60)
       else 
-        @images = Image.all.order('random()').paginate(page: params[:page], per_page: 30) 
+        @images = Image.all.order('random()').paginate(page: params[:page], per_page: 60) 
       end
     end 
   end
