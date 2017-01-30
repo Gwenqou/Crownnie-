@@ -14,7 +14,11 @@ class User < ActiveRecord::Base
                         uniqueness: {case_sensitive:false}, 
                         length: {minimum:3, maximum:18},
                         format: {with: VALID_USER_REGEX, message: 'should contain only letters and numbers'}
-                        
+  
+  before_save do
+    self.email.downcase! if self.email
+  end
+
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i 
   validates :email, presence:true,
                     uniqueness: {case_sensitive:false}, 
@@ -26,14 +30,18 @@ class User < ActiveRecord::Base
   validates :last_name, format: {with: VALID_NAME_REGEX, message: 'should only contain letters'}, on: :update, :if => lambda{ !last_name.nil? }
   
   VALID_PRICE_REGEX = /\A[0-9\+]*\z/ 
-  validates :women_cut, presence: { message: "price is required" },
-                        length: {maximum: 4},
-                        format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, on: :update
-  validates :single_process, presence: { message: "price is required" },
-                        length: {maximum: 4},
-                        format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, on: :update
+  validates :women_cut, length: {maximum: 4},
+                        format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, 
+                        on: :update,
+                        :if => lambda{ !women_cut.nil? }
+                        
+  validates :single_process,length: {maximum: 4},
+                            format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, 
+                            on: :update,
+                            :if => lambda{ !single_process.nil? }
   
   
+  # presence: { message: "price is required" },
    has_secure_password     
    validates :password, length: { minimum: 5, maximum: 30 }, on: :create
    validates :password, length: { minimum: 5, maximum: 30 }, on: :update, :if => lambda{ !password.nil? }
