@@ -41,6 +41,10 @@
   display: inline-block;
 }
 
+.uploadimage .remove-stylist a{
+  padding: 5px;
+}
+
 
 .uploadimage .add-service{
   margin: 20px 0;
@@ -55,6 +59,9 @@
   margin: 0;
 }
 
+.uploadimage .field{
+  padding-top: 8px;
+}
 /*-----------------------------------------------------------*/ 
 
 @media screen and (max-width: 991px) {
