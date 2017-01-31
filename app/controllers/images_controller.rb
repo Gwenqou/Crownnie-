@@ -17,7 +17,7 @@ class ImagesController < ApplicationController
       end 
     end
     
-    Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
+    # Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
 
     if params[:search].present?
       #this line get all the images from all the nearby users, thus there can be duplication 

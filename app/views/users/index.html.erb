@@ -1,4 +1,8 @@
 <div class="user_list">
+  <div class="summary">
+    <p>There're <%= User.where(is_stylist: true).count %> stylists on Crownshot</p>
+    <p>There're <%= Image.count %> pictures on Crownshot</p>
+  </div>
   <div class="list-group list_table">
     <% @users.each do |user| %>
       <li class="list-group-item">
