@@ -1,0 +1,13 @@
+<div class="multiple">
+  <p> Current State of Multiple File Upload: </p>
+  <%= Multiple.first.multiple %> 
+  <hr>
+  <%= form_for(@multiple) do |f|%>
+    <p>
+      Enable Multiple File upload? < Yes / No >
+    </p>
+      <%= f.text_field :multiple %>
+      <%= f.submit "Enter", class:"btn btn-sm btn-danger"%>
+  <% end %>
+
+</div>

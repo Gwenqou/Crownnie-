@@ -117,11 +117,6 @@ class UsersController < ApplicationController
     end 
   end 
   
-  def require_admin
-    if !current_user.admin? 
-      flash[:danger] = "Sorry, you entered an invalid URL"
-      redirect_to user_path(current_user)
-    end 
-  end 
+  
 end 
 

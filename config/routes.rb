@@ -48,6 +48,8 @@ match "/500", :to => "errors#internal_error", :via=> :all
 match '/contacts',     to: 'contacts#new',             via: 'get'
 resources "contacts", only: [:new, :create]
 
+
+resources :multiples
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
