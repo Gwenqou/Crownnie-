@@ -12,7 +12,7 @@
         <% end %>
       </div>
       <div class="upload-file">
-        <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png',onchange:"readURL(this);" %>
+        <%= f.file_field :picture, multiple: true, name: "image[picture]", accept: 'image/jpeg, image/gif, image/png',onchange:"readURL(this);" %>
       </div>
         <%= f.hidden_field :picture_cache, :value => @image.picture_cache %>
       <div class="image-description">
