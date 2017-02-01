@@ -19,7 +19,7 @@ class ImagesController < ApplicationController
     
   # Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
 
-    @testing = "single_process"
+    
   
     if params[:search].present?
       #this line get all the images from all the nearby users, thus there can be duplication 
@@ -37,10 +37,15 @@ class ImagesController < ApplicationController
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
         @images = Image.where(id: @images_list).joins(:categories).where(categories:{ id: category_id }).order('random()').paginate(page: params[:page], per_page: 60)  
+        if category.id === 4  || category.id === 5
+          @circle = "U"
+        else 
+          @circle = params[:category][0]
+        end
         
       else 
         @images = Image.where(id: @images_list).order('random()').paginate(page: params[:page], per_page: 60)  
-        
+        @circle = "C"
       end 
       
     else
@@ -48,8 +53,14 @@ class ImagesController < ApplicationController
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
         @images = Image.joins(:categories).where(categories: { id: category_id }).order('random()').paginate(page: params[:page], per_page: 60)
+        if category_id === 4  || category_id === 5
+          @circle = "U"
+        else 
+          @circle = params[:category][0]
+        end 
       else 
         @images = Image.all.order('random()').paginate(page: params[:page], per_page: 60) 
+        @circle = "C"
       end
     end 
   end

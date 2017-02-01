@@ -1,5 +1,4 @@
 class MultiplesController < ApplicationController
-  
   before_action :require_user, only: [:edit, :update]
   before_action :require_admin, only: [:edit, :update]
   

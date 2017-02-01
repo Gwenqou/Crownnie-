@@ -52,10 +52,10 @@
         <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
         <div class="description">
           <div class="text"><%= image.description.titleize if image.description %></div>
-          <div class="price-circle single_process" data-toggle="modal" data-target="#price"><%=image.users.first["#{@testing}"] if image.users.first["#{@testing}"] %></div>
-          <div class="price-circle women_cut" data-toggle="modal" data-target="#price"><%=image.users.first.women_cut if image.users.first.women_cut %></div>
+          <div class="price-circle single_process" data-toggle="modal" data-target="#<%=@circle %>"><%=image.users.first["#{@circle}"] if image.users.first["#{@circle}"] %></div>
           
-          <div class="modal price-model" id="price" tabindex="-1" role="dialog">
+          
+          <div class="modal price-model" id="W" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -63,13 +63,62 @@
                   <h4 class="modal-title">Price</h4>
                 </div>
                 <div class="modal-body">
-                  <p>White circle: Average Women's Haircut Price</p>
-                  <p>Pink circle: Average Single Process Price</p>
+                  <p>Average price for a <u>lady's haircut</u></p>
                   <hr>
-                  <p><span>DISCLAIMER: The numbers in the circles are NOT locked. For accurate pricing, check out the service menus. </span> <%= link_to "learn more", faq_path %></p>
+                  <p><span>DISCLAIMER: The number in the circle is NOT locked. For accurate pricing, please check out the service menus. </span> <%= link_to "learn more", faq_path %></p>
                 </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
+              </div>
+            </div>
+          </div><!-- /.modal -->
+          
+          <div class="modal price-model" id="M" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Price</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Average price for a <u>men's haircut</u></p>
+                  <hr>
+                  <p><span>DISCLAIMER: The number in the circle is NOT locked. For accurate pricing, please check out the service menus. </span> <%= link_to "learn more", faq_path %></p>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.modal -->
+          
+          <div class="modal price-model" id="C" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Price</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Average price for a <u>single process</u> coloring</p>
+                  <br>
+                  <hr>
+                  <p><span>DISCLAIMER: The number in the circle is NOT locked. For accurate pricing, please check out the service menus. </span> <%= link_to "learn more", faq_path %></p>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.modal -->
+          
+          <div class="modal price-model" id="U" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Price</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Average price for a <u>formal updo</u></p><br>
+                  <p>Notice: for <u>bridal hair and trial</u>, please refer to the service menus</p>
+                  <hr>
+                  <p><span>DISCLAIMER: The number in the circle is NOT locked. For accurate pricing, please check out the service menus. </span> <%= link_to "learn more", faq_path %></p>
+                </div>
+              </div>
+            </div>
           </div><!-- /.modal -->
           
         </div>

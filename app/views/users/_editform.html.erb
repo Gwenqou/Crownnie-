@@ -48,13 +48,23 @@
     </div>
   </div>
   <hr>
+  
   <div class="form-group form-color">
-    
     <div class="col-sm-2">
       <%= f.label "Women's Cut Price", class:"control-label"%>
     </div>
     <div class="col-sm-offset-1 col-sm-6">
-      <%= f.text_field :women_cut, class:"form-control" %>
+      <%= f.text_field :W, class:"form-control" %>
+    </div>
+  </div>
+  
+  <div class="form-group form-color">
+    
+    <div class="col-sm-2">
+      <%= f.label "Men's Cut Price", class:"control-label"%>
+    </div>
+    <div class="col-sm-offset-1 col-sm-6">
+      <%= f.text_field :M, class:"form-control" %>
     </div>
   </div>
   
@@ -63,9 +73,20 @@
       <%= f.label "Single Process Price", class:"control-label"%>
     </div>
     <div class="col-sm-offset-1 col-sm-6">
-      <%= f.text_field :single_process, class:"form-control" %>
+      <%= f.text_field :C, class:"form-control" %>
     </div>
   </div>
+  
+  <div class="form-group form-color">
+    
+    <div class="col-sm-2">
+      <%= f.label "Updo price", class:"control-label"%>
+    </div>
+    <div class="col-sm-offset-1 col-sm-6">
+      <%= f.text_field :U, class:"form-control" %>
+    </div>
+  </div>
+  
   <div class="price"><%=link_to "what is this?", price_explanation_path %></div>
   <hr>
 
