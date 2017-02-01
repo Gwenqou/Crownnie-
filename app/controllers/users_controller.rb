@@ -102,7 +102,7 @@ class UsersController < ApplicationController
   end 
   
   def user_params_update
-    params.require(:user).permit(:username, :email, :password, :salon_name, :salon_location, :appointment_number, :first_name, :last_name, :avatar, :W, :M, :C, :U, menus_attributes:[:menu, :user_id] )
+    params.require(:user).permit(:username, :email, :password, :salon_name, :salon_location, :appointment_number, :first_name, :last_name, :avatar, :w, :m, :c, :u, menus_attributes:[:menu, :user_id] )
   end 
   
 

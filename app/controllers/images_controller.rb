@@ -17,7 +17,7 @@ class ImagesController < ApplicationController
       end 
     end
     
-   Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
+  # Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
 
     
   
@@ -38,14 +38,14 @@ class ImagesController < ApplicationController
         category_id = category.id unless category.nil?
         @images = Image.where(id: @images_list).joins(:categories).where(categories:{ id: category_id }).order('random()').paginate(page: params[:page], per_page: 60)  
         if category.id === 4  || category.id === 5
-          @circle = "U"
+          @circle = "u"
         else 
-          @circle = params[:category][0]
+          @circle = params[:category][0].downcase
         end
         
       else 
         @images = Image.where(id: @images_list).order('random()').paginate(page: params[:page], per_page: 60)  
-        @circle = "C"
+        @circle = "c"
       end 
       
     else
@@ -54,13 +54,13 @@ class ImagesController < ApplicationController
         category_id = category.id unless category.nil?
         @images = Image.joins(:categories).where(categories: { id: category_id }).order('random()').paginate(page: params[:page], per_page: 60)
         if category_id === 4  || category_id === 5
-          @circle = "U"
+          @circle = "u"
         else 
-          @circle = params[:category][0]
+          @circle = params[:category][0].downcase
         end 
       else 
         @images = Image.all.order('random()').paginate(page: params[:page], per_page: 60) 
-        @circle = "C"
+        @circle = "c"
       end
     end 
   end

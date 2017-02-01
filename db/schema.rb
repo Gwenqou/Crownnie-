@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201164555) do
+ActiveRecord::Schema.define(version: 20170201203534) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -85,10 +85,10 @@ ActiveRecord::Schema.define(version: 20170201164555) do
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.boolean  "admin",                  default: false
-    t.string   "W"
-    t.string   "C"
-    t.string   "M"
-    t.string   "U"
+    t.string   "w"
+    t.string   "c"
+    t.string   "m"
+    t.string   "u"
   end
 
   create_table "wishlists", force: :cascade do |t|

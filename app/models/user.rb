@@ -30,24 +30,24 @@ class User < ActiveRecord::Base
   validates :last_name, format: {with: VALID_NAME_REGEX, message: 'should only contain letters'}, on: :update, :if => lambda{ !last_name.nil? }
   
   VALID_PRICE_REGEX = /\A[0-9\+]*\z/ 
-  validates :W, length: {maximum: 4},
+  validates :w, length: {maximum: 4},
                         format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, 
                         on: :update,
-                        :if => lambda{ !W.nil? }
+                        :if => lambda{ !w.nil? }
                         
-  validates :C,length: {maximum: 4},
+  validates :c,length: {maximum: 4},
                         format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, 
                         on: :update,
-                        :if => lambda{ !C.nil? }
+                        :if => lambda{ !c.nil? }
   
-  validates :M, length: {maximum: 4},
+  validates :m, length: {maximum: 4},
                         format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, 
                         on: :update,
-                        :if => lambda{ !M.nil? }
-  validates :U, length: {maximum: 4},
+                        :if => lambda{ !m.nil? }
+  validates :u, length: {maximum: 4},
                         format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, 
                         on: :update,
-                        :if => lambda{ !U.nil? }
+                        :if => lambda{ !u.nil? }
                         
   # presence: { message: "price is required" }
   
