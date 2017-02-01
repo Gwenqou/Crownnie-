@@ -17,8 +17,10 @@ class ImagesController < ApplicationController
       end 
     end
     
-   Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
+  # Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
 
+    @testing = "single_process"
+  
     if params[:search].present?
       #this line get all the images from all the nearby users, thus there can be duplication 
       #if an image has two users, two of the same picture will come up and .distinct doesnt help

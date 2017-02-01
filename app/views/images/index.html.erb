@@ -52,7 +52,7 @@
         <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
         <div class="description">
           <div class="text"><%= image.description.titleize if image.description %></div>
-          <div class="price-circle single_process" data-toggle="modal" data-target="#price"><%=image.users.first.single_process if image.users.first.single_process %></div>
+          <div class="price-circle single_process" data-toggle="modal" data-target="#price"><%=image.users.first["#{@testing}"] if image.users.first["#{@testing}"] %></div>
           <div class="price-circle women_cut" data-toggle="modal" data-target="#price"><%=image.users.first.women_cut if image.users.first.women_cut %></div>
           
           <div class="modal price-model" id="price" tabindex="-1" role="dialog">
