@@ -49,7 +49,8 @@ class User < ActiveRecord::Base
                         on: :update,
                         :if => lambda{ !U.nil? }
                         
-  # presence: { message: "price is required" },
+  # presence: { message: "price is required" }
+  
    has_secure_password     
    validates :password, length: { minimum: 5, maximum: 30 }, on: :create
    validates :password, length: { minimum: 5, maximum: 30 }, on: :update, :if => lambda{ !password.nil? }
