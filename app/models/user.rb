@@ -33,21 +33,21 @@ class User < ActiveRecord::Base
   validates :W, length: {maximum: 4},
                         format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, 
                         on: :update,
-                        :if => lambda{ !:W.nil? }
+                        :if => lambda{ !W.nil? }
                         
   validates :C,length: {maximum: 4},
                         format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, 
                         on: :update,
-                        :if => lambda{ !:C.nil? }
+                        :if => lambda{ !C.nil? }
   
   validates :M, length: {maximum: 4},
                         format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, 
                         on: :update,
-                        :if => lambda{ !:M.nil? }
+                        :if => lambda{ !M.nil? }
   validates :U, length: {maximum: 4},
                         format: {with: VALID_PRICE_REGEX, message: 'price should only contain numbers and/or the plus sign'}, 
                         on: :update,
-                        :if => lambda{ !:U.nil? }
+                        :if => lambda{ !U.nil? }
                         
   # presence: { message: "price is required" },
    has_secure_password     
