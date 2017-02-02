@@ -43,6 +43,16 @@
   line-height: 2;
 }
 
+.about .panel-title{
+  padding: 0 5px;
+}
+.about .panel-title a{
+  color: #e08283 ;
+}
+
+.about .panel-body{
+  padding: 5px 10px;
+}
 /*------------------------------------*/
 
 @media screen and (max-width: 860px) {
