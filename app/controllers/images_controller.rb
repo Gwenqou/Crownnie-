@@ -17,7 +17,7 @@ class ImagesController < ApplicationController
       end 
     end
     
-  # Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
+  Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
 
     
   
@@ -36,7 +36,7 @@ class ImagesController < ApplicationController
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.where(id: @images_list).joins(:categories).where(categories:{ id: category_id }).order('random()').page(params[:page]).per(12)
+        @images = Image.where(id: @images_list).joins(:categories).where(categories:{ id: category_id }).order('random()').page(params[:page]).per(60)
         if category.id === 4  || category.id === 5
           @circle = "u"
         else 
@@ -44,21 +44,21 @@ class ImagesController < ApplicationController
         end
         
       else 
-        @images = Image.where(id: @images_list).order('random()').page(params[:page]).per(12)
+        @images = Image.where(id: @images_list).order('random()').page(params[:page]).per(60)
       end 
       
     else
       if params[:category].present?
         category = Category.where('lower(name) = ?', params[:category].downcase).first
         category_id = category.id unless category.nil?
-        @images = Image.joins(:categories).where(categories: { id: category_id }).order('random()').page(params[:page]).per(12)
+        @images = Image.joins(:categories).where(categories: { id: category_id }).order('random()').page(params[:page]).per(60)
         if category_id === 4  || category_id === 5
           @circle = "u"
         else 
           @circle = params[:category][0].downcase
         end 
       else 
-        @images = Image.all.order('random()').page(params[:page]).per(12)
+        @images = Image.all.order('random()').page(params[:page]).per(60)
         @circle = "c"
       end
     end 
