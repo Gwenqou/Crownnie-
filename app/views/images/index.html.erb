@@ -48,11 +48,9 @@
     </div>
   <% else %>
     <div id="images">
-      <%= render "indeximages" %>
+      <%= render @images %>
     </div>
-    <div class="paginate-box">
-      <%= will_paginate %>
-    </div>
+    <%= paginate @images %>
   <% end %>
   </div>
 </div>

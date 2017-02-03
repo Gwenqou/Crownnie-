@@ -1,0 +1,99 @@
+<div class="row">
+  <div class="col-md-12">
+      
+  <%= form_for(@image) do |f|%>
+    <div class="col-md-3 col-md-offset-1">
+      <div class="uploadplaceholder">
+        <% if @image.picture? %>
+          <%=image_tag @image.picture.url(:thumb) %>
+        <% else %>
+          <img class="img-responsive" id="img_prev" src="https://s3.amazonaws.com/crownshot/white.png" alt="your image" />
+          
+        <% end %>
+      </div>
+      <div class="upload-file">
+        <% if multiple_enable? %>
+          <%= f.file_field :picture, multiple: true, name: "image[picture]", accept: 'image/jpeg, image/gif, image/png',onchange:"readURL(this);" %>
+        <% else %>
+          <%= f.file_field :picture, accept: 'image/jpeg, image/gif, image/png',onchange:"readURL(this);" %>
+        <% end %>
+      </div>
+      
+      
+        <%= f.hidden_field :picture_cache, :value => @image.picture_cache %>
+      <div class="image-description">
+        <p>Picture Caption*</p>
+        <%= f.text_field :description, placeholder: "short description"%>
+      </div>
+    </div>
+      
+      
+
+
+     
+     <div class="col-md-8">
+        <div id="image_users">
+            <%= f.fields_for :image_users do |u| %>
+              <%=render 'image_user_fields', :f => u %>
+            <% end %> 
+            
+            <div class="links add-stylist">
+              <%= link_to_add_association 'add stylist', f, :image_users, id: "add_stylist" %>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="col-md-2 col-md-offset-6">
+          <div class="image-upload">
+            <%= f.submit 'Upload', class:"btn btn-danger" %>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<script>
+
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('#img_prev')
+         .attr('src', e.target.result)
+       };
+
+      reader.readAsDataURL(input.files[0]);
+    }
+  };
+  
+ $(function() {
+   $('#image_users').on('cocoon:after-insert', function() {
+     check_to_hide_or_show_add_link();
+   });
+
+   $('#image_users').on('cocoon:after-remove', function() {
+     check_to_hide_or_show_add_link();
+   });
+
+   check_to_hide_or_show_add_link();
+
+   function check_to_hide_or_show_add_link() {
+     if ($('#image_users .nested-fields').length >= 5) {
+       $('#image_users .links a').hide();
+     } else {
+       $('#image_users .links a').show();
+     }
+   }
+  });
+ 
+
+  var multiple = "<%= Multiple.first.multiple %>";
+  if (multiple=== "Yes") {
+    $('#new_image').fileupload();
+  };
+  
+</script>

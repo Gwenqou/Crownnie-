@@ -6,6 +6,7 @@
 
 
 $(document).ready(function(){
+  
   Dropzone.autoDiscover = false;
   $('#menu-dropzone').dropzone({
     maxFilesize: 2,
@@ -21,7 +22,14 @@ $(document).ready(function(){
  });
  
  
-  // $('#new_image').fileupload()
+ 
+ $("#images").infinitescroll({
+    navSelector: "nav.pagination",
+    nextSelector: "nav.pagination a[rel=next]",
+    itemSelector: "#images"
+  });
+ $(window).scroll()
+
  
 
 });
