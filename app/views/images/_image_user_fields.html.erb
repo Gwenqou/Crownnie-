@@ -4,7 +4,13 @@
     <div class="field-box">
       <div class="field">
         <%= f.label :content,"Stylist" %><br>
-        <%= f.collection_select :user_id, User.where(is_stylist: true).order('username ASC'), :id,:username, {:selected => current_user.id} %>
+        <% link = request.fullpath.downcase() %>
+        <% if link.include?('/edit') %>
+          <%= f.collection_select :user_id, User.where(is_stylist: true).order('username ASC'), :id,:username %>
+        <% else %>
+          <%= f.collection_select :user_id, User.where(is_stylist: true).order('username ASC'), :id,:username, {:selected => current_user.id} %>
+        <% end %>
+
         <div class="remove-stylist">
           <%= link_to_remove_association "<span class='glyphicon glyphicon-trash' aria-hidden='true' </span>".html_safe, f, class:"remove_stylist" %>
         </div>

@@ -2,10 +2,10 @@
  <div class="stylist-portforlio">
     <div class="basic-profile">
       <div class="stylist-name">
-        <h5><%= obj.first_name %> <%=obj.last_name %></h5>
+        <h5><%= obj.first_name if obj.first_name %> <%=obj.last_name if obj.last_name %></h5>
         <span data-toggle="tooltip" data-placement="right" title="Username"><%= obj.username.capitalize %></span><br><br>
-        <span class="color" data-toggle="tooltip" data-placement="right" title="Salon"><%= obj.salon_name.titleize %></span><br>
-        <span class="color" data-toggle="tooltip" data-placement="right" title="Work location"><%= obj.salon_location %></span>
+        <span class="color" data-toggle="tooltip" data-placement="right" title="Salon"><%= obj.salon_name.titleize if obj.salon_name %></span><br>
+        <span class="color" data-toggle="tooltip" data-placement="right" title="Work location"><%= obj.salon_location if obj.salon_location %></span>
       </div>
       <div class="image">
         <% if obj.avatar? %>
