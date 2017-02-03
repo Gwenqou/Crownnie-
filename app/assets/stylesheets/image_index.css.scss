@@ -191,8 +191,44 @@
   left: 20px;
 }
 
+/* ---------Sign Up Pop Up----------- */
 
+.image_index .poping{
+  display: none;
+}
+.image_index .signup-pop .modal{
+  top: 20%;
+  
+}
 
+.image_index .signup-pop .modal-content{
+  background-color: #d34c4d;
+  color: #fff;
+}
+
+.image_index .signup-pop .modal-title{
+  text-align: center;
+  font-size: 160%;
+}
+
+.image_index .signup-pop .modal-body{
+  text-align: center;
+  padding: 30px 5px 50px 5px;
+  font-size: 120%;
+}
+
+.image_index .signup-pop button{
+  font-size: 100%;
+}
+
+.image_index .signup-pop a{
+  padding: 5px 10px;
+}
+
+.image_index .signup-pop .pop-login{
+  color: #fff;
+  border-bottom: 1px dotted #fff;
+}
 /*--------------------------------------------------------------*/
 
 @media screen and (max-width: 1024px) {

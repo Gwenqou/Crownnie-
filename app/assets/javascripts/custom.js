@@ -22,7 +22,6 @@ $(document).ready(function(){
  });
  
  
- 
  $("#images").infinitescroll({
     navSelector: "nav.pagination",
     nextSelector: "nav.pagination a[rel=next]",
@@ -34,6 +33,10 @@ $(document).ready(function(){
   });
  $(window).scroll()
 
- 
+// $(window).scroll(function(){
+//   if ($(window).scrollTop() > $(document).height() - $(window).height() - 500){
+//     $(".poping").click()
+//   }
+// })
 
 });
