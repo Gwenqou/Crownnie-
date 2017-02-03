@@ -1,0 +1,113 @@
+ <% @images.each do |image| %> 
+      <div class="image">
+        <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
+        <div class="description">
+          <div class="text"><%= image.description.titleize if image.description %></div>
+          <div class="price-circle single_process" data-toggle="modal" data-target="#<%=@circle %>"><%=image.users.first["#{@circle}"] if image.users.first["#{@circle}"] %></div>
+          
+          
+          <div class="modal price-model" id="w" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Price</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Average price for a <u>lady's haircut</u></p>
+                  <hr>
+                  <p><span>DISCLAIMER: The number in the circle is NOT locked. For accurate pricing, please check out the service menus. </span> <%= link_to "learn more", faq_path %></p>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.modal -->
+          
+          <div class="modal price-model" id="m" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Price</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Average price for a <u>men's haircut</u></p>
+                  <hr>
+                  <p><span>DISCLAIMER: The number in the circle is NOT locked. For accurate pricing, please check out the service menus. </span> <%= link_to "learn more", faq_path %></p>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.modal -->
+          
+          <div class="modal price-model" id="c" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Price</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Average price for a <u>single process</u> coloring</p>
+                  <br>
+                  <hr>
+                  <p><span>DISCLAIMER: The number in the circle is NOT locked. For accurate pricing, please check out the service menus. </span> <%= link_to "learn more", faq_path %></p>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.modal -->
+          
+          <div class="modal price-model" id="u" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Price</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Average price for a <u>formal updo</u></p><br>
+                  <p>Notice: for <u>bridal hair and trial</u>, please refer to the service menus</p>
+                  <hr>
+                  <p><span>DISCLAIMER: The number in the circle is NOT locked. For accurate pricing, please check out the service menus. </span> <%= link_to "learn more", faq_path %></p>
+                </div>
+              </div>
+            </div>
+          </div><!-- /.modal -->
+          
+        </div>
+        <% if logged_in? %>
+          <% if @wishlist_index.include?(image.id) %>
+            <div class="like">
+              <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love",style:'display:none' %>
+              <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove" %>  
+            </div>
+          <% else %>
+            <div class="like" data-toggle="tooltip" data-placement="top" title="Save to wishlsit">
+              <%= link_to "<i class='ion-ios-heart-outline'></i>".html_safe, add_to_wishlist_path(id: image), remote: true, class: "love"%>
+              <%= link_to "<i class='ion-ios-heart'></i>".html_safe, wishlist_path(id: image.id, image: image), method: :delete, remote: true, class: "unlove",style:'display:none'%>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="like" data-toggle="tooltip" data-placement="top" title="Save to wishlsit" >
+            <div data-toggle="modal" data-target="#wishlist">
+              <i class='ion-ios-heart-outline love'></i>
+            </div>
+          </div>
+         
+          <div class="modal" id="wishlist" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Require login</h4>
+                </div>
+                <div class="modal-body">
+                  <p>Go ahead and sign up to have your own wishlist :)</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-dismiss="modal">Gotcha</button>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+        <% end %>
+      </div>
+    <% end %>
