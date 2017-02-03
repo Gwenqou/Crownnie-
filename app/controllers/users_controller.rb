@@ -51,8 +51,8 @@ class UsersController < ApplicationController
   end 
 
   def show
-    @stylist_images = @user.images
-    @general_images = Image.where(pictureuploader: @user.id)
+    @stylist_images = @user.images.page(params[:page]).per(30)
+    @general_images = Image.where(pictureuploader: @user.id).page(params[:page]).per(30)
   end 
   
   def index

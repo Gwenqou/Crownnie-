@@ -34,7 +34,9 @@
           </div>
         </div>
         <% end %>
-      
+        <div class="paginate-box">
+          <%= paginate @stylist_images %>
+        </div>
     <% end %>
     <% else %>
       <% if Image.where(pictureuploader: @user.id).empty? %>
@@ -59,7 +61,9 @@
           </div>
         </div>
         <% end %>  
-        
+        <div class="paginate-box">
+          <%= paginate  @general_images %>
+        </div>
       <% end %> 
     <% end %>
   </div>
