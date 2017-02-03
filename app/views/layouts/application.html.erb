@@ -15,8 +15,8 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="keywords" content=<%= yield(:keywords) %>>
-  
+  <meta name="keywords" content="<%= yield(:keywords) %>">
+  <meta name="description" content="<%= yield(:description) %>">
 </head>
 <body>
   <%= render 'layouts/navigation' %>

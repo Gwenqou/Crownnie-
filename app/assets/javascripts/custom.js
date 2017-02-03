@@ -26,7 +26,11 @@ $(document).ready(function(){
  $("#images").infinitescroll({
     navSelector: "nav.pagination",
     nextSelector: "nav.pagination a[rel=next]",
-    itemSelector: "#images"
+    itemSelector: "#images",
+    loading: {
+      msgText: "<em>Loading more...</em>",
+    }
+    
   });
  $(window).scroll()
 
