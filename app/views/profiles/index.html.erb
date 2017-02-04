@@ -1,26 +1,29 @@
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+
 <div class="profile-search">
   <div class="image_index">
     <div class="sidebar">
       <%= form_tag profiles_path, :method => :get do %>
         <i class="ion-navicon icon-show"></i>
         <div class="location">
-          <p>Search by Location</p>
+          <p>Location</p>
           <%= text_field_tag :location, params[:location], id: "locationTextField", class: "input_box",placeholder: "Address, city, zipcode" %>
           <div class="rangebar">
             <%= range_field_tag 'radius', params[:radius], in: 1..20, step: 1, id:"ageInputId", oninput:"ageOutputId.value = ageInputId.value" %>
             <output name="ageOutputName" id="ageOutputId"></output> miles 
           </div>
           <%= submit_tag "Done", :name => nil %>
-          </div>
+        </div>
       <% end %> 
       <hr>
-      <%= form_tag profiles_path, :method => :get do %>
-        <p>Search by Name</p>
-        <%= text_field_tag :name, params[:name], placeholder: "input name" %>
-        <% submit_tag "Done", :name => nil %>
-        <span>Search for stylists by first name, username, or salon name</span>
-      <% end %>
+      <div class="search-name">
+        <%= form_tag profiles_path, :method => :get do %>
+          <p>Name</p>
+          <%= text_field_tag :name, params[:name],class: "input_box", placeholder: "Input name" %>
+          <% submit_tag "Done", :name => nil %>
+          <span>You can search for stylists by location, first name, username, or salon name</span>
+        <% end %>
+      </div>
     </div>
     <div class="side-hidden">
       <i class="ion-navicon icon-hidden"></i>
@@ -33,21 +36,21 @@
       <div class="user-box">
         <div class="avatar">
           <% if user.avatar? %>
-            <%= image_tag user.avatar.url %>
+            <%=link_to image_tag(user.avatar.url), profile_path(user) %>
           <% else %>
-            <img class="img-responsive"  src="https://s3.amazonaws.com/crownshot/profile_placeholder.png" alt="stylist_profile" />
+            <%=link_to image_tag("https://s3.amazonaws.com/crownshot/profile_placeholder.png"), profile_path(user) %>
           <% end %>
         </div>
         <div class="user-info">
-          <%= user.username.capitalize%><br>
-          <% if !user.first_name.empty? %>
-            <%= user.first_name %><br>
+          <span data-toggle="tooltip" data-placement="right" title="Username"><%= user.username.capitalize%></span><br>
+          <% if user.first_name? %>
+            <span data-toggle="tooltip" data-placement="right" title="First Name"><%= user.first_name %></span><br>
           <% else %>
             &nbsp<br>
           <% end %>
           
-          <% if !user.salon_name.empty? %>
-            <%= user.salon_name %>
+          <% if user.salon_name? %>
+            <span data-toggle="tooltip" data-placement="right" title="Salon"><%= user.salon_name %></span>
           <% else %>
             &nbsp
           <% end %>
@@ -56,6 +59,11 @@
         
       </div>
     <% end %>
+    
+    <div class="paginate-box">
+      <%= paginate @users %>
+   </div>
+
   </div>
 </div>
 

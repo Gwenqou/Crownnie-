@@ -82,4 +82,7 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username
   
+  searchable do 
+    text :first_name, :username, :salon_name
+  end 
 end 

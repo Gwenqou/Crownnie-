@@ -2,11 +2,29 @@
   position: absolute;
   top: 52px;
   left: 170px;
-  right:0;
+  right: 0;
   bottom: 0;
   padding-left: 10px;
 }
 
+.profile-search .sidebar .search-name{
+  padding: 8px 0;
+  text-align: center;
+  margin: 10% 13% 0% 6%; 
+}
+
+.profile-search .sidebar .search-name p{
+  font-size: 130%;
+  
+}
+.profile-search .sidebar .search-name .input_box{
+  width: 110%;
+  height: 35px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+  
 .profile-search .profile .user-box{
   position: relative;
   display: inline-block;
@@ -21,9 +39,15 @@
   overflow: hidden;
 }
 
+.profile-search .profile .user-box .avatar a{
+  padding: 0;
+}
+
 .profile-search .profile .user-box .user-info{
+  margin-top: 10px;
   font-size: 95%;
   width: 180px;
   color: #da6768;
   text-align: center;
 }
+
