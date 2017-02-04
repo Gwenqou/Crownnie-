@@ -82,5 +82,12 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username
   
-  
+  def self.text_search(query)
+    if query.present?
+      where("username ilike :q or first_name ilike :q", q: "%#{query}%")
+    else
+      scoped
+    end 
+  end 
+    
 end 

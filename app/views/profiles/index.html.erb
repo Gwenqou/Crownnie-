@@ -19,7 +19,7 @@
       <div class="search-name">
         <%= form_tag profiles_path, :method => :get do %>
           <p>Name</p>
-          <%= text_field_tag :name, params[:name],class: "input_box", placeholder: "Input name" %>
+          <%= text_field_tag :query, params[:query],class: "input_box", placeholder: "Input name" %>
           <% submit_tag "Done", :name => nil %>
           <span>You can search for stylists by location, first name, username, or salon name</span>
         <% end %>
