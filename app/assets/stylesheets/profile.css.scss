@@ -51,3 +51,29 @@
   text-align: center;
 }
 
+/*-------------------------------------------*/
+@media screen and (max-width: 1024px) {
+  .profile-search .profile{
+    position: absolute;
+    top: 52px;
+    left: 40px;
+    right: 0;
+    bottom: 0;
+    padding-left: 10px;
+  }
+
+}
+
+@media screen and (max-width: 473px) {
+  .profile-search .profile{
+    left: 120px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .profile-search .profile{
+    left: 70px;
+  }
+
+}
