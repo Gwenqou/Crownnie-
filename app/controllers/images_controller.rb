@@ -17,8 +17,9 @@ class ImagesController < ApplicationController
       end 
     end
     
-  # Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
-
+  if Rails.env.production?
+   Image.connection.execute "select setseed(#{Date.today.strftime("%y%d%m").to_i/1000000.0})"
+  end 
     
   
     if params[:search].present?
