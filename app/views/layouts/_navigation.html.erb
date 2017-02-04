@@ -34,6 +34,8 @@
               <li role="separator" class="divider"></li>
               <li class="nav-font"><%=link_to "Wishlist", wishlist_path(current_user)%></li>
               <li role="separator" class="divider"></li>
+              <li class="nav-font"><%=link_to "Search for stylists", profiles_path%></li>
+              <li role="separator" class="divider"></li>
               <li class="nav-font"><%= link_to "Upload Image", new_image_path%></li>
                <li role="separator" class="divider"></li>
               <li class="nav-font"><%= link_to "Log Out", logout_path, method: :delete %></li>
