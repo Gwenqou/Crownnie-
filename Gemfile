@@ -41,9 +41,7 @@ gem 'dropzonejs-rails'
 gem 'gmaps4rails'
 gem 'mail_form'
 gem 'kaminari'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
-gem 'progress_bar'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
