@@ -1,0 +1,29 @@
+.profile-search .profile{
+  position: absolute;
+  top: 52px;
+  left: 170px;
+  right:0;
+  bottom: 0;
+  padding-left: 10px;
+}
+
+.profile-search .profile .user-box{
+  position: relative;
+  display: inline-block;
+  width: 180px;
+  height: 250px;
+  margin: 20px 15px;
+}
+.profile-search .profile .user-box .avatar{
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-search .profile .user-box .user-info{
+  font-size: 95%;
+  width: 180px;
+  color: #da6768;
+  text-align: center;
+}

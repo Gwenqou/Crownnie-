@@ -1,0 +1,69 @@
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+<div class="profile-search">
+  <div class="image_index">
+    <div class="sidebar">
+      <%= form_tag profiles_path, :method => :get do %>
+        <i class="ion-navicon icon-show"></i>
+        <div class="location">
+          <p>Search by Location</p>
+          <%= text_field_tag :location, params[:location], id: "locationTextField", class: "input_box",placeholder: "Address, city, zipcode" %>
+          <div class="rangebar">
+            <%= range_field_tag 'radius', params[:radius], in: 1..20, step: 1, id:"ageInputId", oninput:"ageOutputId.value = ageInputId.value" %>
+            <output name="ageOutputName" id="ageOutputId"></output> miles 
+          </div>
+          <%= submit_tag "Done", :name => nil %>
+          </div>
+      <% end %> 
+      <hr>
+      <%= form_tag profiles_path, :method => :get do %>
+        <p>Search by Name</p>
+        <%= text_field_tag :name, params[:name], placeholder: "input name" %>
+        <% submit_tag "Done", :name => nil %>
+        <span>Search for stylists by first name, username, or salon name</span>
+      <% end %>
+    </div>
+    <div class="side-hidden">
+      <i class="ion-navicon icon-hidden"></i>
+    </div>
+  </div>
+
+
+  <div class="profile">
+    <% @users.each do |user| %>
+      <div class="user-box">
+        <div class="avatar">
+          <% if user.avatar? %>
+            <%= image_tag user.avatar.url %>
+          <% else %>
+            <img class="img-responsive"  src="https://s3.amazonaws.com/crownshot/profile_placeholder.png" alt="stylist_profile" />
+          <% end %>
+        </div>
+        <div class="user-info">
+          <%= user.username.capitalize%><br>
+          <% if !user.first_name.empty? %>
+            <%= user.first_name %><br>
+          <% else %>
+            &nbsp<br>
+          <% end %>
+          
+          <% if !user.salon_name.empty? %>
+            <%= user.salon_name %>
+          <% else %>
+            &nbsp
+          <% end %>
+          
+        </div>
+        
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  function initialize() {
+	    var input = document.getElementById('locationTextField');
+	    var autocomplete = new google.maps.places.Autocomplete(input);
+	    }
+  google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>

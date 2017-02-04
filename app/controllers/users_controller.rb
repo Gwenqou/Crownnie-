@@ -55,6 +55,8 @@ class UsersController < ApplicationController
     @general_images = Image.where(pictureuploader: @user.id).page(params[:page]).per(30)
   end 
   
+  
+  
   def index
     @users = User.all.order(:id)
   end 
