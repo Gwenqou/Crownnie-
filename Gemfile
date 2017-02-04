@@ -42,8 +42,7 @@ gem 'gmaps4rails'
 gem 'mail_form'
 gem 'kaminari'
 gem 'sunspot_rails'
-gem 'sunspot_solr'
-gem 'progress_bar'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -56,7 +55,8 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
+  gem 'sunspot_solr'
+  gem 'progress_bar'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'sqlite3'
