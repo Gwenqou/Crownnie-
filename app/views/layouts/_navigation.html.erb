@@ -11,15 +11,13 @@
       
       <%= link_to image_tag("logo.png", alt: "crownshot logo"), root_path, class:"navbar-brand ",id:"logo" %>
       <%= link_to "Crownshot", root_path, class:"navbar-brand ",id:"crownshot" %>
-      <form class="navbar-form navbar-left">
-       <%= form_tag profiles_path, :method => :get do %>
+      <%= form_tag profiles_path, :method => :get, class:"navbar-form navbar-left" do %>
          <div class="form-group">
             <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search stylist" %>
          </div>     
             <%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
-        <% end %>
-    </form>
-      
+      <% end %>
+
     </div>
     
 
