@@ -147,7 +147,52 @@
     border: 4px solid #e08283; 
 }
 
+/* ------------------------------------------------ */
+/* Stylist Profile */
+/* ------------------------------------------------ */
+.section-stylist{
+    border-top: 2px solid  #cdcdcd;
+    padding: 80px 0 100px 0;
+    background-color: #f4f4f4;
+}
+.steps-box:first-child{
+    text-align: right;
+    padding-right:3%;
+    margin-top: 35px;
+}
+.steps-box:last-child{
+    padding-left: 3%;
+    margin-top: 70px;
+}
 
+
+.works-step {
+    margin-bottom: 80px;
+    color: #e08283;
+}
+
+.works-step .text{
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 115%;
+}
+
+.works-step .circle{
+    color: #e08283;
+    border:2px solid #e08283;
+    border-radius: 50%;
+    display: inline-block;
+    height:55px;
+    width:55px;
+    text-align: center;
+    padding: 10px 5px;
+    font-size:150%;
+    margin-right:25px;
+    float: left;
+}
+
+
+/*---------------------------------------------*/
 
 /* --------------------------------------------------------------*/
 @media screen and (max-width: 1400px) {
@@ -289,7 +334,7 @@
     .box {
         width: 40%;
         margin: auto;
-        margin-top: 30px;
+        margin-top: 40px;
     }
     .box a{
         padding-left: 0;
@@ -301,7 +346,7 @@
         right: -5px;
     }
     .page1 .section-special-picture{
-    padding: 70px 0 100px 0;
+        padding: 70px 0 50px 0;
     }
     
     .page1 .special-box {
@@ -309,6 +354,22 @@
         margin: auto;
         margin-top: 30px;
     }
+    
+    .section-stylist{
+        padding: 50px 0 100px 0;
+    }
+    .steps-box:first-child{
+        text-align: center;
+        padding-right: 0%;
+    }
+    .steps-box:last-child{
+        width: 360px;
+        margin: 40px auto 0 auto;
+    }
+    .works-step {
+        margin-bottom: 50px;
+    }
+
 
 }
 
@@ -369,6 +430,27 @@
         width: 70%;
         margin: 12px auto 0 auto;
     }
+    
+    .page1 h3{
+        margin-top: 12px;
+    }
+    .works-step .text{
+        margin-top: 8px;
+        font-size: 110%;
+    }
+    
+    .works-step .circle{
+        height:40px;
+        width:40px;
+        padding: 8px 5px;
+        font-size:120%;
+        margin-right:15px;
+    }
+    .steps-box:last-child{
+        width: 320px;
+        padding-right: 10px;
+    }
+    
 }
 
 @media screen and (max-width: 400px) {
@@ -386,7 +468,7 @@
     }
     
     .page1 h2{
-    font-size: 120%;
+        font-size: 120%;
     }
 
     .box {
@@ -397,7 +479,12 @@
     }
     .page1 h3{
         font-size: 110%;
-        
     }
 }
 
+@media screen and (max-width: 350px) {
+    .steps-box:last-child{
+        margin-left: 20px;
+    }
+    
+}
