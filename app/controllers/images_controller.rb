@@ -46,6 +46,7 @@ class ImagesController < ApplicationController
         
       else 
         @images = Image.where(id: @images_list).order('random()').page(params[:page]).per(60)
+        @circle = "c"
       end 
       
     else

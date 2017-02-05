@@ -53,6 +53,7 @@ resources :multiples
 
 resources :profiles, only: [:show, :index]
 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

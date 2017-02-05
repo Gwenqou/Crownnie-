@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-  before_action :require_user, only: [:index, :show ]
+  # before_action :require_user, only: [:index ]
   
   def index 
     @users = User.where(is_stylist: true).page(params[:page]).per(25)
@@ -16,4 +16,7 @@ class ProfilesController < ApplicationController
   def show 
     @user = User.where(is_stylist: true).friendly.find(params[:id])
   end 
+  
+
+  
 end

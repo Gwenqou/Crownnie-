@@ -90,6 +90,15 @@ a:visited{
  margin-bottom:0px;
  opacity: 0.95;
 }
+
+
+
+
+.navbar .navbar-form .btn{
+  background-color: #e08283;
+  color: #fff;
+}
+
 .nav li a{
   color:#e08283;
 }
@@ -181,9 +190,49 @@ a:visited{
 
 /*--------------------------------------------------------*/
 
+@media screen and (max-width: 776px) {
+  
+  #logo {
+    padding-right: 5px;
+  }
+  .navbar .navbar-form .form-group input{
+    width: 186px;
+  }
+  .navbar .navbar-form .form-group{
+    width: 186px;
+    display: inline-block;
+  }
+  .navbar form{
+    padding: 0 15px;
+  }
+  .navbar .navbar-form{
+    margin-bottom: 4px;
+  }
+}
+
 @media screen and (max-width: 550px) {
+    #crownshot{
+      display:none;
+    }
+    #logo {
+      padding-right: 15px;
+    }
+    .navbar .navbar-form .form-group .form-control{
+      height: 28px;
+    }
+    .navbar .navbar-form{
+      margin-top: 12px;
+    }
+    .navbar .navbar-form .form-group input,
+    .navbar .navbar-form .form-group{
+      width: 166px;
+    }
+
     .panel-body {
       padding: 15px 0;
+    }
+    .navbar-form .btn{
+      padding: 3px 6px;
     }
 }
 
@@ -193,6 +242,13 @@ a:visited{
     #crownshot{
       font-size: 150%;
       padding-left: 2px;
+    }
+    .navbar .navbar-form .form-group input,
+    .navbar .navbar-form .form-group{
+      width: 136px;
+    }
+    .navbar .navbar-form{
+      margin-top: 10px;
     }
     .footer-nav{
       padding-left: 0px;
