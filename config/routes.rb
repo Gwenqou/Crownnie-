@@ -52,7 +52,7 @@ resources "contacts", only: [:new, :create]
 resources :multiples
 
 resources :profiles, only: [:show, :index]
-post 'search' => 'profiles#search'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

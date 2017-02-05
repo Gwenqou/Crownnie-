@@ -17,9 +17,6 @@ class ProfilesController < ApplicationController
     @user = User.where(is_stylist: true).friendly.find(params[:id])
   end 
   
-  def search
-     @user = User.find_by(username: params[:query])
-      render action: 'show'
-  end 
+
   
 end
