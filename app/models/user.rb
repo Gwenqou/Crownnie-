@@ -84,7 +84,7 @@ class User < ActiveRecord::Base
   
   def self.text_search(query)
     if query.present?
-      where("username ilike :q or first_name ilike :q", q: "%#{query}%")
+      where("username @@ :q or first_name @@ :q or salon_name @@ :q", q: query)
     else
       scoped
     end 

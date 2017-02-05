@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :require_user, only: [:index, :show ]
   
   def index 
     @users = User.where(is_stylist: true).page(params[:page]).per(25)

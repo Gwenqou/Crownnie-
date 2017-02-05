@@ -19,11 +19,14 @@
       <div class="search-name">
         <%= form_tag profiles_path, :method => :get do %>
           <p>Name</p>
-          <%= text_field_tag :query, params[:query],class: "input_box", placeholder: "Input name" %>
-          <% submit_tag "Done", :name => nil %>
-          <span>You can search for stylists by location, first name, username, or salon name</span>
+            <%= text_field_tag :query, params[:query],class: "input_box", placeholder: "" %>
+          <br>
+          
+            <%= submit_tag "Done", :name => nil %>
         <% end %>
       </div>
+      <hr>
+      <div align="center" data-toggle="tooltip" data-placement="bottom" title="search stylists with location or name (first name, username or salon name)">What is this?</div>
     </div>
     <div class="side-hidden">
       <i class="ion-navicon icon-hidden"></i>
@@ -44,13 +47,13 @@
         <div class="user-info">
           <span data-toggle="tooltip" data-placement="right" title="Username"><%= user.username.capitalize%></span><br>
           <% if user.first_name? %>
-            <span data-toggle="tooltip" data-placement="right" title="First Name"><%= user.first_name %></span><br>
+            <span data-toggle="tooltip" data-placement="right" title="First Name"><%= user.first_name.capitalize %></span><br>
           <% else %>
             &nbsp<br>
           <% end %>
           
           <% if user.salon_name? %>
-            <span data-toggle="tooltip" data-placement="right" title="Salon"><%= user.salon_name %></span>
+            <span data-toggle="tooltip" data-placement="right" title="Salon"><%= user.salon_name.titleize %></span>
           <% else %>
             &nbsp
           <% end %>
