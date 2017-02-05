@@ -12,21 +12,20 @@
             <%= range_field_tag 'radius', params[:radius], in: 1..20, step: 1, id:"ageInputId", oninput:"ageOutputId.value = ageInputId.value" %>
             <output name="ageOutputName" id="ageOutputId"></output> miles 
           </div>
-          <%= submit_tag "Done", :name => nil %>
+          <%= submit_tag "Search", :name => nil %>
         </div>
       <% end %> 
       <hr>
       <div class="search-name">
         <%= form_tag profiles_path, :method => :get do %>
           <p>Name</p>
-            <%= text_field_tag :query, params[:query],class: "input_box", placeholder: "" %>
+            <%= text_field_tag :query, params[:query], class: "input_box", placeholder: "Username, First Name" %>
           <br>
-          
-            <%= submit_tag "Done", :name => nil %>
+            <%= submit_tag "Search", :name => nil %>
         <% end %>
       </div>
       <hr>
-      <div align="center" data-toggle="tooltip" data-placement="bottom" title="search stylists with location or name (first name, username or salon name)">What is this?</div>
+      <div align="center" data-toggle="tooltip" data-placement="bottom" title="search for stylists based on location or name (first name, username or salon name)">What is this?</div>
     </div>
     <div class="side-hidden">
       <i class="ion-navicon icon-hidden"></i>

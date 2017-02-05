@@ -8,8 +8,7 @@ class ProfilesController < ApplicationController
       @users = User.where(is_stylist: true).where.not(salon_location: [nil, '']).near(params[:location], @radius).page(params[:page]).per(25)
     end 
     if params[:query].present?
-     @users = User.text_search(params[:query]).page(params[:page]).per(25)
-
+      @users = User.text_search(params[:query]).page(params[:page]).per(25)
     end 
     
   end 
