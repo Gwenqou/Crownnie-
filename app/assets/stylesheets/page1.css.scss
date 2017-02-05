@@ -151,7 +151,7 @@
 /* Stylist Profile */
 /* ------------------------------------------------ */
 .section-stylist{
-    border-top: 2px solid  #cdcdcd;
+    border-top: 10px solid  #fefefe;
     padding: 80px 0 100px 0;
     background-color: #f4f4f4;
 }
@@ -165,7 +165,10 @@
     margin-top: 70px;
 }
 
-
+.steps-box img{
+    width: 284px;
+    height: auto;
+}
 .works-step {
     margin-bottom: 80px;
     color: #e08283;
@@ -486,5 +489,7 @@
     .steps-box:last-child{
         margin-left: 20px;
     }
-    
+    .works-step .circle{
+        padding: 5px 5px;
+    }
 }
