@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   validates :email, presence:true,
                     uniqueness: {case_sensitive:false}, 
                     length: {minimum:3, maximum:105},
-                    format: {with: VALID_EMAIL_REGEX}
+                    format: {with: VALID_EMAIL_REGEX, message: 'format should be valid'}
     
   VALID_NAME_REGEX = /\A[a-zA-Z\s]*\z/ 
   validates :first_name, format: {with: VALID_NAME_REGEX, message: 'should only contain letters'}, on: :update, :if => lambda{ !first_name.nil? }
@@ -49,7 +49,7 @@ class User < ActiveRecord::Base
                         on: :update,
                         :if => lambda{ !u.nil? }
                         
-  # presence: { message: "price is required" }
+
   
    has_secure_password     
    validates :password, length: { minimum: 5, maximum: 30 }, on: :create

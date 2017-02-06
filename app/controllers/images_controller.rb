@@ -80,26 +80,22 @@ class ImagesController < ApplicationController
   def create 
     @image = Image.new(image_params)
     @image.pictureuploader = current_user.id
+
     if @image.save
       flash[:success]="Image saved"
       redirect_to user_path(current_user)
     else 
       flash.now[:danger] = 'Please make sure that: <br/>'
-      if(params[:image][:picture].nil?)
+      if(params[:image][:picture].nil? && params[:image][:picture_cache].empty?)
         flash.now[:danger] << "* Picture is not blank.<br/>"
-      end
-      if(params[:image][:description].empty?)
-        flash.now[:danger] << "* Picture Caption is present.<br/>"
-      end
-      if(!params[:image][:description].empty?)
-        flash.now[:danger] << "* Caption is between 3-25 characters. <br/>"
-        flash.now[:danger] << "* Caption should contain only letters, single quotes, spaces and dashes <br/>"
+      elsif(params[:image][:description].empty?)
+          flash.now[:danger] << "* Picture Caption contains 3-25 characters(letters and single quotes only) <br/>"
+      else
+          flash.now[:danger] << "* Caption contains 3-25 characters. <br/>"
+          flash.now[:danger] << "* Caption should contain only letters, single quotes, spaces and dashes <br/>"
+          flash.now[:danger] << "* At least one stylist that performed on this hair is chosen.<br/>"
+          flash.now[:danger] << "* At least one service is selected for each stylist."
       end 
-      
-      if(params[:image][:image_user_attributes].nil?)
-        flash.now[:danger] << "* At least one stylist that performed on this hair is chosen.<br/>"
-        flash.now[:danger] << "* At least one service is selected for each stylist."
-      end
       render 'new'
     end 
   end 
