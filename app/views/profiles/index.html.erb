@@ -34,33 +34,33 @@
 
 
   <div class="profile">
-    <% @users.each do |user| %>
-      <div class="user-box">
-        <div class="avatar">
-          <% if user.avatar? %>
-            <%=link_to image_tag(user.avatar.url), profile_path(user) %>
-          <% else %>
-            <%=link_to image_tag("https://s3.amazonaws.com/crownshot/profile_placeholder.png"), profile_path(user) %>
-          <% end %>
+
+      <% @users.each do |user| %>
+        <div class="user-box">
+          <div class="avatar">
+            <% if user.avatar? %>
+              <%=link_to image_tag(user.avatar.url), profile_path(user) %>
+            <% else %>
+              <%=link_to image_tag("https://s3.amazonaws.com/crownshot/profile_placeholder.png"), profile_path(user) %>
+            <% end %>
+          </div>
+          <div class="user-info">
+            <span data-toggle="tooltip" data-placement="right" title="Username"><%= user.username.capitalize%></span><br>
+            <% if user.first_name? %>
+              <span data-toggle="tooltip" data-placement="right" title="First Name"><%= user.first_name.capitalize %></span><br>
+            <% else %>
+              &nbsp<br>
+            <% end %>
+            <% if user.salon_name? %>
+              <span data-toggle="tooltip" data-placement="right" title="Salon"><%= user.salon_name.titleize %></span>
+            <% else %>
+              &nbsp
+            <% end %>
+      
+          </div>
+
         </div>
-        <div class="user-info">
-          <span data-toggle="tooltip" data-placement="right" title="Username"><%= user.username.capitalize%></span><br>
-          <% if user.first_name? %>
-            <span data-toggle="tooltip" data-placement="right" title="First Name"><%= user.first_name.capitalize %></span><br>
-          <% else %>
-            &nbsp<br>
-          <% end %>
-          
-          <% if user.salon_name? %>
-            <span data-toggle="tooltip" data-placement="right" title="Salon"><%= user.salon_name.titleize %></span>
-          <% else %>
-            &nbsp
-          <% end %>
-          
-        </div>
-        
-      </div>
-    <% end %>
+      <% end %>
     
     <div class="paginate-box">
       <%= paginate @users %>
