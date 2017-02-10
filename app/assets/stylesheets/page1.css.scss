@@ -377,6 +377,9 @@
 }
 
 @media screen and (max-width: 650px) {
+    .page1 .search-boxes{
+        top: 55%;
+    }
     .page1 .jumbotron{
       height: 470px;
     }
@@ -433,7 +436,9 @@
         width: 70%;
         margin: 12px auto 0 auto;
     }
-    
+    .page1 .search-boxes{
+        top: 50%;
+    }
     .page1 h3{
         margin-top: 12px;
     }

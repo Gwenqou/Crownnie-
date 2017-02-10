@@ -4,7 +4,16 @@
         <div class="description">
           <div class="text"><%= image.description.titleize if image.description %></div>
           <div class="price-circle single_process" data-toggle="modal" data-target="#<%=@circle %>"><%=image.users.first["#{@circle}"] if image.users.first["#{@circle}"] %></div>
-          
+          <div class="stylists">
+              <% if image.users.count === 1 %>
+                <% if image.users.first.first_name? %>
+                     by <%= image.users.first.first_name.capitalize%>
+                <% end %>
+              <% end %>
+          </div>
+            
+             
+       
           
           <div class="modal price-model" id="w" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
