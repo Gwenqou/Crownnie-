@@ -9,6 +9,9 @@
                 <% if image.users.first.first_name? %>
                      by <%= image.users.first.first_name.capitalize%>
                 <% end %>
+                
+              <% else %>
+                by more than one stylists
               <% end %>
           </div>
             
