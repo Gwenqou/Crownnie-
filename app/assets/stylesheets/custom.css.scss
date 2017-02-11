@@ -86,6 +86,10 @@ a:visited{
   padding: 5px 15px;
 }
 
+.field_with_errors .message{
+  font-size:80%;
+  color: #D00;
+}
 /* -------navigation------- */
 .navbar{
  background-color:#fff; 
