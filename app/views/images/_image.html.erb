@@ -8,6 +8,8 @@
               <% if image.users.count === 1 %>
                 <% if image.users.first.first_name? %>
                      by <%= image.users.first.first_name.capitalize%>
+                <% else %>
+                     &nbsp
                 <% end %>
                 
               <% else %>

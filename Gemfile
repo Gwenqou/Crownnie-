@@ -21,6 +21,7 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'ionicons-rails'
 gem 'cocoon'
 gem 'jquery-fileupload-rails'
+gem 'client_side_validations'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'aws-sdk', '~> 2'

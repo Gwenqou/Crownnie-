@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require jquery.infinitescroll.js
+//= require rails.validations
 //= require cocoon
 //= require bootstrap-sprockets
 //= require dropzone

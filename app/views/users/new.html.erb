@@ -3,10 +3,10 @@
   <h2>Release your confidence</h2>
   <h3><strike>Have a good day.</strike> Make it a great day </h3>
   <br>
-  <%= render 'shared/errors', obj: @user %>
+  <%#= render 'shared/errors', obj: @user %>
     <div class="row">
       <div class="col-sm-8 col-sm-offset-3 form-space">
-        <%= form_for(@user, :html=>{class:"form-horizontal", role: "form"}) do |f| %>
+        <%= form_for(@user,  :html=>{class:"form-horizontal", role: "form"}) do |f| %>
           <%= render 'users/form', :f => f %>
           <br>
           <div class="form-group ">
@@ -20,3 +20,5 @@
       </div>
     </div> 
 </div>
+
+<!--:validate =>true,-->
