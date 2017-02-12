@@ -164,21 +164,35 @@ a:visited{
     font-size: 100%;
 }
 
-.footer-nav{
+.footer-nav,
+.social-links{
     list-style: none;
     padding-top: 0px;
     padding-left: 60px;
 }
 
-
+.social-links{
+  margin-right: 80px;
+}
 .footer-nav li{
     float: left;
     display: inline-block;
 }
 
-.footer-nav li a{
+.footer-nav li a,
+.social-links li a{
     border:0;
     color: #888;
+}
+
+.social-links li{
+    float: right;
+    display: inline-block;
+}
+
+.social-links li a:link,
+.social-links li a:visited{
+    font-size: 160%;
 }
 
 .footer p{
@@ -215,6 +229,12 @@ a:visited{
   }
   .navbar .navbar-form{
     margin-bottom: 4px;
+  }
+  .social-links{
+    width: 300px;
+  }
+  .social-links li{
+    float: left;
   }
 }
 
