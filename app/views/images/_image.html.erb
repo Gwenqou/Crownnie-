@@ -1,6 +1,6 @@
 
       <div class="image">
-        <%= link_to image_tag(image.picture.url(:thumb)), image_path(image) %>
+        <%= link_to image_tag(image.picture.url(:thumb)), image_path(image), :target => "_blank" %>
         <div class="description">
           <div class="text"><%= image.description.titleize if image.description %></div>
           <div class="price-circle single_process" data-toggle="modal" data-target="#<%=@circle %>"><%=image.users.first["#{@circle}"] if image.users.first["#{@circle}"] %></div>
