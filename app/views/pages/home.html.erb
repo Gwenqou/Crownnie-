@@ -6,61 +6,46 @@
   <div class="jumbotron">
     <div class="col-md-6 col-md-offset-3 jumbo">
       <h1>EVERY DAY IS A GOOD HAIR DAY</h1>
-      <div class="caption"><h5>Discover the hottest hair stylists in your area</h5></div>
+      <div class="caption"><h5>Discover the hottest hair stylists in New York City</h5></div>
     </div>  
-    <div class="col-md-6 col-md-offset-3 search-boxes">
-      <%= form_tag images_path, :method => :get do %>
-        <%= text_field_tag :search, params[:search], id: "searchTextField",  class: "search-box location-box", placeholder: "Address, city, zipcode" %>
-        <%= select_tag 'category', options_for_select(@cats, ''),class: "search-box category-box" %>
-        <%= submit_tag "Discover", :name => nil, class:"search-box discover-box" %>
-      <% end %>
-    </div>
   </div>
   <section class="section-daily-picture">
-    <h2>Fabulous Hairstyles</h2>
+    <h2>Take a Peak: Fabulous Hairstyles</h2>
             
   <div class="row box-section">
     <div class="col-sm-offset-1 col-sm-3 ">
       <div class="box">
-        <%= link_to image_tag("mencut.png", alt: "mens cut" ), images_path(category: 'MEN\'S CUT') %>
-        <div class="credit">
-            <%= link_to "by Moran", "https://www.crownshot.com/crownshot/5" %>
-          </div>
+        <%= image_tag "mencut.png", alt: "mens cut"  %>
       </div>
-        <h3><%= link_to "Men's cut", images_path(category: 'MEN\'S CUT') %></h3>
+      <h3>Men's Cut</h3>
       </div>
     <div class="col-sm-3 ">
        <div class="box">
-          <%= link_to image_tag("womencut2.png", alt: "womens cut" ), images_path(category: 'WOMEN\'S CUT') %>
-          <div class="credit">
-            <%= link_to "by Michael", "https://www.crownshot.com/crownshot/103" %>
-          </div>
+          <%= image_tag "womencut2.png", alt: "womens cut" %>
+         
         </div>
-      <h3><%= link_to "Women's cut", images_path(category: 'WOMEN\'S CUT') %></h3>
+      <h3>Women's cut</h3>
     </div>
     <div class="col-sm-3 ">
-       <div class="box">
-        <%= link_to image_tag("redcolor.png", alt: "color" ), images_path(category: 'COLOR') %>
-         <div class="credit">
-            <%= link_to "by Reavey", "https://www.crownshot.com/crownshot/12" %>
-          </div>
+      <div class="box">
+        <%= image_tag "redcolor.png", alt: "color" %>  
       </div>
-      <h3><%= link_to "Color", images_path(category: 'COLOR') %></h3>
+      <h3>Color</h3>
     </div>
    </div>
  </section>
  <section class="section-special-picture">
     <div class="row">
-      <h2>The Perfect Hairstyle <br>for when you say I do</h2>
+      <h2>Take a Peak: The Perfect Hairstyle <br>for when you say I do</h2>
     </div>
     <div class="row ">
       <div class="col-sm-3 col-sm-offset-3 special-box ">
-        <%= link_to image_tag("bridal.jpg", alt: "bridal" ), images_path(category: 'BRIDAL') %>
-        <h3><%= link_to "Bridal", images_path(category: 'BRIDAL') %></h3>
+        <%= image_tag "bridal.jpg", alt: "bridal" %>
+        <h3>Bridal</h3>
       </div>
       <div class="col-sm-3 special-box">
-        <%= link_to image_tag("prom.png", alt: "prom" ), images_path(category: 'PROM') %>
-        <h3><%= link_to "Prom", images_path(category: 'PROM') %></h3>
+        <%= image_tag"prom.png", alt: "prom" %>
+        <h3>Prom</h3>
       </div>
     </div>
   </section>
@@ -70,8 +55,7 @@
     </div>
     <div class="row ">
       <div class="col-sm-6 steps-box">
-        <%= link_to image_tag("sam1.png", alt: "stylist profile", class:"profile-image" ), image_path(427) %>
-
+        <%= image_tag "sam1.png", alt: "stylist profile", class:"profile-image" %>
       </div>
       <div class="col-sm-6 steps-box">
         <div class="works-step">
@@ -84,11 +68,8 @@
         </div>
          <div class="works-step">
             <div class="circle">3</div>
-            <div class="text">Save the hairstyle in your wishlist!</div>
+            <div class="text">Save the hairstyle in your wishlist.</div>
         </div>
-        
-      
-                
       </div>
     </div>
   </section>
